@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SliTaz Pizza\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-22 12:45+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: web/pizza.cgi:67
+msgid "First step"
+msgstr ""
+
+#: web/pizza.cgi:69
+msgid ""
+"Chosse your distribution name and the one you want to use as\n"
+"\tbase. We need our mail to notify you when your SliTaz Flavor is built \n"
+"\tand if any things goes wrong."
+msgstr ""
+
+#: web/pizza.cgi:77
+msgid "Flavor name"
+msgstr ""
+
+#: web/pizza.cgi:81
+msgid "Short description"
+msgstr ""
+
+#: web/pizza.cgi:85
+msgid "Email"
+msgstr ""
+
+#: web/pizza.cgi:89
+msgid "Based on"
+msgstr ""
+
+#: web/pizza.cgi:93
+msgid "Text mode system"
+msgstr ""
+
+#: web/pizza.cgi:95
+msgid "X without GTK or QT"
+msgstr ""
+
+#: web/pizza.cgi:97
+msgid "Clean GTK desktop"
+msgstr ""
+
+#: web/pizza.cgi:99
+msgid "Default SliTaz desktop"
+msgstr ""
+
+#: web/pizza.cgi:110
+msgid "Continue"
+msgstr ""
+
+#: web/pizza.cgi:125
+msgid "Generate"
+msgstr ""
+
+#: web/pizza.cgi:146
+msgid "Cancel"
+msgstr ""
+
+#: web/pizza.cgi:149
+msgid "Build flavor"
+msgstr ""
+
+#: web/pizza.cgi:160
+msgid "Start over"
+msgstr ""
+
+#: web/pizza.cgi:176
+msgid "Packing:"
+msgstr ""
+
+#: web/pizza.cgi:209
+msgid "Your ISO will be built on next Pizza Bot run"
+msgstr ""
+
+#: web/pizza.cgi:211
+#, sh-format
+msgid "Ther is $inqueue flavors in queue"
+msgstr ""
+
+#: web/pizza.cgi:219
+msgid "Download tarball: "
+msgstr ""
+
+#: web/pizza.cgi:226
+msgid "Status"
+msgstr ""
+
+#: web/pizza.cgi:247
+msgid "Download ISO:"
+msgstr ""
+
+#: web/pizza.cgi:251
+msgid "Flavor is building or still in the build queue"
+msgstr ""
+
+#: web/pizza.cgi:259
+msgid "Status for:"
+msgstr ""
+
+#: web/pizza.cgi:261
+msgid "Flavor description:"
+msgstr ""
+
+#: web/pizza.cgi:276
+msgid "Download tarball:"
+msgstr ""
+
+#: web/pizza.cgi:299
+msgid "Help"
+msgstr ""
+
+#: web/pizza.cgi:327
+msgid "Welcome"
+msgstr ""
+
+#: web/pizza.cgi:341
+msgid "Create a new flavor"
+msgstr ""
+
+#: web/pizza.cgi:351
+msgid "Latest builds"
+msgstr ""
