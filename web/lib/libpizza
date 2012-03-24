@@ -1,0 +1,57 @@
+#!/bin/sh
+#
+# Common functions for Pizza CGI/SHell web interface.
+#
+
+[ -f "/etc/slitaz/pizza.conf" ] && . /etc/slitaz/pizza.conf
+[ -f "../pizza.conf" ] && . ../pizza.conf
+. ./db.conf
+. /usr/lib/slitaz/httphelper
+header
+
+# xHTML header.
+cat lib/header.html || exit 1
+
+# Status function.
+status() {
+	if [ $? = 0 ]; then
+		echo " <span class="span-ok">OK</span>"
+	else
+		echo " <span class="span-red">Failed</span>"
+	fi
+}
+
+# Put some colors in log and DB files.
+highlighter() {
+	case $1 in
+		log)
+			sed -e 's#OK#<span class="span-ok">OK</span>#g' \
+				-e 's#Failed#<span class="span-red">Failed</span>#g' ;;
+		activity)
+			sed s"#^\([^']* : \)#<span class='log-date'>\0</span>#"g ;;
+	esac
+}
+
+# Log activities, we want first letter capitalized.
+log() {
+	grep ^[A-Z] | \
+		sed s"#^[A-Z]\([^']*\)#$(date '+%Y-%m-%d %H:%M') : \0#" >> $activity
+}
+
+# Usage: error string
+error() {
+	echo "<span class="span-red">ERROR: $@</span>"
+}
+
+# Pizza notification function: notify "message" "icon"
+notify() {
+	img=info
+	[ "$2" ] && img=$2
+	cat << EOT
+<script type="text/javascript">
+	document.write('<div id="notify"><img src="images/$img.png" />$1</div>');
+	fadeNotify('notify', 100, 0, 300);
+	setTimeout('hideNotify()', 6200);
+</script>
+EOT
+}
