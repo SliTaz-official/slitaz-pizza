@@ -1,0 +1,210 @@
+#!/bin/sh
+#
+# SliTaz Pizza host cmdline utility - Create environment, chroot, clean
+# Backup and purge should be done via cron jobs.
+#
+
+[ -f "/etc/slitaz/pizza.conf" ] && . /etc/slitaz/pizza.conf
+[ -f "pizza.conf" ] && . ./pizza.conf
+
+# Pizza DB files.
+chroot="$PIZZA/chroot"
+pkgs="${chroot}$SLITAZ/packages"
+cache="${chroot}$SLITAZ/cache"
+queue="${chroot}$SLITAZ/queue"
+tmp="${chroot}$SLITAZ/tmp"
+feeds="${chroot}$SLITAZ/xml"
+activity="$cache/activity"
+builds="$cache/builds"
+public="$VHOST/public"
+bindpub="${chroot}$SLITAZ/public"
+
+#
+# Functions
+#
+
+usage() {
+	cat << EOT
+
+$(echo -e "\033[1mUsage:\033[0m") pizza [command]
+
+$(echo -e "\033[1mCommands:\033[0m")
+  usage        Display this short usage.
+  setup        Setup Pizza build environment.
+  up-files     Update chroot and web files from datadir.
+  exec         Execute a command in chroot.
+  chroot       Chroot in Pizza environment.
+  start        Start Pizza bot and mount packages.
+  stop         Stop Pizza and unmount packages.
+  get-lists    Get latest skel packages list from Hg.
+  sync-pkgs    Sync packages from SliTaz mirror.
+  purge        Purge Pizza tmp directory.
+  clean        Complet chroot clean-up.
+
+EOT
+}
+
+# Status function.
+status() {
+	if [ $? = 0 ]; then
+		echo " OK"
+	else
+		echo " Failed"
+	fi
+}
+
+# Get latest skel packages list
+get_pkgs_lists() {
+	cd $cache
+	for skel in base justx gtkonly core
+	do
+		echo -n "Getting $skel packages list... "
+		wget -O packages.$skel \
+			$HG/raw-file/tip/$skel/packages.list 2>/dev/null
+		echo "Done"
+	done
+}
+
+# The Bot is chrooted and can't access main pizza.conf
+bot_config()
+{
+	config=$chroot/etc/slitaz/pizza-bot.conf
+	echo '# Pizza Bot configuration.' > $config
+	grep ^PIZZA_URL /etc/slitaz/pizza.conf >> $config
+	grep ^MAIL_DOMAIN /etc/slitaz/pizza.conf >> $config
+	grep ^MAIL_SERVER /etc/slitaz/pizza.conf >> $config
+}
+
+#
+# Commands
+#
+
+case "$1" in
+	setup)
+		# Setup build host.
+		crontabs="$chroot/var/spool/cron/crontabs"
+		if [ -d "$chroot/proc" ]; then
+			echo "Chroot already exist: $chroot" && exit 0
+		fi
+		echo ""
+		echo "Setting up Pizza environment..."
+		mkdir -p $crontabs $cache $pkgs $tmp $queue $bindpub $feeds
+		touch $activity $builds
+		chmod 0777 $tmp $queue $cache
+		chmod 0666 $activity
+		for pkg in slitaz-base-files busybox tazlito tazpkg postfix
+		do
+			echo "Installing package: $pkg"
+			tazpkg -gi $pkg --root=$chroot >/dev/null
+		done
+		
+		# Files
+		echo -n "Creating needed files..."
+		cp -f /etc/resolv.conf $chroot/etc
+		mkdir -p $chroot/etc/init.d
+		bot_config
+		# No more needed when slitaz-base-files have rc.functions
+		cp -f /etc/init.d/rc.functions $chroot/etc/init.d
+		echo '# Check pizza queue each 5 min' > $crontabs/root
+		echo '*/20  * * * * /usr/bin/pizza-bot' >> $crontabs/root
+		status
+		
+		# We want Tazlito to build ISO's in /home/slitaz
+		echo -n "Updating Tazlito default configuration..."
+		sed -i s'/^WORK_DIR=.*/WORK_DIR="\/home\/slitaz"/' \
+			$chroot/etc/tazlito/tazlito.conf
+		status
+		
+		echo -n "Installing Pizza Bot..." 
+		cp -a $DATA/pizza-bot $chroot/usr/bin
+		status
+		cd $cache && get_pkgs_lists
+		
+		# Web interface and public dir
+		echo -n "Installing the web interface..."
+		mkdir -p $public && chmod 0777 $public
+		cp -a $DATA/web/* $VHOST
+		status
+		echo "Pizza chroot : $chroot"
+		echo "Vhost path   : $VHOST"
+		echo ""
+		echo "To start Pizza Bot: $(basename $0) start"
+		echo "" ;;
+	up-files)
+		# Update files in chroot when pizza is update on host.
+		echo -n "Updating chroot and virtual host..."
+		cp -a $DATA/web/* $VHOST
+		cp -a $DATA/pizza-bot $chroot/usr/bin 
+		bot_config
+		status ;;
+	exec)
+		# Execute a command in chroot.
+		[ "$2" ] || exit 0
+		chroot $chroot $2 ;;
+	chroot)
+		# Chroot in Pizza environment.
+		echo -e "\nChrooting to: $chroot\n"
+		chroot $chroot /bin/sh --login
+		echo -e "\nExiting Pizza chroot...\n" ;;
+	start)
+		# Mount and start Pizza
+		if ! mount | fgrep -q "pizza/chroot"; then
+			gettext -e "Mounting packages and public...\n"
+			mount -o bind $SLITAZ/$SLITAZ_VERSION/packages $pkgs
+			mount -o bind $public $bindpub
+		fi
+		chroot $chroot /etc/init.d/crond start 
+		[ "$MAIL_DOMAIN" ] && chroot $chroot /etc/init.d/postfix start ;;
+	stop)
+		# unmount and stop Pizza
+		if mount | fgrep -q "pizza/chroot"; then
+			gettext -e "Unmounting packages and public...\n"
+			umount $pkgs
+			umount $bindpub
+		fi 
+		chroot $chroot /etc/init.d/crond stop 
+		[ "$MAIL_DOMAIN" ] && chroot $chroot /etc/init.d/postfix stop ;;
+	get-lists)
+		get_pkgs_lists ;;
+	sync-pkgs)
+		echo "Syncing all $SLITAZ_VERSION packages..."
+		rsync -azH --delete rsync://mirror.slitaz.org/slitaz-$SLITAZ_VERSION/ 
+			$SLITAZ/$SLITAZ_VERSION/packages/ ;;
+	backup)
+		echo "Creating Pizza backup..."
+		bak="pizza-$(date "+%Y%m%d")"
+		dir="$PIZZA/backups/$bak"
+		mkdir -p $dir && cd $PIZZA/backups
+		cp -a $cache $dir
+		cp -a $chroot/home/slitaz/xml $dir
+		for flavor in $(ls $public)
+		do
+			if [ -f "$public/$flavor/receipt" ]; then
+				mkdir -p $dir/public/$flavor
+				. $public/$flavor/receipt
+				cp -f $public/$flavor/$FLAVOR.flavor \
+					$dir/public/$flavor 2>/dev/null
+			fi
+		done
+		tar cf $bak.tar $bak && rm -rf $bak
+		lzma e $bak.tar $bak.tar.lzma 
+		du -sh $bak.tar.lzma ;;
+	purge)
+		# Remove tmp file older than 24 hours and ISO older than 15 days.
+		# TODO: Improve and use configs from pizza.conf
+		echo "Purging tmp files..."
+		find $tmp -mtime +1 | xargs rm -f
+		echo "Purging ISO's..."
+		find $public -mtime +15 | xargs rm -f ;;
+	clean)
+		# Clean all chroot.
+		echo -e "\nCleaning: $chroot"
+		cd $chroot || exit 1
+		for i in *
+		do
+			[ "$i" == "home" ] || rm -rf $i
+		done && echo "" ;;
+	*)
+		usage ;;
+esac
+exit 0
