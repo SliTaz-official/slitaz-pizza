@@ -1,0 +1,146 @@
+#!/bin/sh
+#
+# SliTaz Pizza chroot cmdline utility. This tool is designed to be run 
+# by cron and automaticaly build flavors in the queue. We build one ISO
+# at once so we dont use too much resources.
+#
+# Copyright (C) 2012 SliTaz GNU/Linux - GNU gpl v2
+# Authors : Christophe Lincoln <pankso@slitaz.org>
+#
+
+. /etc/slitaz/pizza-bot.conf
+
+# Pizza DB files.
+pizza="/home/slitaz"
+cache="$pizza/cache"
+queue="$pizza/queue"
+activity="$cache/activity"
+public="$pizza/public"
+builds="$cache/builds"
+lockfile="/var/lock/pizza.lock"
+feeds="$pizza/xml"
+
+# Log activities, we want first letter capitalized.
+log() {
+	grep ^[A-Z] | \
+		sed s"#^[A-Z]\([^']*\)#$(date '+%Y-%m-%d %H:%M') : \0#" >> $activity
+}
+
+# Clean exit.
+quit() {
+	rm -f $lockfile
+	exit 0
+}
+
+# Create a XML feed for freshly builded flavor.
+gen_rss() {
+	pubdate=$(date "+%a, %d %b %Y %X")
+	cat > $feeds/slitaz-$ID.xml << EOT
+	<item>
+		<title>$FLAVOR $VERSION</title>
+		<link>${PIZZA_URL}?id=$ID</link>
+		<guid>slitaz-$ID</guid>
+		<pubDate>$pubdate</pubDate>
+		<description>$SHORT_DESC</description>
+	</item>
+EOT
+}
+
+# Mail body.
+mail_body() {
+	md5=$(cat $public/slitaz-$ID/$FLAVOR.md5 | awk '{print $1}')
+	cat << EOT
+From: SliTaz Pizza <pizza@$MAIL_DOMAIN>
+To: $MAINTAINER
+Date: $(date '+%a, %d %b %Y %H:%M:%S %z')
+Subject: Flavor ISO is built
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Hi,
+
+Your custom SliTaz GNU/Linux system is ready to download! It will be
+hosted a as long as we can but with absolutely no warranty in time.
+
+Get $FLAVOR ISO and files at: ${PIZZA_URL}?id=slitaz-$ID
+
+ISO size: $ISO_SIZE
+MD5 sum: $md5
+
+If you wish a long time service hosting please get in touch via our 
+professional platform at http://slitaz.pro
+
+Visit http://www.slitaz.org for latest news about the project and
+get community support on SliTaz Forum http://forum.slitaz.org
+
+Sended by the SliTaz Pizza Mailer
+
+EOT
+}
+
+# Run as daemon by default.
+case "$1" in
+	usage)
+		echo "Usage: $(basename $0) [lock|unlock]" ;;
+	lock)
+		echo $$ > $lockfile ;;
+	unlock)
+		rm -f $lockfile ;;
+	*)
+		[ -f "$lockfile" ] && echo "Pizza is locked" && exit 0
+		trap 'rm -f $command && exit 1' INT TERM
+		echo $$ > $lockfile
+		name=$(ls -rt $queue | head -n 1)
+		log="$public/$name/distro.log"
+		work="$pizza/flavors"
+		[ ! "$name" ] && echo "Empty build queue" && quit
+		. $queue/$name/receipt
+		
+		echo "Build started for flavor: <a href='?id=$ID'>$ID</a>" | log
+		echo -e "Build started   : $(date '+%Y-%m-%d %H:%M')\n" | tee -a $log
+		
+		rm -rf $work && mkdir -p $work && cd $work
+		mv $queue/$name $FLAVOR
+		chown -R root.root $FLAVOR
+		tazlito pack-flavor $FLAVOR | tee -a $log
+		tazlito get-flavor $FLAVOR | tee -a $log
+		mv $FLAVOR.flavor $public/$name
+		sed -i s"/^ISO_NAME=.*/ISO_NAME=\"$FLAVOR\"/" tazlito.conf
+		yes '' | tazlito gen-distro 2>&1 | tee -a $log
+		
+		# Create an XML feed
+		gen_rss
+		
+		# We want a public packages list md5sum file and move ISO so users
+		# can download it. Keep original pkgs list and build a complet one.
+		cp -f $FLAVOR/packages.list $public/$name
+		cd $pizza/distro
+		pkgsinst="$public/$name/installed.list"
+		rm -f $pkgsinst && touch $pkgsinst
+		for pkg in $(ls -1 rootfs/var/lib/tazpkg/installed)
+		do
+			. rootfs/var/lib/tazpkg/installed/$pkg/receipt
+			echo "$PACKAGE | $VERSION | $SHORT_DESC" >> $pkgsinst
+		done
+		echo "ISO_SIZE=\"$(du -sh $FLAVOR.iso | awk '{print $1}')\"" >> \
+			$public/$name/receipt
+		echo "ROOTFS_SIZE=\"$(du -sh rootfs | awk '{print $1}')\"" >> \
+			$public/$name/receipt
+		md5sum $FLAVOR.iso > $public/$name/$FLAVOR.md5
+		mv $FLAVOR.iso $public/$name
+		chown -R www.www $public/$name
+		
+		# Send mail if enabled.
+		if [ "$MAIL_DOMAIN" ]; then
+			. $public/$name/receipt
+			echo "Sending mail to: $MAINTAINER"
+			mail_body | /usr/sbin/sendmail $MAINTAINER
+		fi
+		
+		# Count builds
+		count=$(cat $builds)
+		count=$(($count + 1))
+		echo "$count" > $builds
+		rm -f $lockfile ;;
+esac
+exit 0
