@@ -1,0 +1,19 @@
+README for SliTaz Pizza flavor
+================================================================================
+
+
+SliTaz GNU/Linux Pizza - _DATE_
+
+Welcome to SliTaz GNU/Linux and the Open Source community. This Live system
+was created online by the SliTaz Pizza service. SliTaz GNU/Linux is distributed
+in the hope that it will be useful, but with ABSOLUTELY NO WARRANTY.
+
+To boot SliTaz please insert de cdrom into your computer and boot or reboot to
+choose the cdrom as first boot media. SliTaz run entirely in RAM memory and
+dont touch anything on your machine. SliTaz can also be installed on a USB
+media and booted from the web via PXE.
+
+http://pizza.slitaz.me/
+
+
+================================================================================
