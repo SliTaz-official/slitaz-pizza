@@ -92,7 +92,8 @@ case "$1" in
 		touch $activity $builds
 		chmod 0777 $tmp $queue $cache
 		chmod 0666 $activity
-		for pkg in slitaz-base-files busybox tazlito tazpkg postfix
+		for pkg in slitaz-base-files busybox tazlito tazpkg postfix \
+			shared-mime-info
 		do
 			echo "Installing package: $pkg"
 			tazpkg -gi $pkg --root=$chroot >/dev/null
