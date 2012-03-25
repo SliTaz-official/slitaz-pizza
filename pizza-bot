@@ -96,7 +96,7 @@ case "$1" in
 		[ ! "$name" ] && echo "Empty build queue" && quit
 		. $queue/$name/receipt
 		
-		echo "Build started for flavor: <a href='?id=$ID'>$ID</a>" | log
+		echo "Build started for flavor: <a href='?id=$ID'>$ID</a> ($FLAVOR)" | log
 		echo -e "Build started   : $(date '+%Y-%m-%d %H:%M')\n" | tee -a $log
 		
 		rm -rf $work && mkdir -p $work && cd $work

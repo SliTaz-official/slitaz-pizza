@@ -211,7 +211,7 @@ EOT
 			eval_gettext "There is \$inqueue flavors in queue"
 		fi
 		echo ""
-		echo "New flavor added to queue: <a href='?id=$id'>$id</a>" | log
+		echo "New flavor added to queue: <a href='?id=$id'>$id</a> ($FLAVOR)" | log
 		cat << EOT
 </pre>
 <div>
