@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# SliTaz Pizza CGI/web interface - Let's me have a pizza :-) 
+# SliTaz Pizza CGI/web interface - Let's have a pizza :-) 
 # Packages step
 #
 
@@ -20,7 +20,7 @@ list="$tmpdir/slitaz-$id/packages.list"
 #
 
 list_pkgs() {
-	# Pizza use local packages synced with mirror each night.
+	# Pizza uses local packages synced with mirror each night.
 	pkgsdesc="$SLITAZ/$SLITAZ_VERSION/packages/packages.desc"
 	[ ! -f "$pkgsdesc" ] && echo "Missing: $pkgsdesc"
 	for pkg in $(cat $list)

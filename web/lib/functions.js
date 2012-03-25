@@ -11,7 +11,7 @@ function checkForm() {
     }
     if(document.forms["pizza"]["desc"].value == "")
     {
-        alert("Please fill up the flavor description");
+        alert("Please fill in the flavor description");
         document.forms["pizza"]["desc"].focus();
         return false;
     }

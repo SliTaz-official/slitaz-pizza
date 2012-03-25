@@ -1,8 +1,8 @@
 #!/bin/sh
 #
 # SliTaz Pizza chroot cmdline utility. This tool is designed to be run 
-# by cron and automaticaly build flavors in the queue. We build one ISO
-# at once so we dont use too much resources.
+# by cron and automatically build flavors in the queue. We build one ISO
+# at once so we don't use too many resources.
 #
 # Copyright (C) 2012 SliTaz GNU/Linux - GNU gpl v2
 # Authors : Christophe Lincoln <pankso@slitaz.org>
@@ -32,7 +32,7 @@ quit() {
 	exit 0
 }
 
-# Create a XML feed for freshly builded flavor.
+# Create a XML feed for freshly built flavor.
 gen_rss() {
 	pubdate=$(date "+%a, %d %b %Y %X")
 	cat > $feeds/slitaz-$ID.xml << EOT
@@ -60,20 +60,20 @@ Content-Transfer-Encoding: 8bit
 Hi,
 
 Your custom SliTaz GNU/Linux system is ready to download! It will be
-hosted a as long as we can but with absolutely no warranty in time.
+hosted as long as we can but with absolutely no warranty in time.
 
 Get $FLAVOR ISO and files at: ${PIZZA_URL}?id=slitaz-$ID
 
 ISO size: $ISO_SIZE
 MD5 sum: $md5
 
-If you wish a long time service hosting please get in touch via our 
+If you wish a long time hosting service please get in touch via our 
 professional platform at http://slitaz.pro
 
 Visit http://www.slitaz.org for latest news about the project and
 get community support on SliTaz Forum http://forum.slitaz.org
 
-Sended by the SliTaz Pizza Mailer
+Sent by the SliTaz Pizza Mailer
 
 EOT
 }
@@ -112,7 +112,7 @@ case "$1" in
 		gen_rss
 		
 		# We want a public packages list md5sum file and move ISO so users
-		# can download it. Keep original pkgs list and build a complet one.
+		# can download it. Keep original pkgs list and build a complete one.
 		cp -f $FLAVOR/packages.list $public/$name
 		cd $pizza/distro
 		pkgsinst="$public/$name/installed.list"

@@ -2,29 +2,29 @@ SliTaz Pizza
 ================================================================================
 
 
-The SliTaz Pizza provide tools and utils to build Live systems online.
+The SliTaz Pizza provides tools and utils to build Live systems online.
 
 
-	* Build ISO flavor online in a simple to use and modern interface
-	* Use stable packages or cooking if next to a stable release
-	* Build queue and one build at time to be less resources intensiv
-	* Can be run localy as a frontend to Tazlito or from the cmdline
+	* Build ISO flavors online in a simple to use and modern interface
+	* Use stable packages or cooking if near to a stable release
+	* Build queue and one build at a time to be less resources intensive
+	* Can be run locally as a frontend to Tazlito or from the cmdline
 	* Produce standard and valid HTML code and wildly themable
 	* Provide a status page to follow build process for each flavor
 	* Create a tarball of the flavor receipt, list and addfiles
 	* Log activities, build process and provide useful statistics
-	* Keep ISO images and files public a while, then archive them
+	* Keep ISO images and files public for a while, then archive them
 	* Uniq ID strings for each flavor and mail notification
-	* RSS feed for all new builded flavors and summary on web interface
+	* RSS feed for all newly built flavors and summary on web interface
 
 
 Build process
 -------------
-First you have to choose the distro name, provide a short description,
-a valid email address so Pizza can notify you when ISO is built or in
+First you have to choose the distro name, provide a short description, and
+a valid email address so Pizza can notify you when ISOs are built or in
 case the build failed. You must also choose a skeleton to base your
 custom distro on. Then add some packages and follow the steps. When
-validate the build, Pizza will create a tarball of your flavors a add
+validating the build, Pizza will create a tarball of your flavors and add
 it to the build queue, so it can take some time before your ISO image
 is generated.
 
@@ -34,24 +34,24 @@ FAQ
 
 	* Is it long to build ?
     
-	  By default Pizza build a distro each 20 min but skip a run if an
-	  other distro is still building. After it depend on the build queue,
+	  By default Pizza builds a distro every 20 min but skips a run if 
+	  another distro is still building. After it depends on the build queue,
 	  and the size of your custom SliTaz distro.
 
 	* How long do you keep my ISO ?
 	
-	  We can't garanty hosting for long time actually, we will keep your
-	  product as long as wee can. But surely enough time to share it with
+	  We can't guaranty hosting for a long time actually, we will keep your
+	  product as long as we can. But surely enough time to share it with
 	  your friends or family.
 
 
 
 Installation and Administration
 -------------------------------
-Pizza use a chroot to build ISO and a web interface to create the flavor
-file. Pizza can be installed and setup in a few commands. The package provide
-pizza host utility, pizza-bot build bot for chroot and pizza.cgi wich is
-the web interface main script. So let's go throught the installation:
+Pizza uses a chroot to build ISOs and a web interface to create the flavor
+file. Pizza can be installed and setup in a few commands. The package provides
+a pizza host utility, pizza-bot build bot for chroot and pizza.cgi which is
+the web interface main script. So let's go through the installation:
 
 # tazpkg -gi slitaz-pizza
 
@@ -60,27 +60,27 @@ Or from Hg:
 # hg clone http://hg.slitaz.org/slitaz-pizza
 # cd pizza && make install
 
-You can display a list of command an a short usage with the usage command.
+You can display a list of commands and a short usage with the usage command.
 Create the chroot and build environment. You may want to have a look
-at Pizza configuration file before processing:
+at the Pizza configuration file before processing:
 
 # pizza setup
 
-Now you ready to start the build bot to build queued flavors one by one.
+Now you are ready to start the build bot to build queued flavors one by one.
 You can also chroot in the environment to build manually or test.
 
 # pizza start
 
-In time they may be quiet a lot of ISO and temporary files. To clean up the
+In time there may be quite a lot of ISOs and temporary files. To clean up the
 temporary files and old flavors files:
 
 # pizza purge
 
-The cron task is run in the chroot and check if any flavor have been submited,
-by default it check all 20 minutes. The bot frenquency can be changed by
+The cron task is run in the chroot and checks if any flavors have been submitted,
+by default it checks every 20 minutes. The bot frequency can be changed by
 editing root crontabs in the build chroot.
 
-To check build queue or chroot manually your can use:
+To check build queue or chroot manually you can use:
 
 # pizza exec pizza-bot
 # pizza chroot
@@ -88,9 +88,9 @@ To check build queue or chroot manually your can use:
 
 Developers and translators
 --------------------------
-SHell script as you could expected. Keep speed in mind and security. Always
-think to have a simple option and a advanced option, for example in rootfs
-modification let users add custom wallpaper easely and advanced users can
+SHell script as you would expect. Keep speed in mind and security. Always
+think to have a simple option and an advanced option, for example in rootfs
+modification let users add custom wallpaper easily and advanced users can
 upload a full roootfs.
 
 Pizza has been coded from the beginning with gettext support. Please forget

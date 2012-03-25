@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# SliTaz Pizza CGI/web interface - Let's me have a pizza :-) 
+# SliTaz Pizza CGI/web interface - Let's have a pizza :-) 
 # SliTaz rootfs step
 #
 
@@ -24,7 +24,7 @@ tarball_handler() {
 	chmod a+r $upload/$tarball
 	status
 	
-	# Ectract into the tmp upload dir.
+	# Extract into the tmp upload dir.
 	gettext "Extracting archive for sanity checks..."
 	case "$tarball" in
 		*.tar.gz) tar xzf $tarball && status ;;
@@ -58,7 +58,7 @@ tarball_handler() {
 	
 	# So now it time to move the addfile to flavor files.
 	if [ -d "$upload/rootfs" ]; then
-		echo "Additionnal rootfs: accepted" | tee -a $log
+		echo "Additional rootfs: accepted" | tee -a $log
 		mkdir -p $tmpdir/slitaz-$id
 		mv $upload/rootfs $tmpdir/slitaz-$id
 		rm -rf $tmpdir/slitaz-$id/upload-*
@@ -96,7 +96,7 @@ case " $(FILE) " in
 esac
 
 #
-# Source receipt and display page with additonal rootfs or file upload.
+# Source receipt and display page with additional rootfs or file upload.
 #
 . $tmpdir/slitaz-$id/receipt
 cat << EOT
@@ -105,7 +105,7 @@ cat << EOT
 
 <p>
 	SliTaz root filesystem modification can be done via an easy to use form,
-	a single tarball or by uploading file one by one in the wanted directory.
+	a single tarball or by uploading files one by one in the wanted directory.
 </p>
 
 <h3>$(gettext "Easy customization")</h3>
@@ -117,9 +117,9 @@ cat << EOT
 <h3>$(gettext "Rootfs tarball")</h3>
 <p>
 	The files in the rootfs archive must have the same directory structure
-	than any standard SliTaz or Linux system. For example if you wish to
+	as any standard SliTaz or Linux system. For example if you wish to
 	have a custom boot configuration file, you will have: rootfs/etc/rcS.conf.
-	Accepted tarball format are: <strong>tar.gz tar.bz2 tar.lzma</strong>
+	Accepted tarball formats are: <strong>tar.gz tar.bz2 tar.lzma</strong>
 	and the archived directory must be named rootfs with a valid file system
 	hierachy such as: /usr/bin /etc /var/www
 </p>

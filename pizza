@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# SliTaz Pizza host cmdline utility - Create environment, chroot, clean
+# SliTaz Pizza host cmdline utility - Create environment, chroot, clean.
 # Backup and purge should be done via cron jobs.
 #
 
@@ -39,7 +39,7 @@ $(echo -e "\033[1mCommands:\033[0m")
   get-lists    Get latest skel packages list from Hg.
   sync-pkgs    Sync packages from SliTaz mirror.
   purge        Purge Pizza tmp directory.
-  clean        Complet chroot clean-up.
+  clean        Complete chroot clean-up.
 
 EOT
 }
@@ -84,7 +84,7 @@ case "$1" in
 		# Setup build host.
 		crontabs="$chroot/var/spool/cron/crontabs"
 		if [ -d "$chroot/proc" ]; then
-			echo "Chroot already exist: $chroot" && exit 0
+			echo "Chroot already exists: $chroot" && exit 0
 		fi
 		echo ""
 		echo "Setting up Pizza environment..."
@@ -105,7 +105,7 @@ case "$1" in
 		bot_config
 		# No more needed when slitaz-base-files have rc.functions
 		cp -f /etc/init.d/rc.functions $chroot/etc/init.d
-		echo '# Check pizza queue each 5 min' > $crontabs/root
+		echo '# Check pizza queue every 5 mins' > $crontabs/root
 		echo '*/20  * * * * /usr/bin/pizza-bot' >> $crontabs/root
 		status
 		
@@ -131,7 +131,7 @@ case "$1" in
 		echo "To start Pizza Bot: $(basename $0) start"
 		echo "" ;;
 	up-files)
-		# Update files in chroot when pizza is update on host.
+		# Update files in chroot when pizza is updated on host.
 		echo -n "Updating chroot and virtual host..."
 		cp -a $DATA/web/* $VHOST
 		cp -a $DATA/pizza-bot $chroot/usr/bin 

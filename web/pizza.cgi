@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# SliTaz Pizza CGI/web interface - Let's me have a pizza :-) 
+# SliTaz Pizza CGI/web interface - Let's have a pizza :-) 
 # Please KISS, it is important and keep speed in mind. Thanks, Pankso.
 #
 
@@ -66,9 +66,9 @@ case " $(GET) " in
 		cat << EOT
 <h2>$(gettext "First step")</h2>
 <p>
-	$(gettext "Chosse your distribution name and the one you want to use as
-	base. We need our mail to notify you when your SliTaz Flavor is built 
-	and if any things goes wrong.")
+	$(gettext "Choose your distribution name and the one you want to use as
+	base. We need your mail to notify you when your SliTaz Flavor is built 
+	and if anything goes wrong.")
 </p>
 <form method="get" action="pkgs.cgi" name="pizza" onsubmit="return checkForm();">
 <table>
@@ -125,9 +125,9 @@ EOT
 <h2>$(gettext "Generate")</h2>
 <p>
 	Last chance to stop process or start over. Next step will pack your
-	flavor and add it to the build queue. Here you can also add note to
+	flavor and add it to the build queue. Here you can also add a note to
 	your receipt flavor, this will be displayed on your flavor ID page
-	and can be used to give more infos to other users and SliTaz developers.
+	and can be used to give more info to other users and SliTaz developers.
 </p>
 <pre>
 Uniq ID    : $id
@@ -208,7 +208,7 @@ EOT
 		if [ "$inqueue" == "1" ]; then
 			gettext "Your ISO will be built on next Pizza Bot run"
 		else
-			eval_gettext "Ther is \$inqueue flavors in queue"
+			eval_gettext "There is \$inqueue flavors in queue"
 		fi
 		echo ""
 		echo "New flavor added to queue: <a href='?id=$id'>$id</a>" | log
@@ -237,7 +237,7 @@ EOT
 		[ -f "public/slitaz-$id/receipt" ] && . public/slitaz-$id/receipt
 		log="$public/slitaz-$id/distro.log"
 		if [ ! -d "public/slitaz-$id" ]; then
-			echo "Sorry, can't found flavor ID: $id"
+			echo "Sorry, can't find flavor ID: $id"
 			cat lib/footer.html && exit 0
 		fi
 		if [ -f "$public/slitaz-$id/$FLAVOR.iso" ]; then
@@ -326,8 +326,8 @@ EOT
 		cat << EOT
 <h2>$(gettext "Welcome")</h2>
 <p>
-	SliTaz Pizza let you create your own SliTaz ISO flavor online. The
-	ISO image can be burnt on a cdrom or installed on an USB media. 
+	SliTaz Pizza lets you create your own SliTaz ISO flavor online. The
+	ISO image can be burnt on a cdrom or installed on USB media. 
 	Please read the SliTaz Pizza 
 	<a href="?help">Help</a> before starting a new flavor.
 </p>
