@@ -353,7 +353,7 @@ Flavors: $inqueue in queue - $builds builds - $pubiso public
 EOT
 		echo "<h2>$(gettext "Latest builds")</h2>"
 		echo '<pre>'
-		for flavor in $(ls -1t public | head -n 10)
+		for flavor in $(ls -1t public | head -n 5)
 		do
 			if [ -f "public/$flavor/receipt" ]; then
 				. ./public/$flavor/receipt
