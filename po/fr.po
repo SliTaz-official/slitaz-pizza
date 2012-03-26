@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: SliTaz Pizza\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-26 23:22+0200\n"
-"PO-Revision-Date: 2012-03-26 14:37+0100\n"
+"PO-Revision-Date: 2012-03-26 23:26+0100\n"
 "Last-Translator: Christophe Lincoln <pankso@slitaz.org>\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -28,8 +28,7 @@ msgid ""
 "\tand if anything goes wrong."
 msgstr ""
 "Veuillez choisir le nom de votre distribution et la version sur laquelle\n"
-"\tvous voulez vous baser. Nous avons besoin de votre adresse email pour "
-"vous\n"
+"\tvous voulez vous baser. Nous avons besoin de votre adresse email pour vous\n"
 "\tavertir quant votre ISO a été construite ou en cas de problèmes."
 
 #: web/pizza.cgi:77
@@ -64,7 +63,8 @@ msgstr "Bureau légé avec GTK"
 msgid "Default SliTaz desktop"
 msgstr "Le bureau Slitaz"
 
-#: web/pizza.cgi:110 web/pkgs.cgi:152
+#: web/pizza.cgi:110
+#: web/pkgs.cgi:152
 msgid "Continue"
 msgstr "Continuer"
 
@@ -141,7 +141,8 @@ msgstr "Télécharger une archive:"
 msgid "Help"
 msgstr "Aide"
 
-#: web/pizza.cgi:321 web/pizza.cgi:370
+#: web/pizza.cgi:321
+#: web/pizza.cgi:370
 msgid "Activity"
 msgstr "Activité"
 
@@ -171,25 +172,27 @@ msgstr "Plus d'activité"
 
 #: web/pkgs.cgi:105
 msgid "Creating receipt and packages list"
-msgstr ""
+msgstr "Création de la receipt et de la liste des paquets"
 
 #: web/pkgs.cgi:137
 msgid "Remove package(s)"
-msgstr ""
+msgstr "Supprimer"
 
 #: web/pkgs.cgi:144
 msgid "Add package(s)"
-msgstr ""
+msgstr "Ajouter"
 
 #: web/pkgs.cgi:159
 msgid ""
 "Here you can add or remove some packages from your flavor. You\n"
 "can also search for packages name and description to find a package name"
 msgstr ""
+"Ici vous pouvez ajouter ou supprimer des paquets de votre saveur.\n"
+"Vous pouvez aussi chercher pour un non ou une description de paquet."
 
 #: web/pkgs.cgi:165
 msgid "Search"
-msgstr ""
+msgstr "Rechecher"
 
 #~ msgid "Short desc"
 #~ msgstr "Petite desc"
