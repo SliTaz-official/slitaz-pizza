@@ -108,8 +108,10 @@ case " $(GET) " in
 		notify "$(gettext "Creating receipt and packages list")"
 		mkdir -p $tmpdir/slitaz-$id
 		# Use a pkg desc for the web interface and a simple one tazlito.
-		cp -f $hgflavors/$skel/packages.desc $list
-		cp -f $hgflavors/$skel/packages.list $tmpdir/slitaz-$id/packages.list
+		cp -f $hgflavors/$skel/packages.desc $desc
+		cp -f $hgflavors/$skel/packages.list $list
+		[ -d "$hgflavors/$skel/rootfs" ] && \
+			cp -a $hgflavors/$skel/rootfs $tmpdir/slitaz-$id
 		empty_receipt
 		sed -i \
 			-e s"/FLAVOR=.*/FLAVOR=\"slitaz-$flavor\"/" \
