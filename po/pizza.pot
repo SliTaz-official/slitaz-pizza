@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Pizza\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-26 23:09+0200\n"
+"POT-Creation-Date: 2012-03-26 23:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,7 +60,7 @@ msgstr ""
 msgid "Default SliTaz desktop"
 msgstr ""
 
-#: web/pizza.cgi:110
+#: web/pizza.cgi:110 web/pkgs.cgi:152
 msgid "Continue"
 msgstr ""
 
@@ -68,79 +68,121 @@ msgstr ""
 msgid "Generate"
 msgstr ""
 
-#: web/pizza.cgi:146
+#: web/pizza.cgi:127
+msgid ""
+"Last chance to stop process or start over. Next step will pack\n"
+"your flavor and add it to the build queue. Here you can also add a note to\n"
+"your receipt flavor, this will be displayed on your flavor ID page and \n"
+"can be used to give more info to other users and SliTaz developers."
+msgstr ""
+
+#: web/pizza.cgi:147
 msgid "Cancel"
 msgstr ""
 
-#: web/pizza.cgi:149
+#: web/pizza.cgi:150
 msgid "Build flavor"
 msgstr ""
 
-#: web/pizza.cgi:160
+#: web/pizza.cgi:157
+msgid "Removing temporary files for:"
+msgstr ""
+
+#: web/pizza.cgi:161
 msgid "Start over"
 msgstr ""
 
-#: web/pizza.cgi:176
+#: web/pizza.cgi:177
 msgid "Packing:"
 msgstr ""
 
-#: web/pizza.cgi:209
+#: web/pizza.cgi:210
 msgid "Your ISO will be built on next Pizza Bot run"
 msgstr ""
 
-#: web/pizza.cgi:211
+#: web/pizza.cgi:212
 #, sh-format
 msgid "There is $inqueue flavors in queue"
 msgstr ""
 
-#: web/pizza.cgi:219
+#: web/pizza.cgi:220
 msgid "Download tarball: "
 msgstr ""
 
-#: web/pizza.cgi:226
+#: web/pizza.cgi:227
 msgid "Status"
 msgstr ""
 
-#: web/pizza.cgi:247
+#: web/pizza.cgi:248
 msgid "Download ISO:"
 msgstr ""
 
-#: web/pizza.cgi:251
+#: web/pizza.cgi:252
 msgid "Flavor is building or still in the build queue"
 msgstr ""
 
-#: web/pizza.cgi:259
+#: web/pizza.cgi:260
 msgid "Status for:"
 msgstr ""
 
-#: web/pizza.cgi:261
+#: web/pizza.cgi:262
 msgid "Flavor description:"
 msgstr ""
 
-#: web/pizza.cgi:276
+#: web/pizza.cgi:277
 msgid "Download tarball:"
 msgstr ""
 
-#: web/pizza.cgi:299
+#: web/pizza.cgi:300
 msgid "Help"
 msgstr ""
 
-#: web/pizza.cgi:320 web/pizza.cgi:369
+#: web/pizza.cgi:321 web/pizza.cgi:370
 msgid "Activity"
 msgstr ""
 
-#: web/pizza.cgi:337
+#: web/pizza.cgi:338
 msgid "Welcome"
 msgstr ""
 
-#: web/pizza.cgi:350
+#: web/pizza.cgi:341
+msgid ""
+"SliTaz Pizza lets you create your own SliTaz ISO flavor \n"
+"online. The ISO image can be burnt on a cdrom or installed on USB media. \n"
+"Please read the SliTaz Pizza <a href=?help>Help</a> before starting \n"
+"a new flavor."
+msgstr ""
+
+#: web/pizza.cgi:351
 msgid "Create a new flavor"
 msgstr ""
 
-#: web/pizza.cgi:354
+#: web/pizza.cgi:355
 msgid "Latest builds"
 msgstr ""
 
-#: web/pizza.cgi:373
+#: web/pizza.cgi:374
 msgid "More activity"
+msgstr ""
+
+#: web/pkgs.cgi:105
+msgid "Creating receipt and packages list"
+msgstr ""
+
+#: web/pkgs.cgi:137
+msgid "Remove package(s)"
+msgstr ""
+
+#: web/pkgs.cgi:144
+msgid "Add package(s)"
+msgstr ""
+
+#: web/pkgs.cgi:159
+msgid ""
+"Here you can add or remove some packages from your flavor. You\n"
+"can also search for packages name and description to find a package name"
+msgstr ""
+
+#: web/pkgs.cgi:165
+msgid "Search"
 msgstr ""

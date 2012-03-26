@@ -124,11 +124,12 @@ EOT
 		cat << EOT
 <h2>$(gettext "Generate")</h2>
 <p>
-	Last chance to stop process or start over. Next step will pack your
-	flavor and add it to the build queue. Here you can also add a note to
-	your receipt flavor, this will be displayed on your flavor ID page
-	and can be used to give more info to other users and SliTaz developers.
+$(gettext "Last chance to stop process or start over. Next step will pack
+your flavor and add it to the build queue. Here you can also add a note to
+your receipt flavor, this will be displayed on your flavor ID page and 
+can be used to give more info to other users and SliTaz developers.")
 </p>
+
 <pre>
 Uniq ID    : $id
 Flavor     : $FLAVOR
@@ -153,7 +154,7 @@ EOT
 		;;
 	*\ cancel\ *)
 		id="$(GET id)"
-		echo "<p>Removing temporary files for: $id</p>" 
+		echo "<p>$(gettext "Removing temporary files for:") $id</p>" 
 		[ -d "$tmpdir/slitaz-$id" ] && rm -rf $tmpdir/slitaz-$id/
 		cat << EOT
 <form method="get" action="./">
@@ -337,10 +338,10 @@ EOT
 <h2>$(gettext "Welcome")</h2>
 <form method="get" action="./">
 <p>
-	SliTaz Pizza lets you create your own SliTaz ISO flavor online. The
-	ISO image can be burnt on a cdrom or installed on USB media. 
-	Please read the SliTaz Pizza 
-	<a href="?help">Help</a> before starting a new flavor.
+$(gettext "SliTaz Pizza lets you create your own SliTaz ISO flavor 
+online. The ISO image can be burnt on a cdrom or installed on USB media. 
+Please read the SliTaz Pizza <a href="?help">Help</a> before starting 
+a new flavor.")
 </p>
 <pre>
 Flavors: $inqueue in queue - $builds builds - $pubiso public

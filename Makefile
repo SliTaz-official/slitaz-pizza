@@ -12,7 +12,7 @@ all:
 
 pot:
 	xgettext -o po/pizza.pot -L Shell --package-name="SliTaz Pizza" \
-		./web/pizza.cgi
+		./web/pizza.cgi ./web/pkgs.cgi
 
 msgmerge:
 	@for l in $(LINGUAS); do \
