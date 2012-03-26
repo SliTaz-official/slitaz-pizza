@@ -118,7 +118,7 @@ cat << EOT
 </form>
 
 <form method="get" action="pkgs.cgi" style="float: right;">
-	<input type="text" name="add" />
+	<input type="text" name="add" style="width: 400px;" />
 	<input type="hidden" name="id" value="$id" />
 	<input type="submit" name="pkgs" value="$(gettext "Add package(s)")">
 </form>

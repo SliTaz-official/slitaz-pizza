@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Pizza\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-22 12:45+0100\n"
+"POT-Creation-Date: 2012-03-26 14:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,9 +23,9 @@ msgstr ""
 
 #: web/pizza.cgi:69
 msgid ""
-"Chosse your distribution name and the one you want to use as\n"
-"\tbase. We need our mail to notify you when your SliTaz Flavor is built \n"
-"\tand if any things goes wrong."
+"Choose your distribution name and the one you want to use as\n"
+"\tbase. We need your mail to notify you when your SliTaz Flavor is built \n"
+"\tand if anything goes wrong."
 msgstr ""
 
 #: web/pizza.cgi:77
@@ -90,7 +90,7 @@ msgstr ""
 
 #: web/pizza.cgi:211
 #, sh-format
-msgid "Ther is $inqueue flavors in queue"
+msgid "There is $inqueue flavors in queue"
 msgstr ""
 
 #: web/pizza.cgi:219
@@ -125,14 +125,22 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: web/pizza.cgi:327
+#: web/pizza.cgi:320 web/pizza.cgi:369
+msgid "Activity"
+msgstr ""
+
+#: web/pizza.cgi:337
 msgid "Welcome"
 msgstr ""
 
-#: web/pizza.cgi:341
+#: web/pizza.cgi:350
 msgid "Create a new flavor"
 msgstr ""
 
-#: web/pizza.cgi:351
+#: web/pizza.cgi:354
 msgid "Latest builds"
+msgstr ""
+
+#: web/pizza.cgi:373
+msgid "More activity"
 msgstr ""

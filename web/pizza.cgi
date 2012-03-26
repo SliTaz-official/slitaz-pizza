@@ -315,6 +315,16 @@ EOT
 		echo -n "Public size    : " && du -sh public | awk '{print $1}'
 		echo -n "Tmp size       : " && du -sh $tmpdir | awk '{print $1}'
 		echo '</pre>' ;;
+	*\ activity\ *)
+		cat << EOT
+<h2><img src="images/monitor.png" alt="" />$(gettext "Activity")</h2>
+
+<pre>
+$(tac $activity | highlighter activity)
+</pre>
+
+EOT
+		;;
 	*)
 		#
 		# Main page
@@ -325,6 +335,7 @@ EOT
 		[ "$builds" ] || builds=0
 		cat << EOT
 <h2>$(gettext "Welcome")</h2>
+<form method="get" action="./">
 <p>
 	SliTaz Pizza lets you create your own SliTaz ISO flavor online. The
 	ISO image can be burnt on a cdrom or installed on USB media. 
@@ -336,31 +347,33 @@ Flavors: $inqueue in queue - $builds builds - $pubiso public
 </pre>
 
 <div class="start">
-	<form method="get" action="./">
-		<input type="hidden" name="start" value="flavor" />
-		<input type="submit" value="$(gettext "Create a new flavor")">
-	</form>
+		<input type="submit" name="start" value="$(gettext "Create a new flavor")">
 </div>
-
-<h2>Activity</h2>
-<pre>
-$(tac $activity | head -n 12 | highlighter activity)
-</pre>
 
 EOT
 		echo "<h2>$(gettext "Latest builds")</h2>"
 		echo '<pre>'
-		for flavor in $(ls -1t public | head -n 12)
+		for flavor in $(ls -1t public | head -n 10)
 		do
 			if [ -f "public/$flavor/receipt" ]; then
 				. ./public/$flavor/receipt
 				[ -f "public/$flavor/$FLAVOR.iso" ] && \
 					cat << EOT
-$VERSION : <a href="public/$flavor/$FLAVOR.iso">$FLAVOR.iso</a> ($ISO_SIZE)
+$(get_gravatar $MAINTAINER 24) <a href="?id=$ID">$ID</a> : \
+<a href="public/$flavor/$FLAVOR.iso">$FLAVOR.iso</a> ($ISO_SIZE)
 EOT
 			fi
 		done 
-		echo '</pre>' ;;
+		echo '</pre>' 
+		cat << EOT
+<h2>$(gettext "Activity")</h2>
+<pre>
+$(tac $activity | head -n 12 | highlighter activity)
+</pre>
+	<input type="submit" name="activity" value="$(gettext "More activity")">
+</form>
+EOT
+		;;
 esac
 
 # HTML footer.
