@@ -82,10 +82,25 @@ case " $(FILE) " in
 			mkdir -p $images
 			mv $tmpname $images/slitaz-background.jpg
 			chmod a+r $images/*.jpg
-			notify "$(gettext "Added image:") $wallpaper ($size Bytes)" "info"
+			notify "$(gettext "Added image:") $wallpaper ($size Bytes)"
 		else
 			notify "$(gettext "Unsupported image format")" "error"
 		fi ;;
+	*\ desktop-file\ *)
+		id="$(POST id)"
+		tmpname="$(FILE desktop-file tmpname)"
+		file="$(FILE desktop-file name)"
+		size="$(FILE desktop-file size)"
+		path="$tmpdir/slitaz-$id/rootfs/etc/skel/Desktop"
+		mkdir -p $path
+		case "$file" in
+			*README*|*.desktop|*.html|*.png|*.jpg) 
+				mv $tmpname $path/$file
+				notify "$(gettext "Added file:") $file ($size Bytes)" ;;
+			*) 
+				notify "$(gettext "Unsupported file type")" "error" ;;
+		esac
+		;;
 	*\ tarball\ *)
 		id="$(POST id)"
 		tmpname="$(FILE tarball tmpname)"
@@ -110,9 +125,33 @@ cat << EOT
 
 <h3>$(gettext "Easy customization")</h3>
 
-	$(gettext "Desktop Wallpaper"):
-	<input type="file" name="wallpaper" size="40" />
-	<input type="submit" value="Upload" />
+<p>
+$(gettext "Desktop Wallpaper in JPG format"):
+<p>
+
+<div class="inputfile">
+	<div class="inputhide">
+		<input type="file" name="wallpaper" size="48" />
+	</div>
+</div>
+<input type="submit" value="Upload Image" />
+
+<!-- Buggy case action
+
+<p>
+$(gettext "Files on user desktop such as README, desktop file or documenatation.
+Allowed file and extentions are:") README .desktop .html .png .jpg:
+/etc/skel/Desktop:
+<p>
+
+<div class="inputfile">
+	<div class="inputhide">
+		<input type="file" name="desktop-file" size="48" />
+	</div>
+</div>
+<input type="submit" value="Upload File" />
+
+-->
 
 <h3>$(gettext "Rootfs tarball")</h3>
 <p>
@@ -124,10 +163,13 @@ cat << EOT
 	hierachy such as: /usr/bin /etc /var/www
 </p>
 
-	Rootfs tarball:
-	<input type="file" name="tarball" size="40" />
+	<div class="inputfile">
+		<div class="inputhide">
+			<input type="file" name="tarball" size="48" />
+		</div>
+	</div>
 	<input type="hidden" name="id" value="$id" />
-	<input type="submit" value="Upload" />
+	<input type="submit" value="Upload rootfs" />
 </form>
 
 $([ "$tarball" ] && tarball_handler)

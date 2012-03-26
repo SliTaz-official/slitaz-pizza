@@ -145,16 +145,8 @@ cat << EOT
 </div>
 </form>
 
-
-<div class="next">
-	<form method="get" action="rootfs.cgi">
-		<input type="hidden" name="id" value="$id" />
-		<input type="submit" value="$(gettext "Continue")">
-	</form>
-</div>
-
 <form method="get" action="pkgs.cgi">
-<p style="margin-right: 100px;">
+<p>
 
 $(gettext "Here you can add or remove some packages from your flavor. You
 can also search for packages name and description to find a package name")
@@ -173,6 +165,14 @@ Uniq ID    : $id
 Flavor     : $FLAVOR
 Short desc : $SHORT_DESC
 </pre>
+
+<div class="next">
+	<form method="get" action="rootfs.cgi">
+		<input type="hidden" name="id" value="$id" />
+		<input type="submit" value="$(gettext "Continue")">
+	</form>
+</div>
+
 EOT
 
 # HTML footer.
