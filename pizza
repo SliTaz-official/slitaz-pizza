@@ -75,6 +75,12 @@ bot_config()
 	grep ^MAIL_SERVER /etc/slitaz/pizza.conf >> $config
 }
 
+# Log activities, we want first letter capitalized.
+log() {
+	grep ^[A-Z] | \
+		sed s"#^[A-Z]\([^']*\)#$(date '+%Y-%m-%d %H:%M') : \0#" >> $activity
+}
+
 #
 # Commands
 #
@@ -193,6 +199,7 @@ case "$1" in
 	purge)
 		# Remove tmp file older than 24 hours and ISO older than 15 days.
 		# TODO: Improve and use configs from pizza.conf
+		echo "Purging temporary files and old flavors" | log
 		echo "Purging tmp files..."
 		find $tmp -mtime +1 | xargs rm -f
 		echo "Purging ISO's..."
