@@ -161,7 +161,7 @@ select {
 
 /* Round corner */
 
-pre, table, input, textarea, select, .note, .box, #notify {
+img, pre, table, input, textarea, select, .note, .box, #notify {
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;

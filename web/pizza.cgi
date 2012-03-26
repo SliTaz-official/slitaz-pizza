@@ -257,9 +257,9 @@ EOT
 		[ "$ROOTFS_SIZE" ] || ROOTFS_SIZE="N/A"
 		cat << EOT
 <h2>$(gettext "Status for:") $FLAVOR</h2>
-<p>
-	$(gettext "Flavor description:") $SHORT_DESC
-</p>
+<div>
+	$(get_gravatar $MAINTAINER) $(gettext "Flavor description:") $SHORT_DESC
+</div>
 <pre>
 Uniq ID     : $id
 Flavor      : $FLAVOR

@@ -54,3 +54,5 @@ uninstall:
 
 clean:
 	rm -rf po/*~
+	rm -rf po/mo
+	
