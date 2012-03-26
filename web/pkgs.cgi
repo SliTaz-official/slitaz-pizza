@@ -14,7 +14,8 @@ mail="$(GET mail)"
 log="$tmpdir/slitaz-$id/distro.log"
 allpkgs="$SLITAZ/$SLITAZ_VERSION/packages/packages.desc"
 # Flavor pkgs list format: pkgname version " short desc "
-list="$tmpdir/slitaz-$id/packages.desc"
+list="$tmpdir/slitaz-$id/packages.list"
+desc="$tmpdir/slitaz-$id/packages.desc"
 
 #
 # Functions
@@ -83,7 +84,8 @@ case " $(GET) " in
 				name=$(echo $pkginfo | cut -d "|" -f 1)
 				vers=$(echo $pkginfo | cut -d "|" -f 2)
 				desc=$(echo $pkginfo | cut -d "|" -f 3)
-				echo "$name $vers \" $desc \"" >> $list
+				echo "$name $vers \" $desc \"" >> $desc
+				echo "$name" >> $list
 			fi
 		done ;;
 	*\ rm\ *)
@@ -92,6 +94,7 @@ case " $(GET) " in
 		pkgs=$(echo $cmdline | sed -e s'/+/ /g' -e s'/pkg=//g' -e s/$cmd//)
 		for pkg in $pkgs
 		do
+			sed -i "/^${pkg} /"d $desc
 			sed -i "/^${pkg} /"d $list
 		done ;;
 	*)
@@ -104,15 +107,17 @@ case " $(GET) " in
 		[ ! "$desc" ] && echo "Missing short desciption" && exit 0
 		notify "$(gettext "Creating receipt and packages list")"
 		mkdir -p $tmpdir/slitaz-$id
+		# Use a pkg desc for the web interface and a simple one tazlito.
 		cp -f $hgflavors/$skel/packages.desc $list
-		echo "Receipt created : $(date '+%Y-%m-%d %H:%M')" > $log
+		cp -f $hgflavors/$skel/packages.list $tmpdir/slitaz-$id/packages.list
 		empty_receipt
 		sed -i \
 			-e s"/FLAVOR=.*/FLAVOR=\"slitaz-$flavor\"/" \
 			-e s"/MAINTAINER=.*/MAINTAINER=\"$mail\"/" \
 			-e s"/SKEL=.*/SKEL=\"$skel\"/" \
 			-e s"/SHORT_DESC=.*/SHORT_DESC=\"$desc\"/" \
-			-e s"/ID=.*/ID=\"$id\"/" $tmpdir/slitaz-$id/receipt ;;
+			-e s"/ID=.*/ID=\"$id\"/" $tmpdir/slitaz-$id/receipt 
+		echo "Receipt created : $(date '+%Y-%m-%d %H:%M')" > $log ;;
 esac
 
 #
@@ -123,7 +128,6 @@ esac
 nb=$(cat $list | wc -l)
 cat << EOT
 <h2>Packages ($nb)</h2>
-
 
 <form method="get" action="pkgs.cgi">
 	<div id="packages">
