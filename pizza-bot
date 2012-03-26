@@ -62,7 +62,7 @@ Hi,
 Your custom SliTaz GNU/Linux system is ready to download! It will be
 hosted as long as we can but with absolutely no warranty in time.
 
-Get $FLAVOR ISO and files at: ${PIZZA_URL}?id=slitaz-$ID
+Get $FLAVOR ISO and files at: ${PIZZA_URL}?id=$ID
 
 ISO size: $ISO_SIZE
 MD5 sum: $md5
