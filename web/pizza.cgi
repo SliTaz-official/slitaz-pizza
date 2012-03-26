@@ -359,7 +359,7 @@ EOT
 				. ./public/$flavor/receipt
 				[ -f "public/$flavor/$FLAVOR.iso" ] && \
 					cat << EOT
-$(get_gravatar $MAINTAINER 24) <a href="?id=$ID">$ID</a> : \
+$(get_gravatar $MAINTAINER 24) <a href="?id=$ID">$VERSION</a> : \
 <a href="public/$flavor/$FLAVOR.iso">$FLAVOR.iso</a> ($ISO_SIZE)
 EOT
 			fi
