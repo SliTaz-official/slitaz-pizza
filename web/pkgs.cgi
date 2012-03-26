@@ -65,7 +65,7 @@ case " $(GET) " in
 	*\ add\ *)
 		for pkg in $add
 		do
-			if ! grep -q ^${pkg}$ $list; then
+			if ! grep -Eq "^($pkg|get-$pkg)$" $list; then
 				echo "$pkg" >> $list
 			fi
 		done ;;
