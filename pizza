@@ -18,6 +18,7 @@ activity="$cache/activity"
 builds="$cache/builds"
 public="$VHOST/public"
 bindpub="${chroot}$SLITAZ/public"
+hgflavors="$cache/flavors"
 
 #
 # Functions
@@ -36,7 +37,7 @@ $(echo -e "\033[1mCommands:\033[0m")
   chroot       Chroot in Pizza environment.
   start        Start Pizza bot and mount packages.
   stop         Stop Pizza and unmount packages.
-  get-lists    Get latest skel packages list from Hg.
+  get-lists    Get latest flavor skel from Hg.
   sync-pkgs    Sync packages from SliTaz mirror.
   purge        Purge Pizza tmp directory.
   clean        Complete chroot clean-up.
@@ -53,15 +54,27 @@ status() {
 	fi
 }
 
-# Get latest skel packages list
+# Get latest flavor skel packages list. We use Hg to get latest list
+# and addfiles. Then build an HTML list with version from the local
+# packages mirror.
 get_pkgs_lists() {
-	cd $cache
+	cd $hgflavors && hg pull -u
 	for skel in base justx gtkonly core
 	do
-		echo -n "Getting $skel packages list... "
-		wget -O packages.$skel \
-			$HG/raw-file/tip/$skel/packages.list 2>/dev/null
-		echo "Done"
+		echo -n "Creating $skel packages.desc... "
+		allpkgs="$SLITAZ/$SLITAZ_VERSION/packages/packages.desc"
+		pkgsdesc="$skel/packages.desc"
+		rm -f $pkgsdesc && touch $pkgsdesc
+		for pkg in $(cat $skel/packages.list)
+		do
+			IFS="|"
+			grep "^$pkg |" $allpkgs | cut -f 1,2,3 -d "|" | \
+			while read PACKAGE VERSION SHORT_DESC
+			do
+				echo "$PACKAGE $VERSION \"$SHORT_DESC\"" >> $pkgsdesc
+			done
+		done
+		status
 	done
 }
 
@@ -112,8 +125,8 @@ case "$1" in
 		bot_config
 		# No more needed when slitaz-base-files have rc.functions
 		cp -f /etc/init.d/rc.functions $chroot/etc/init.d
-		echo '# Check pizza queue every 5 mins' > $crontabs/root
-		echo '*/20  * * * * /usr/bin/pizza-bot' >> $crontabs/root
+		echo '# Check pizza queue every 15 mins' > $crontabs/root
+		echo '*/15  * * * * /usr/bin/pizza-bot' >> $crontabs/root
 		status
 		
 		# We want Tazlito to build ISO's in /home/slitaz
@@ -125,7 +138,13 @@ case "$1" in
 		echo -n "Installing Pizza Bot..." 
 		cp -a $DATA/pizza-bot $chroot/usr/bin
 		status
-		cd $cache && get_pkgs_lists
+		cd $cache
+		
+		# We use files from Hg repo definet in pizza.conf.
+		if [ ! -d "$hgflavors" ]; then
+			cd $cache && hg clone $HG && cd -
+		fi
+		get_pkgs_lists
 		
 		# Web interface and public dir
 		echo -n "Installing the web interface..."
