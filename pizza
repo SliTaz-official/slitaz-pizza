@@ -194,8 +194,9 @@ case "$1" in
 		get_pkgs_lists ;;
 	sync-pkgs)
 		echo "Syncing all $SLITAZ_VERSION packages..."
-		rsync -azH --delete rsync://mirror.slitaz.org/slitaz-$SLITAZ_VERSION/ 
-			$SLITAZ/$SLITAZ_VERSION/packages/ ;;
+		echo "Syncing all $SLITAZ_VERSION packages" | log
+		rsync -azHv --delete $RSYNC_PKGS $LOCAL_PKGS
+		du -sh $LOCAL_PKGS ;;
 	backup)
 		echo "Creating Pizza backup..."
 		bak="pizza-$(date "+%Y%m%d")"
