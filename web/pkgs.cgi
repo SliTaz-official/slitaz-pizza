@@ -69,10 +69,6 @@ search_pkgs() {
 # Actions
 #
 
-#[ "$DEBUG" ] && echo "<div></div>"
-DEBUG=0
-[ "$DEBUG" ] && echo "<div>$flavor - $desc</div>"
-
 case " $(GET) " in
 	*\ search\ *)
 		search="$(GET search)"
