@@ -18,17 +18,6 @@ The SliTaz Pizza provides tools and utils to build Live systems online.
 	* RSS feed for all newly built flavors and summary on web interface
 
 
-Build process
--------------
-First you have to choose the distro name, provide a short description, and
-a valid email address so Pizza can notify you when ISOs are built or in
-case the build failed. You must also choose a skeleton to base your
-custom distro on. Then add some packages and follow the steps. When
-validating the build, Pizza will create a tarball of your flavors and add
-it to the build queue, so it can take some time before your ISO image
-is generated.
-
-
 Installation and Administration
 -------------------------------
 Pizza uses a chroot to build ISOs and a web interface to create the flavor

@@ -300,6 +300,7 @@ EOT
 		echo "<h2>$(gettext "Help")</h2>"
 		cat /usr/share/doc/pizza/help.en.html
 		cat /usr/share/doc/pizza/faq.en.html
+		echo '<h3>README</h3>'
 		echo '<pre>'
 		cat /usr/share/doc/pizza/README
 		echo '</pre>' ;;
