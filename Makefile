@@ -40,7 +40,7 @@ install: msgfmt
 	install -m 0755 data/* $(DESTDIR)$(PREFIX)/share/pizza
 	install -m 0644 pizza.conf $(DESTDIR)/etc/slitaz
 	install -m 0644 README $(DESTDIR)$(PREFIX)/share/doc/pizza
-	#install -m 0644 doc/* $(DESTDIR)$(PREFIX)/share/doc/pizza
+	cp -a doc/* $(DESTDIR)$(PREFIX)/share/doc/pizza
 	cp -a po/mo/* $(DESTDIR)$(PREFIX)/share/locale
 	cp -a web $(DESTDIR)$(PREFIX)/share/pizza
 	chown -R root.root $(DESTDIR)$(PREFIX)/share/pizza

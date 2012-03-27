@@ -298,7 +298,8 @@ EOT
 		fi ;;
 	*\ help\ *)
 		echo "<h2>$(gettext "Help")</h2>"
-		echo "<b>TODO: HTML faq/doc</b>"
+		cat /usr/share/doc/pizza/index.en.html
+		cat /usr/share/doc/pizza/faq.en.html
 		echo '<pre>'
 		cat /usr/share/doc/pizza/README
 		echo '</pre>' ;;
