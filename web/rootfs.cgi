@@ -85,16 +85,17 @@ case " $(FILE) " in
 		else
 			notify "$(gettext "Unsupported image format")" "error"
 		fi ;;
-	*\ desktop-file\ *)
+	*\ desktop\ *)
 		id="$(POST id)"
-		tmpname="$(FILE desktop-file tmpname)"
-		file="$(FILE desktop-file name)"
-		size="$(FILE desktop-file size)"
+		tmpname="$(FILE desktop tmpname)"
+		file="$(FILE desktop name)"
+		size="$(FILE desktop size)"
 		path="$tmpdir/slitaz-$id/rootfs/etc/skel/Desktop"
 		mkdir -p $path
 		case "$file" in
 			*README*|*.desktop|*.html|*.png|*.jpg) 
 				mv $tmpname $path/$file
+				chmod a+r $path/$file
 				notify "$(gettext "Added file:") $file ($size Bytes)" ;;
 			*) 
 				notify "$(gettext "Unsupported file type")" "error" ;;
@@ -154,22 +155,20 @@ $(gettext "Desktop Wallpaper in JPG format"):
 </div>
 <input type="submit" value="Upload Image" style="margin-left: 6px;" />
 
-<!-- Buggy case action
-
 <p>
 $(gettext "Files on user desktop such as README, desktop file or documenatation.
-Allowed file and extentions are:") README .desktop .html .png .jpg:
-/etc/skel/Desktop:
+The file will be copied in the Home directory of each new user. SliTaz create
+the default Live user at boot. Allowed file and extentions are:") README 
+.desktop .html .png .jpg:
 <p>
 
 <div class="inputfile">
 	<div class="inputhide">
-		<input type="file" name="desktop-file" size="48" />
+		<input type="file" name="desktop" size="48" />
 	</div>
 </div>
 <input type="submit" value="Upload File" style="margin-left: 6px;" />
 
--->
 
 <h3>$(gettext "Rootfs tarball")</h3>
 <p>
