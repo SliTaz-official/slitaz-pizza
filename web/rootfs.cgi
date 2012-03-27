@@ -59,9 +59,9 @@ tarball_handler() {
 	# So now it time to move the addfile to flavor files.
 	if [ -d "$upload/rootfs" ]; then
 		echo "Additional rootfs: accepted" | tee -a $log
-		mkdir -p $tmpdir/slitaz-$id
-		mv $upload/rootfs $tmpdir/slitaz-$id
-		rm -rf $tmpdir/slitaz-$id/upload-*
+		mkdir -p $tmpdir/slitaz-$id/rootfs
+		mv $upload/rootfs/* $tmpdir/slitaz-$id/rootfs
+		rm -rf $tmpdir/slitaz-$id/upload-* $upload/rootfs
 	fi
 	echo "</pre>"
 	rm -rf $upload
@@ -73,7 +73,6 @@ tarball_handler() {
 
 case " $(FILE) " in
 	*\ wallpaper\ *)
-		id="$(POST id)"
 		tmpname="$(FILE wallpaper tmpname)"
 		wallpaper="$(FILE wallpaper name)"
 		size="$(FILE wallpaper size)"
@@ -102,13 +101,31 @@ case " $(FILE) " in
 		esac
 		;;
 	*\ tarball\ *)
-		id="$(POST id)"
 		tmpname="$(FILE tarball tmpname)"
 		tarball="$(FILE tarball name)"
 		size="$(FILE tarball size)" ;;
 	*)
 		id="$(GET id)" ;;
 esac
+
+[ -n "$id" ] || id="$(POST id)"
+
+if [ "$(GET loram)" != "none" ]; then
+	echo "Low RAM convertion: $(GET loram)" | tee -a $log
+	mkdir -p $tmpdir/slitaz-$id/rootfs/etc/tazlito 2> /dev/null
+	cat > $tmpdir/slitaz-$id/rootfs/etc/tazlito/loram.final <<EOT
+cd \$1/..
+iso=\$(ls *.iso)
+if [ -s "\$iso" ]; then
+	echo "Converting \$iso to low ram iso..."
+	yes y | tazlito build-loram \$iso $iso.\$\$ $(GET loram)
+	mv -f \$iso.\$\$ \$iso
+	md5sum \$iso > \${iso%.iso}.md5
+	echo "================================================================================"
+fi
+cd - > /dev/null
+EOT
+fi
 
 #
 # Source receipt and display page with additional rootfs or file upload.
@@ -170,6 +187,17 @@ Allowed file and extentions are:") README .desktop .html .png .jpg:
 	</div>
 	<input type="hidden" name="id" value="$id" />
 	<input type="submit" value="Upload rootfs" />
+
+<h3>$(gettext "ISO image convertion")</h3>
+
+	$(gettext "Low RAM support"):
+	<select name="loram">
+		<option value="none">$(gettext "No")</option>
+		<option value="ram">$(gettext "In RAM only")</option>
+		<option value="smallcdrom">$(gettext "Small CDROM or RAM")</option>
+		<option value="cdrom">$(gettext "Large CDROM or RAM")</option>
+	</select>
+	<input type="submit" value="Convert" />
 </form>
 
 $([ "$tarball" ] && tarball_handler)
