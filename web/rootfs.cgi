@@ -110,8 +110,9 @@ esac
 
 [ -n "$id" ] || id="$(POST id)"
 
-if [ "$(GET loram)" != "none" ]; then
-	echo "Low RAM convertion: $(GET loram)" | tee -a $log
+if [ "$(GET loram)" != "none" ] || [ "$(GET loram)" != "" ]; then
+	echo "Low RAM convertion: $(GET loram)" >> $log
+	notify "$(gettext "Low RAM convertion:") $(GET loram)"
 	mkdir -p $tmpdir/slitaz-$id/rootfs/etc/tazlito 2> /dev/null
 	cat > $tmpdir/slitaz-$id/rootfs/etc/tazlito/loram.final <<EOT
 cd \$1/..
