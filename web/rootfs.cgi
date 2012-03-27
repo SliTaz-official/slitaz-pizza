@@ -112,8 +112,8 @@ esac
 [ -n "$id" ] || id="$(POST id)"
 
 if [ "$(GET loram)" != "none" ] && [ "$(GET loram)" != "" ]; then
-	echo "Low RAM convertion: $(GET loram)" >> $log
-	notify "$(gettext "Low RAM convertion:") $(GET loram)"
+	echo "Low RAM conversion: $(GET loram)" >> $log
+	notify "$(gettext "Low RAM conversion:") $(GET loram)"
 	mkdir -p $tmpdir/slitaz-$id/rootfs/etc/tazlito 2> /dev/null
 	cat > $tmpdir/slitaz-$id/rootfs/etc/tazlito/loram.final <<EOT
 cd \$1/..
@@ -156,9 +156,9 @@ $(gettext "Desktop Wallpaper in JPG format"):
 <input type="submit" value="Upload Image" style="margin-left: 6px;" />
 
 <p>
-$(gettext "Files on user desktop such as README, desktop file or documenatation.
-The file will be copied in the Home directory of each new user. SliTaz create
-the default Live user at boot. Allowed file and extentions are:") README 
+$(gettext "Files on user desktop such as README, desktop files or documentation.
+The files will be copied in the Home directory of each new user. SliTaz creates
+the default Live user at boot. Allowed files and extentions are:") README 
 .desktop .html .png .jpg:
 <p>
 
@@ -187,7 +187,7 @@ the default Live user at boot. Allowed file and extentions are:") README
 </div>
 <input type="submit" value="Upload rootfs" style="margin-left: 6px;" />
 
-<h3>$(gettext "ISO image convertion")</h3>
+<h3>$(gettext "ISO image conversion")</h3>
 
 	$(gettext "Low RAM support"):
 	<select name="loram">

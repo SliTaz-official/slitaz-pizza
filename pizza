@@ -55,7 +55,7 @@ status() {
 }
 
 # Get latest flavor skel packages list. We use Hg to get latest list
-# and addfiles. Then build an HTML list with version from the local
+# and addfiles. Then build a HTML list with version from the local
 # packages mirror.
 get_pkgs_lists() {
 	cd $hgflavors && hg pull -u
@@ -129,7 +129,7 @@ case "$1" in
 		echo '*/15  * * * * /usr/bin/pizza-bot' >> $crontabs/root
 		status
 		
-		# We want Tazlito to build ISO's in /home/slitaz
+		# We want Tazlito to build ISOs in /home/slitaz
 		echo -n "Updating Tazlito default configuration..."
 		sed -i s'/^WORK_DIR=.*/WORK_DIR="\/home\/slitaz"/' \
 			$chroot/etc/tazlito/tazlito.conf
@@ -140,7 +140,7 @@ case "$1" in
 		status
 		cd $cache
 		
-		# We use files from Hg repo definet in pizza.conf.
+		# We use files from Hg repo defined in pizza.conf.
 		if [ ! -d "$hgflavors" ]; then
 			cd $cache && hg clone $HG && cd -
 		fi

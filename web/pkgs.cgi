@@ -78,7 +78,7 @@ case " $(GET) " in
 		notify "Adding packages: $add"
 		for pkg in $add
 		do
-			# Add pkg only if not yep in Pizza flavor pkgs list
+			# Add pkg only if not yet in Pizza flavor pkgs list
 			if ! grep -Eq "^($pkg|get-$pkg) " $list; then
 				pkginfo=$(grep -E "^($pkg|get-$pkg) " $allpkgs | cut -f 1,2,3 -d "|")
 				name=$(echo $pkginfo | cut -d "|" -f 1)
@@ -105,7 +105,7 @@ case " $(GET) " in
 		[ ! "$flavor" ] && echo "Missing flavor name" && exit 0
 		[ ! "$mail" ] && echo "Missing email address" && exit 0
 		[ ! "$skel" ] && echo "Missing SliTaz skeleton" && exit 0
-		[ ! "$desc" ] && echo "Missing short desciption" && exit 0
+		[ ! "$desc" ] && echo "Missing short description" && exit 0
 		notify "$(gettext "Creating receipt and packages list")"
 		mkdir -p $tmpdir/slitaz-$id
 		# Use a pkg desc for the web interface and a simple one tazlito.
@@ -155,8 +155,8 @@ cat << EOT
 <form method="get" action="pkgs.cgi">
 <p>
 
-$(gettext "Here you can add or remove some packages from your flavor. You
-can also search for packages name and description to find a package name")
+$(gettext "Here you can add or remove some packages to your flavor. You
+can also search for a packages name and description to find a package name")
 
 </p>
 	<input type="text" name="search" style="width: 300px;" />
