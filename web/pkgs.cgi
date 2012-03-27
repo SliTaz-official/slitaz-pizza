@@ -85,7 +85,7 @@ case " $(GET) " in
 				vers=$(echo $pkginfo | cut -d "|" -f 2)
 				desc=$(echo $pkginfo | cut -d "|" -f 3)
 				echo "$name $vers \" $desc \"" >> $pkgsdesc
-				echo "$name" >> $list
+				echo "$pkg" >> $list
 			fi
 		done ;;
 	*\ rm\ *)
