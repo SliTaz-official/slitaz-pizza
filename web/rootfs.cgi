@@ -120,7 +120,7 @@ cd \$1/..
 iso=\$(ls *.iso)
 if [ -s "\$iso" ]; then
 	echo "Converting \$iso to low ram iso..."
-	yes y | tazlito build-loram \$iso $iso.\$\$ $(GET loram)
+	yes y | tazlito build-loram \$iso \$iso.\$\$ $(GET loram)
 	mv -f \$iso.\$\$ \$iso
 	md5sum \$iso > \${iso%.iso}.md5
 	echo "================================================================================"
