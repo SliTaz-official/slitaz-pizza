@@ -12,10 +12,10 @@ skel="$(GET skel)"
 desc="$(GET desc)"
 mail="$(GET mail)"
 log="$tmpdir/slitaz-$id/distro.log"
+# Flavor pkgs desc list format: pkgname version " short desc "
 allpkgs="$SLITAZ/$SLITAZ_VERSION/packages/packages.desc"
-# Flavor pkgs list format: pkgname version " short desc "
 list="$tmpdir/slitaz-$id/packages.list"
-desc="$tmpdir/slitaz-$id/packages.desc"
+pkgsdesc="$tmpdir/slitaz-$id/packages.desc"
 
 #
 # Functions
@@ -23,8 +23,8 @@ desc="$tmpdir/slitaz-$id/packages.desc"
 
 # Pizza uses local packages synced with mirror each night.
 list_pkgs() {
-	[ ! -f "$list" ] && echo "Missing: $list"
-	cat $list | while read PACKAGE VERSION SHORT_DESC
+	[ ! -f "$list" ] && echo "Missing: $pkgsdesc"
+	cat $pkgsdesc | while read PACKAGE VERSION SHORT_DESC
 	do
 		cat << EOT
 
@@ -69,6 +69,10 @@ search_pkgs() {
 # Actions
 #
 
+#[ "$DEBUG" ] && echo "<div></div>"
+DEBUG=0
+[ "$DEBUG" ] && echo "<div>$flavor - $desc</div>"
+
 case " $(GET) " in
 	*\ search\ *)
 		search="$(GET search)"
@@ -84,7 +88,7 @@ case " $(GET) " in
 				name=$(echo $pkginfo | cut -d "|" -f 1)
 				vers=$(echo $pkginfo | cut -d "|" -f 2)
 				desc=$(echo $pkginfo | cut -d "|" -f 3)
-				echo "$name $vers \" $desc \"" >> $desc
+				echo "$name $vers \" $desc \"" >> $pkgsdesc
 				echo "$name" >> $list
 			fi
 		done ;;
@@ -92,9 +96,10 @@ case " $(GET) " in
 		cmdline=$(echo ${QUERY_STRING#pkg=} | sed s'/&/ /g')
 		cmdline=${cmdline%id=*}
 		pkgs=$(echo $cmdline | sed -e s'/+/ /g' -e s'/pkg=//g' -e s/$cmd//)
+		notify "Removing packages: $pkgs"
 		for pkg in $pkgs
 		do
-			sed -i "/^${pkg} /"d $desc
+			sed -i "/^${pkg} /"d $pkgsdesc
 			sed -i "/^${pkg} /"d $list
 		done ;;
 	*)
@@ -108,7 +113,7 @@ case " $(GET) " in
 		notify "$(gettext "Creating receipt and packages list")"
 		mkdir -p $tmpdir/slitaz-$id
 		# Use a pkg desc for the web interface and a simple one tazlito.
-		cp -f $hgflavors/$skel/packages.desc $desc
+		cp -f $hgflavors/$skel/packages.desc $pkgsdesc
 		cp -f $hgflavors/$skel/packages.list $list
 		[ -d "$hgflavors/$skel/rootfs" ] && \
 			cp -a $hgflavors/$skel/rootfs $tmpdir/slitaz-$id
