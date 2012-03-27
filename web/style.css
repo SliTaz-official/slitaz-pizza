@@ -193,8 +193,10 @@ input[type="file"] {
 	background: #f8f8f8 url(images/open.png) no-repeat center right; 
 	z-index: 2;
 	border: 1px solid #ccc;
-	padding: 2px 0px 0px 2px;
-	height: 24px;
+	padding: 3px 0px 0px 2px;
+	height: 25px;
+	float: left;
+	margin-top: 4px;
 }
 
 input[type="file"]::-webkit-file-upload-button {

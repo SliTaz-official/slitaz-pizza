@@ -152,7 +152,7 @@ $(gettext "Desktop Wallpaper in JPG format"):
 		<input type="file" name="wallpaper" size="48" />
 	</div>
 </div>
-<input type="submit" value="Upload Image" />
+<input type="submit" value="Upload Image" style="margin-left: 6px;" />
 
 <!-- Buggy case action
 
@@ -167,7 +167,7 @@ Allowed file and extentions are:") README .desktop .html .png .jpg:
 		<input type="file" name="desktop-file" size="48" />
 	</div>
 </div>
-<input type="submit" value="Upload File" />
+<input type="submit" value="Upload File" style="margin-left: 6px;" />
 
 -->
 
@@ -181,13 +181,12 @@ Allowed file and extentions are:") README .desktop .html .png .jpg:
 	hierachy such as: /usr/bin /etc /var/www
 </p>
 
-	<div class="inputfile">
-		<div class="inputhide">
-			<input type="file" name="tarball" size="48" />
-		</div>
+<div class="inputfile">
+	<div class="inputhide">
+		<input type="file" name="tarball" size="48" />
 	</div>
-	<input type="hidden" name="id" value="$id" />
-	<input type="submit" value="Upload rootfs" />
+</div>
+<input type="submit" value="Upload rootfs" style="margin-left: 6px;" />
 
 <h3>$(gettext "ISO image convertion")</h3>
 
@@ -199,6 +198,8 @@ Allowed file and extentions are:") README .desktop .html .png .jpg:
 		<option value="cdrom">$(gettext "Large CDROM or RAM")</option>
 	</select>
 	<input type="submit" value="Convert" />
+
+<input type="hidden" name="id" value="$id" />
 </form>
 
 $([ "$tarball" ] && tarball_handler)
