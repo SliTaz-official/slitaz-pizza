@@ -111,16 +111,16 @@ esac
 
 [ -n "$id" ] || id="$(POST id)"
 
-if [ "$(GET loram)" != "none" ] && [ "$(GET loram)" != "" ]; then
-	echo "Low RAM conversion: $(GET loram)" >> $log
-	notify "$(gettext "Low RAM conversion:") $(GET loram)"
+if [ "$(POST loram)" != "none" ] && [ "$(POST loram)" != "" ]; then
+	echo "Low RAM conversion: $(POST loram)" >> $log
+	notify "$(gettext "Low RAM conversion:") $(POST loram)"
 	mkdir -p $tmpdir/slitaz-$id/rootfs/etc/tazlito 2> /dev/null
 	cat > $tmpdir/slitaz-$id/rootfs/etc/tazlito/loram.final <<EOT
 cd \$1/..
 iso=\$(ls *.iso)
 if [ -s "\$iso" ]; then
 	echo "Converting \$iso to low ram iso..."
-	yes y | tazlito build-loram \$iso \$iso.\$\$ $(GET loram)
+	yes y | tazlito build-loram \$iso \$iso.\$\$ $(POST loram)
 	mv -f \$iso.\$\$ \$iso
 	md5sum \$iso > \${iso%.iso}.md5
 	echo "================================================================================"
