@@ -28,6 +28,7 @@ highlighter() {
 			sed -e ':a;s/^\(.\{1,73\}\)OK$/\1 OK/;ta' \
 				-e ':a;s/^\(.\{1,73\}\)Failed$/\1 Failed/;ta' |
 			sed -e 's|\[[0-9G\.KM]*    .||g' -e 's|.\[18G|    |' \
+				-e 's/.*'$(echo -ne '\r')'\[/[/' \
 				-e 's|.\[1m|<b>|' -e 's|.\[0m|</b>|' \
 				-e 's#OK#<span class="span-ok">OK</span>#g' \
 				-e 's#Failed#<span class="span-red">Failed</span>#g' ;;
