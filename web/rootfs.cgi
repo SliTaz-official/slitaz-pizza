@@ -111,10 +111,24 @@ esac
 
 [ -n "$id" ] || id="$(POST id)"
 
+if [ "$(POST fastboot)" != "" ]; then
+	echo "Fast boot conversion" >> $log
+	notify "$(gettext "Fast boot conversion")"
+	mkdir -p $tmpdir/slitaz-$id/rootfs/etc/tazlito 2> /dev/null
+	cat > $tmpdir/slitaz-$id/rootfs/etc/tazlito/fastboot.iso <<EOT
+[ -x /usr/bin/lzop ] || tazpkg get-install lzop
+find * | cpio -o -H newc | lzop -9 > \$1/boot/rootfs.gz
+EOT
+	cat > $tmpdir/slitaz-$id/rootfs/etc/tazlito/fastboot.rootfs <<EOT
+sed -i 's/FAST_BOOT_X="no"/FAST_BOOT_X="yes"/' etc/rcS.conf
+EOT
+fi
+
 if [ "$(POST loram)" != "none" ] && [ "$(POST loram)" != "" ]; then
 	echo "Low RAM conversion: $(POST loram)" >> $log
 	notify "$(gettext "Low RAM conversion:") $(POST loram)"
 	mkdir -p $tmpdir/slitaz-$id/rootfs/etc/tazlito 2> /dev/null
+	rm -f $tmpdir/slitaz-$id/rootfs/etc/tazlito/fastboot.iso 2> /dev/null
 	cat > $tmpdir/slitaz-$id/rootfs/etc/tazlito/loram.final <<EOT
 cd \$1/..
 iso=\$(ls *.iso)
@@ -189,6 +203,8 @@ the default Live user at boot. Allowed files and extentions are:") README
 
 <h3>$(gettext "ISO image conversion")</h3>
 
+	<input type="checkbox" name="fastboot" />
+	$(gettext "Fast boot") - 
 	$(gettext "Low RAM support"):
 	<select name="loram">
 		<option value="none">$(gettext "No")</option>
