@@ -195,6 +195,7 @@ case "$1" in
 	sync-pkgs)
 		echo "Syncing all $SLITAZ_VERSION packages..."
 		echo "Syncing all $SLITAZ_VERSION packages" | log
+		tazpkg recharge
 		rsync -azHv --delete $RSYNC_PKGS $LOCAL_PKGS
 		du -sh $LOCAL_PKGS ;;
 	backup)
