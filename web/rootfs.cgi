@@ -115,9 +115,15 @@ if [ "$(POST fastboot)" != "" ]; then
 	echo "Fast boot conversion" >> $log
 	notify "$(gettext "Fast boot conversion")"
 	mkdir -p $tmpdir/slitaz-$id/rootfs/etc/tazlito 2> /dev/null
-	cat > $tmpdir/slitaz-$id/rootfs/etc/tazlito/fastboot.iso <<EOT
+	# lzo decompression crash with 2.6.37...
+	false && cat > $tmpdir/slitaz-$id/rootfs/etc/tazlito/fastboot.iso <<EOT
 [ -x /usr/bin/lzop ] || tazpkg get-install lzop
 find * | cpio -o -H newc | lzop -9 > \$1/boot/rootfs.gz
+EOT
+	cat > $tmpdir/slitaz-$id/rootfs/etc/tazlito/fastboot.iso <<EOT
+find * | cpio -o -H newc | gzip -9 > \$1/boot/rootfs.gz
+[ -x /usr/bin/advdef ] || tazpkg get-install advancecomp
+[ -x /usr/bin/advdef ] && advdef -z4 \$1/boot/rootfs.gz
 EOT
 	cat > $tmpdir/slitaz-$id/rootfs/etc/tazlito/fastboot.rootfs <<EOT
 sed -i 's/FAST_BOOT_X="no"/FAST_BOOT_X="yes"/' etc/rcS.conf
