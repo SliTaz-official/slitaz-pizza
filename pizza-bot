@@ -96,6 +96,9 @@ case "$1" in
 		[ ! "$name" ] && echo "Empty build queue" && quit
 		. $queue/$name/receipt
 		
+		#tazpkg setup-mirror /home/slitaz/packages
+		tazpkg recharge
+		
 		echo "Build started for flavor: <a href='?id=$ID'>$ID</a> ($FLAVOR)" | log
 		echo -e "Build started   : $(date '+%Y-%m-%d %H:%M')\n" | tee -a $log
 		
