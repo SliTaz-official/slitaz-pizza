@@ -115,7 +115,7 @@ case "$1" in
 			shared-mime-info
 		do
 			echo "Installing package: $pkg"
-			tazpkg -gi $pkg --root=$chroot >/dev/null
+			tazpkg get-install $pkg --root=$chroot >/dev/null
 		done
 		
 		# Files
