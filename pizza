@@ -48,7 +48,7 @@ EOT
 # Status function.
 status() {
 	if [ $? = 0 ]; then
-		echo " OK"
+		echo " Done"
 	else
 		echo " Failed"
 	fi
@@ -80,8 +80,7 @@ get_pkgs_lists() {
 }
 
 # The Bot is chrooted and can't access main pizza.conf
-bot_config()
-{
+bot_config() {
 	config=$chroot/etc/slitaz/pizza-bot.conf
 	echo '# Pizza Bot configuration.' > $config
 	grep ^PIZZA_URL /etc/slitaz/pizza.conf >> $config
@@ -124,6 +123,7 @@ case "$1" in
 		cp -f /etc/resolv.conf $chroot/etc
 		mkdir -p $chroot/etc/init.d
 		bot_config
+
 		# No more needed when slitaz-base-files have rc.functions
 		cp -f /etc/init.d/rc.functions $chroot/etc/init.d
 		echo '# Check pizza queue every 15 mins' > $crontabs/root
@@ -183,7 +183,7 @@ case "$1" in
 		chroot $chroot /etc/init.d/crond start
 		[ "$MAIL_DOMAIN" ] && chroot $chroot /etc/init.d/postfix start ;;
 	stop)
-		# unmount and stop Pizza
+		# Unmount and stop Pizza
 		if mount | fgrep -q "pizza/chroot"; then
 			gettext -e "Unmounting packages and public...\n"
 			umount $pkgs
