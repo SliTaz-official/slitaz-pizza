@@ -73,6 +73,7 @@ get_pkgs_lists() {
 			do
 				echo "$PACKAGE $VERSION \"$SHORT_DESC\"" >> $pkgsdesc
 			done
+			unset IFS
 		done
 		status
 	done
@@ -117,7 +118,7 @@ case "$1" in
 			echo "Installing package: $pkg"
 			tazpkg get-install $pkg --root=$chroot >/dev/null
 		done
-		
+
 		# Files
 		echo -n "Creating needed files..."
 		cp -f /etc/resolv.conf $chroot/etc
@@ -128,24 +129,24 @@ case "$1" in
 		echo '# Check pizza queue every 15 mins' > $crontabs/root
 		echo '*/15  * * * * /usr/bin/pizza-bot' >> $crontabs/root
 		status
-		
+
 		# We want Tazlito to build ISOs in /home/slitaz
 		echo -n "Updating Tazlito default configuration..."
 		sed -i s'/^WORK_DIR=.*/WORK_DIR="\/home\/slitaz"/' \
 			$chroot/etc/tazlito/tazlito.conf
 		status
-		
-		echo -n "Installing Pizza Bot..." 
+
+		echo -n "Installing Pizza Bot..."
 		cp -a $DATA/pizza-bot $chroot/usr/bin
 		status
 		cd $cache
-		
+
 		# We use files from Hg repo defined in pizza.conf.
 		if [ ! -d "$hgflavors" ]; then
 			cd $cache && hg clone $HG && cd -
 		fi
 		get_pkgs_lists
-		
+
 		# Web interface and public dir
 		echo -n "Installing the web interface..."
 		mkdir -p $public && chmod 0777 $public
@@ -160,7 +161,7 @@ case "$1" in
 		# Update files in chroot when pizza is updated on host.
 		echo -n "Updating chroot and virtual host..."
 		cp -a $DATA/web/* $VHOST
-		cp -a $DATA/pizza-bot $chroot/usr/bin 
+		cp -a $DATA/pizza-bot $chroot/usr/bin
 		bot_config
 		status ;;
 	exec)
@@ -179,7 +180,7 @@ case "$1" in
 			mount -o bind $SLITAZ/$SLITAZ_VERSION/packages $pkgs
 			mount -o bind $public $bindpub
 		fi
-		chroot $chroot /etc/init.d/crond start 
+		chroot $chroot /etc/init.d/crond start
 		[ "$MAIL_DOMAIN" ] && chroot $chroot /etc/init.d/postfix start ;;
 	stop)
 		# unmount and stop Pizza
@@ -187,8 +188,8 @@ case "$1" in
 			gettext -e "Unmounting packages and public...\n"
 			umount $pkgs
 			umount $bindpub
-		fi 
-		chroot $chroot /etc/init.d/crond stop 
+		fi
+		chroot $chroot /etc/init.d/crond stop
 		[ "$MAIL_DOMAIN" ] && chroot $chroot /etc/init.d/postfix stop ;;
 	get-lists)
 		get_pkgs_lists ;;
@@ -214,7 +215,7 @@ case "$1" in
 			fi
 		done
 		tar cf $bak.tar $bak && rm -rf $bak
-		lzma e $bak.tar $bak.tar.lzma 
+		lzma e $bak.tar $bak.tar.lzma
 		du -sh $bak.tar.lzma ;;
 	purge)
 		# Remove tmp file older than 24 hours and ISO older than 15 days.
