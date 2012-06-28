@@ -39,7 +39,7 @@ at the Pizza configuration file before processing:
 # pizza setup
 
 Now you are ready to start the build bot to build queued flavors one by one.
-You can also chroot in the environment to build manually or test.
+You can also chroot in the environment to build manually or test:
 
 # pizza start
 
@@ -52,7 +52,7 @@ The cron task is run in the chroot and checks if any flavors have been submitted
 by default it checks every 20 minutes. The bot frequency can be changed by
 editing root crontabs in the build chroot.
 
-To check build queue or chroot manually you can use:
+To check the build queue or chroot manually you can use:
 
 # pizza exec pizza-bot
 # pizza chroot
