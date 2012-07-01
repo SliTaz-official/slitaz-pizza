@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Pizza\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-26 23:22+0200\n"
+"POT-Creation-Date: 2012-07-01 20:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,7 +60,7 @@ msgstr ""
 msgid "Default SliTaz desktop"
 msgstr ""
 
-#: web/pizza.cgi:110 web/pkgs.cgi:152
+#: web/pizza.cgi:110 web/pkgs.cgi:179
 msgid "Continue"
 msgstr ""
 
@@ -137,15 +137,15 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: web/pizza.cgi:321 web/pizza.cgi:370
+#: web/pizza.cgi:323 web/pizza.cgi:372
 msgid "Activity"
 msgstr ""
 
-#: web/pizza.cgi:338
+#: web/pizza.cgi:340
 msgid "Welcome"
 msgstr ""
 
-#: web/pizza.cgi:341
+#: web/pizza.cgi:343
 msgid ""
 "SliTaz Pizza lets you create your own SliTaz ISO flavor \n"
 "online. The ISO image can be burnt on a cdrom or installed on USB media. \n"
@@ -153,36 +153,36 @@ msgid ""
 "a new flavor."
 msgstr ""
 
-#: web/pizza.cgi:351
+#: web/pizza.cgi:353
 msgid "Create a new flavor"
 msgstr ""
 
-#: web/pizza.cgi:355
+#: web/pizza.cgi:357
 msgid "Latest builds"
 msgstr ""
 
-#: web/pizza.cgi:374
+#: web/pizza.cgi:376
 msgid "More activity"
 msgstr ""
 
-#: web/pkgs.cgi:105
+#: web/pkgs.cgi:109
 msgid "Creating receipt and packages list"
 msgstr ""
 
-#: web/pkgs.cgi:137
+#: web/pkgs.cgi:144
 msgid "Remove package(s)"
 msgstr ""
 
-#: web/pkgs.cgi:144
+#: web/pkgs.cgi:151
 msgid "Add package(s)"
 msgstr ""
 
-#: web/pkgs.cgi:159
+#: web/pkgs.cgi:158
 msgid ""
-"Here you can add or remove some packages from your flavor. You\n"
-"can also search for packages name and description to find a package name"
+"Here you can add or remove some packages to your flavor. You\n"
+"can also search for a packages name and description to find a package name"
 msgstr ""
 
-#: web/pkgs.cgi:165
+#: web/pkgs.cgi:164
 msgid "Search"
 msgstr ""
