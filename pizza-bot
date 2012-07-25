@@ -95,6 +95,8 @@ case "$1" in
 		work="$pizza/flavors"
 		[ ! "$name" ] && echo "Empty build queue" && quit
 		. $queue/$name/receipt
+
+		[ -z "$ID" -o -z "$FLAVOR" ] && echo "$name not valid" && quit
 		
 		#tazpkg setup-mirror /home/slitaz/packages
 		tazpkg recharge
