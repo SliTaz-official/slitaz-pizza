@@ -98,6 +98,7 @@ case "$1" in
 
 		[ -z "$ID" -o -z "$FLAVOR" ] && echo "$name not valid" && quit
 		
+		[ -d /proc/1 ] || mount -t proc /proc /proc
 		#tazpkg setup-mirror /home/slitaz/packages
 		tazpkg recharge
 		
