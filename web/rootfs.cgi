@@ -60,7 +60,7 @@ tarball_handler() {
 	if [ -d "$upload/rootfs" ]; then
 		echo "Additional rootfs: accepted" | tee -a $log
 		mkdir -p $tmpdir/slitaz-$id/rootfs
-		mv $upload/rootfs/* $tmpdir/slitaz-$id/rootfs
+		cp -a $upload/rootfs/* $tmpdir/slitaz-$id/rootfs
 		rm -rf $tmpdir/slitaz-$id/upload-* $upload/rootfs
 	fi
 	echo "</pre>"
