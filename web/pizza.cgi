@@ -209,7 +209,7 @@ EOT
 		if [ "$inqueue" == "1" ]; then
 			gettext "Your ISO will be built on next Pizza Bot run"
 		else
-			eval_gettext "There is \$inqueue flavors in queue"
+			eval_gettext "There are \$inqueue flavors in queue"
 		fi
 		echo ""
 		echo "New flavor added to queue: <a href='?id=$id'>$id</a> ($FLAVOR)" | log
