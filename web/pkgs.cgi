@@ -38,18 +38,18 @@ EOT
 	done
 }
 
-# Gen an empty receipt for new flavor.
-empty_receipt() {
+# Gen an receipt for new flavor.
+gen_receipt() {
 	cat > $tmpdir/slitaz-$id/receipt << EOT
 # SliTaz flavor receipt.
 
-FLAVOR=""
-SHORT_DESC=""
+FLAVOR="slitaz-$flavor"
+SHORT_DESC="$desc"
 VERSION="$(date "+%Y%m%d")"
-MAINTAINER=""
+MAINTAINER="$mail"
 
-ID=""
-SKEL=""
+ID="$id"
+SKEL="$skel"
 
 EOT
 }
@@ -113,13 +113,7 @@ case " $(GET) " in
 		cp -f $hgflavors/$skel/packages.list $list
 		[ -d "$hgflavors/$skel/rootfs" ] && \
 			cp -a $hgflavors/$skel/rootfs $tmpdir/slitaz-$id
-		empty_receipt
-		sed -i \
-			-e s"/FLAVOR=.*/FLAVOR=\"slitaz-$flavor\"/" \
-			-e s"/MAINTAINER=.*/MAINTAINER=\"$mail\"/" \
-			-e s"/SKEL=.*/SKEL=\"$skel\"/" \
-			-e s"/SHORT_DESC=.*/SHORT_DESC=\"$(echo $desc | sed 's/\([&\/]\)/\\\1/g')\"/" \
-			-e s"/ID=.*/ID=\"$id\"/" $tmpdir/slitaz-$id/receipt 
+		gen_receipt
 		echo "Receipt created : $(date '+%Y-%m-%d %H:%M')" > $log ;;
 esac
 
