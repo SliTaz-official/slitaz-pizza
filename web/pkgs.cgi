@@ -118,7 +118,7 @@ case " $(GET) " in
 			-e s"/FLAVOR=.*/FLAVOR=\"slitaz-$flavor\"/" \
 			-e s"/MAINTAINER=.*/MAINTAINER=\"$mail\"/" \
 			-e s"/SKEL=.*/SKEL=\"$skel\"/" \
-			-e s"/SHORT_DESC=.*/SHORT_DESC=\"$desc\"/" \
+			-e s"/SHORT_DESC=.*/SHORT_DESC=\"$(echo $desc | sed 's/\([&\/]\)/\\\1/g')\"/" \
 			-e s"/ID=.*/ID=\"$id\"/" $tmpdir/slitaz-$id/receipt 
 		echo "Receipt created : $(date '+%Y-%m-%d %H:%M')" > $log ;;
 esac
