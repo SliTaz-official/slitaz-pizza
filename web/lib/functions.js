@@ -8,7 +8,17 @@ function checkForm() {
         alert("Please enter SliTaz pizza flavor name");
         document.forms["pizza"]["flavor"].focus();
         return false;
-    }
+    } else {
+		var str = "!@#$%^&*()+=[]\\\';,./{}|\":<>?";
+		for (var i = 0; i < document.forms["pizza"]["flavor"].value.length; i++) {
+		  	if (str.indexOf(document.forms["pizza"]["flavor"].value.charAt(i)) != -1)
+		  	{
+			  	alert ("Invalid Flavor name.\n Please remove speciial characters.");
+			  	document.forms["pizza"]["desc"].focus();
+			  	return false;
+		  	}
+		}
+	}
     if(document.forms["pizza"]["desc"].value == "")
     {
         alert("Please fill in the flavor description");
