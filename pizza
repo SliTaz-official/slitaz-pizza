@@ -86,6 +86,7 @@ bot_config() {
 	grep ^PIZZA_URL /etc/slitaz/pizza.conf >> $config
 	grep ^MAIL_DOMAIN /etc/slitaz/pizza.conf >> $config
 	grep ^MAIL_SERVER /etc/slitaz/pizza.conf >> $config
+	grep ^MAIL_FROM /etc/slitaz/pizza.conf >> $config
 }
 
 # Log activities, we want first letter capitalized.

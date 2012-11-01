@@ -20,6 +20,7 @@ builds="$cache/builds"
 lockfile="/var/lock/pizza.lock"
 feeds="$pizza/xml"
 
+
 # Log activities, we want first letter capitalized.
 log() {
 	grep ^[A-Z] | \
@@ -137,10 +138,10 @@ case "$1" in
 		chown -R www.www $public/$name
 		
 		# Send mail if enabled.
-		if [ "$MAIL_DOMAIN" ]; then
+		if [ "$MAIL_FROM" ]; then
 			. $public/$name/receipt
 			echo "Sending mail to: $MAINTAINER"
-			mail_body | /usr/sbin/sendmail $MAINTAINER
+			mail_body | /usr/bin/sendmail -f $MAIL_FROM $MAINTAINER
 		fi
 		
 		# Count builds
