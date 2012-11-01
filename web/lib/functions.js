@@ -13,7 +13,7 @@ function checkForm() {
 		for (var i = 0; i < document.forms["pizza"]["flavor"].value.length; i++) {
 		  	if (str.indexOf(document.forms["pizza"]["flavor"].value.charAt(i)) != -1)
 		  	{
-			  	alert ("Invalid Flavor name.\n Please remove speciial characters.");
+			  	alert ("Invalid Flavor name.\n Please remove special characters.");
 			  	document.forms["pizza"]["desc"].focus();
 			  	return false;
 		  	}
