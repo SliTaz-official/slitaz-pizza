@@ -152,6 +152,7 @@ case "$1" in
 		echo -n "Installing the web interface..."
 		mkdir -p $public && chmod 0777 $public
 		cp -a $DATA/web/* $VHOST
+		cp -a $DATA/public/* $public
 		status
 		echo "Pizza chroot : $chroot"
 		echo "Vhost path   : $VHOST"

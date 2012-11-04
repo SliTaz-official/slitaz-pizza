@@ -30,20 +30,24 @@ msgfmt:
 # Installation
 
 install: msgfmt
-	install -m 0777 -d $(DESTDIR)/etc/slitaz
-	install -m 0777 -d $(DESTDIR)$(PREFIX)/bin
-	install -m 0777 -d $(DESTDIR)$(PREFIX)/share/pizza/web
-	install -m 0777 -d $(DESTDIR)$(PREFIX)/share/pizza/web/images
-	install -m 0777 -d $(DESTDIR)$(PREFIX)/share/doc/pizza
+	install -m 0755 -d $(DESTDIR)/etc/slitaz
+	install -m 0755 -d $(DESTDIR)$(PREFIX)/bin
+	install -m 0755 -d $(DESTDIR)$(PREFIX)/share/pizza/public
+	install -m 0755 -d $(DESTDIR)$(PREFIX)/share/pizza/web
+	install -m 0755 -d $(DESTDIR)$(PREFIX)/share/pizza/web/images
+	install -m 0755 -d $(DESTDIR)$(PREFIX)/share/pizza/web/lib
+	install -m 0755 -d $(DESTDIR)$(PREFIX)/share/doc/pizza
 	install -m 0755 pizza $(DESTDIR)$(PREFIX)/bin
 	install -m 0755 pizza-bot $(DESTDIR)$(PREFIX)/share/pizza
+	install -m 0755 public/index.cgi $(DESTDIR)$(PREFIX)/share/pizza/public
 	install -m 0755 data/* $(DESTDIR)$(PREFIX)/share/pizza
 	install -m 0644 pizza.conf $(DESTDIR)/etc/slitaz
 	install -m 0644 README $(DESTDIR)$(PREFIX)/share/doc/pizza
 	cp -a doc/* $(DESTDIR)$(PREFIX)/share/doc/pizza
-	cp -a po/mo/* $(DESTDIR)$(PREFIX)/share/locale
+	cp -a po/mo $(DESTDIR)$(PREFIX)/share/locale
 	cp -a web $(DESTDIR)$(PREFIX)/share/pizza
 	chown -R root.root $(DESTDIR)$(PREFIX)/share/pizza
+	chmod 755 $(DESTDIR)$(PREFIX)/share/pizza/web/*.cgi
 
 uninstall:
 	rm -rf \
