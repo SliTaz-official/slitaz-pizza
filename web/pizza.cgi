@@ -346,7 +346,7 @@ Please read the SliTaz Pizza <a href="?help">Help</a> before starting
 a new flavor.")
 </p>
 <pre>
-Flavors: $inqueue in queue - $builds builds - $pubiso public
+Flavors: $inqueue in queue - $builds builds - $pubiso <a href="/public">public</a>
 </pre>
 
 <div class="start">
