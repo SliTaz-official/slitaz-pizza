@@ -144,6 +144,12 @@ case "$1" in
 			mail_body | /usr/bin/sendmail -f $MAIL_FROM $MAINTAINER
 		fi
 		
+		# Notify Admin if enabled.
+		if [ "$MAIL_ADMIN" ]; then
+			echo "Sending mail to: $MAIL_ADMIN"
+			echo "$(date '+%a, %d %b %Y %H:%M:%S %z') New flavor built on Pizza: ${PIZZA_URL}?id=$ID " | /usr/bin/sendmail -f $MAIL_FROM $MAIL_ADMIN
+		fi
+		
 		# Count builds
 		count=$(cat $builds)
 		count=$(($count + 1))
