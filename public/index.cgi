@@ -43,7 +43,7 @@ Flavors: $inqueue in queue - $builds builds - $pubiso public</a>
 </pre>
 EOT
 
-for dir in $public/*
+for dir in $(ls -td $public/slitaz-*)
 do
 	if [ -f $dir/receipt ] && (grep -q '^FLAVOR' $dir/receipt ]); then
 		flavor=$(grep '^FLAVOR' $dir/receipt | cut -d '=' -f 2 | sed 's/\"//g' )
