@@ -75,7 +75,7 @@ case " $(GET) " in
 	<tbody>
 		<tr>
 			<td>$(gettext "Flavor name")</td>
-			<td><input type="text" name="flavor" size="40" maxlength="40" /></td>
+			<td><input type="text" name="flavor" size="40" maxlength="25" /></td>
 		</tr>
 		<tr>
 			<td>$(gettext "Short description")</td>
