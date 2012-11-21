@@ -147,7 +147,8 @@ case "$1" in
 		# Notify Admin if enabled.
 		if [ "$MAIL_ADMIN" ]; then
 			echo "Sending mail to: $MAIL_ADMIN"
-			echo "$(date '+%a, %d %b %Y %H:%M:%S %z') New flavor built on Pizza: ${PIZZA_URL}?id=$ID " | /usr/bin/sendmail -f $MAIL_FROM $MAIL_ADMIN
+			echo -e "From: SliTaz Pizza<noreply@slitaz.org>\nSubject: New built on Pizza\nNew flavor built on Pizza: ${PIZZA_URL}?id=$ID " \
+			 | /usr/bin/sendmail -f $MAIL_FROM $MAIL_ADMIN
 		fi
 		
 		# Count builds
