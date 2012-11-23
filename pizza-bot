@@ -2,7 +2,7 @@
 #
 # SliTaz Pizza chroot cmdline utility. This tool is designed to be run 
 # by cron and automatically build flavors in the queue. We build one ISO
-# at once so we don't use too many resources.
+# at a time so we don't use too many resources.
 #
 # Copyright (C) 2012 SliTaz GNU/Linux - GNU gpl v2
 # Authors : Christophe Lincoln <pankso@slitaz.org>
@@ -61,14 +61,14 @@ Content-Transfer-Encoding: 8bit
 Hi,
 
 Your custom SliTaz GNU/Linux system is ready to download! It will be
-hosted as long as we can but with absolutely no warranty in time.
+hosted for as long as we can but with absolutely no warranty in time.
 
 Get $FLAVOR ISO and files at: ${PIZZA_URL}?id=$ID
 
 ISO size: $ISO_SIZE
 MD5 sum: $md5
 
-If you wish a long time hosting service please get in touch via our 
+If you would like a long time hosting service please get in touch via our 
 professional platform at http://slitaz.pro
 
 Visit http://www.slitaz.org for latest news about the project and
@@ -147,7 +147,7 @@ case "$1" in
 		# Notify Admin if enabled.
 		if [ "$MAIL_ADMIN" ]; then
 			echo "Sending mail to: $MAIL_ADMIN"
-			echo -e "From: SliTaz Pizza<noreply@slitaz.org>\nSubject: New built on Pizza\nNew flavor built on Pizza: ${PIZZA_URL}?id=$ID " \
+			echo -e "From: SliTaz Pizza<noreply@slitaz.org>\nSubject: New build on Pizza\nNew flavor built on Pizza: ${PIZZA_URL}?id=$ID " \
 			 | /usr/bin/sendmail -f $MAIL_FROM $MAIL_ADMIN
 		fi
 		
