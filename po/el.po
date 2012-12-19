@@ -1,0 +1,204 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Constantine Mousafiris <kvisitor@gnugr.org>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: SliTaz Pizza\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-01 20:02+0000\n"
+"PO-Revision-Date: 2012-12-17 16:46+0200\n"
+"Last-Translator: Constantine Mousafiris <kvisitor@gnugr.org>\n"
+"Language-Team: Kostis Mousafiris\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.5.2\n"
+
+#: web/pizza.cgi:67
+msgid "First step"
+msgstr "Πρώτο βήμα"
+
+#: web/pizza.cgi:69
+msgid ""
+"Choose your distribution name and the one you want to use as\n"
+"\tbase. We need your mail to notify you when your SliTaz Flavor is built \n"
+"\tand if anything goes wrong."
+msgstr ""
+"Επιλέξτε το όνομα της διανομής και εκείνο που θέλετε να χρησιμοποιήσετε σαν\n"
+"\tβάση. Χρειαζόμαστε το e-mail σας για να σας ειδοποιήσουμε για το πότε θα είναι διαθέσιμο το SliTaz Flavor \n"
+"\tκαι αν ποτέ ο,τιδήποτε πάει στραβά."
+
+#: web/pizza.cgi:77
+msgid "Flavor name"
+msgstr "Όνομα του flavor"
+
+#: web/pizza.cgi:81
+msgid "Short description"
+msgstr "Σύντομη περιγραφή"
+
+#: web/pizza.cgi:85
+msgid "Email"
+msgstr "Ηλεκτρο. διεύθυνση e-mail"
+
+#: web/pizza.cgi:89
+msgid "Based on"
+msgstr "Βασίζεται στο"
+
+#: web/pizza.cgi:93
+msgid "Text mode system"
+msgstr "Σύστημα σε μορφή κειμένου (text mode)"
+
+#: web/pizza.cgi:95
+msgid "X without GTK or QT"
+msgstr "To X χωρίς GTK ή QT"
+
+#: web/pizza.cgi:97
+msgid "Clean GTK desktop"
+msgstr "Καθαρισμός της επιφάνειας εργασίας GTK"
+
+#: web/pizza.cgi:99
+msgid "Default SliTaz desktop"
+msgstr "Προεπιλεγμένη επιφάνεια εργασίας του SliTaz"
+
+#: web/pizza.cgi:110
+#: web/pkgs.cgi:179
+msgid "Continue"
+msgstr "Συνέχεια"
+
+#: web/pizza.cgi:125
+msgid "Generate"
+msgstr "Δημιουργία"
+
+#: web/pizza.cgi:127
+msgid ""
+"Last chance to stop process or start over. Next step will pack\n"
+"your flavor and add it to the build queue. Here you can also add a note to\n"
+"your receipt flavor, this will be displayed on your flavor ID page and \n"
+"can be used to give more info to other users and SliTaz developers."
+msgstr ""
+"Αυτή είναι η τελευταία ευκαιρία για τη διακοπή της διδικασίας, ή την επανεκκίνηση. Στο επόμενο βήμα, θα πακεταριστεί το\n"
+"δικό σας flavor και θα προστεθεί στην ουρά των build. Εδώ, μπορείτε, επίσης, να προσθέσετε μια σημείωση στη\n"
+"δική σας απόδειξη flavor, και αυτό θα εμφανισθεί στη σελίδα ταυτοποίησης ID του flavor και \n"
+"θα μπορεί να χρησιμοποιηθεί για να την παροχή περισσότερων πληροφοριών σε άλλους χρήστες και στους προγραμματιστές του SliTaz."
+
+#: web/pizza.cgi:147
+msgid "Cancel"
+msgstr "Διαγραφή"
+
+#: web/pizza.cgi:150
+msgid "Build flavor"
+msgstr "Χτίσιμο του flavor"
+
+#: web/pizza.cgi:157
+msgid "Removing temporary files for:"
+msgstr "Διαγραφή προσωρινών αρχείων για:"
+
+#: web/pizza.cgi:161
+msgid "Start over"
+msgstr "Εκκίνηση"
+
+#: web/pizza.cgi:177
+msgid "Packing:"
+msgstr "Γίνεται πακετάρισμα:"
+
+#: web/pizza.cgi:210
+msgid "Your ISO will be built on next Pizza Bot run"
+msgstr "Το δικό σας ISO θα χτιστεί με την επόμενη εκτέλεση του Pizza Bot"
+
+#: web/pizza.cgi:212
+#, sh-format
+msgid "There is $inqueue flavors in queue"
+msgstr "Υπάρχουν $inqueue flavors στην ουρά"
+
+#: web/pizza.cgi:220
+msgid "Download tarball: "
+msgstr "Κατεβάστε το tarball:"
+
+#: web/pizza.cgi:227
+msgid "Status"
+msgstr "Κατάσταση (status)"
+
+#: web/pizza.cgi:248
+msgid "Download ISO:"
+msgstr "Κατεβάστε το ISO:"
+
+#: web/pizza.cgi:252
+msgid "Flavor is building or still in the build queue"
+msgstr "Γίνεται το χτίσιμο του flavor ή βρίσκεται ακόμη στην ουρά των build"
+
+#: web/pizza.cgi:260
+msgid "Status for:"
+msgstr "Κατάσταση για:"
+
+#: web/pizza.cgi:262
+msgid "Flavor description:"
+msgstr "Περιγραφή του flavor:"
+
+#: web/pizza.cgi:277
+msgid "Download tarball:"
+msgstr "Κατεβάστε το tarball:"
+
+#: web/pizza.cgi:300
+msgid "Help"
+msgstr "Βοήθεια"
+
+#: web/pizza.cgi:323
+#: web/pizza.cgi:372
+msgid "Activity"
+msgstr "Δραστηριότητα"
+
+#: web/pizza.cgi:340
+msgid "Welcome"
+msgstr "Καλωσήλθατε"
+
+#: web/pizza.cgi:343
+msgid ""
+"SliTaz Pizza lets you create your own SliTaz ISO flavor \n"
+"online. The ISO image can be burnt on a cdrom or installed on USB media. \n"
+"Please read the SliTaz Pizza <a href=?help>Help</a> before starting \n"
+"a new flavor."
+msgstr ""
+"Το SliTaz Pizza σας επιτρέπει να δημιουργήσετε τη δική σας εικόνα SliTaz ISO flavor \n"
+"online. Η εικόνα ISO μπορεί να καεί σε ένα CD-rom ή να εγκατασταθεί σε ένα αποθηκευτικό μέσο USB. \n"
+"Παρακαλούμε, διαβάστε τη <a href=?help>Βοήθεια</a> του SliTaz Pizza,  πριν την έναρξη \n"
+"ενός νέου flavor."
+
+#: web/pizza.cgi:353
+msgid "Create a new flavor"
+msgstr "Δημιουργία ενός νέου flavor"
+
+#: web/pizza.cgi:357
+msgid "Latest builds"
+msgstr "Τα πιο πρόσφατα builds"
+
+#: web/pizza.cgi:376
+msgid "More activity"
+msgstr "Περισσότερες δραστηριότητες"
+
+#: web/pkgs.cgi:109
+msgid "Creating receipt and packages list"
+msgstr "Δημιουργείται απόδειξη (receipt) και κατάλογος πακέτων"
+
+#: web/pkgs.cgi:144
+msgid "Remove package(s)"
+msgstr "Απομάκρυνση πακέτου(ων)"
+
+#: web/pkgs.cgi:151
+msgid "Add package(s)"
+msgstr "Προσθήκη πακέτου(ων)"
+
+#: web/pkgs.cgi:158
+msgid ""
+"Here you can add or remove some packages to your flavor. You\n"
+"can also search for a packages name and description to find a package name"
+msgstr ""
+"Εδώ, μπορείτε να προσθέτετε ή να διαγράφετε μερικά πακέτα στο δικό σας flavor. Μπορείτε,\n"
+"επίσης, να ψάξετε ένα όνομα πακέτου και την περιγραφή, για να εντοπίσετε το όνομα ενός πακέτου"
+
+#: web/pkgs.cgi:164
+msgid "Search"
+msgstr "Αναζήτηση"
+
