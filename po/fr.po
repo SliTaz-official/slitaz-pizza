@@ -30,7 +30,7 @@ msgstr ""
 "Veuillez choisir le nom de votre distribution et la version sur laquelle\n"
 "\tvous voulez vous baser. Nous avons besoin de votre adresse email pour "
 "vous\n"
-"\tavertir quant votre ISO a été construite ou en cas de problèmes."
+"\tavertir quand votre ISO sera construite ou en cas de problèmes."
 
 #: web/pizza.cgi:77
 msgid "Flavor name"
@@ -79,6 +79,11 @@ msgid ""
 "your receipt flavor, this will be displayed on your flavor ID page and \n"
 "can be used to give more info to other users and SliTaz developers."
 msgstr ""
+"Dernier chance d'arrête le processus.\n"
+"La prochaine étape sera d'empaqueter votre saveur et de l'ajouter à la file de construction."
+"Ici, vous pouvez également ajouter une courte note sur la recette de votre saveur,"
+"elle sera visible sur la page de votre saveur, et pourra être utilisé pour que les utilisateurs et les développeurs SliTaz,"
+"aient plus d'information sur votre saveur."
 
 #: web/pizza.cgi:147
 msgid "Cancel"
@@ -90,7 +95,7 @@ msgstr "Construire la saveur"
 
 #: web/pizza.cgi:157
 msgid "Removing temporary files for:"
-msgstr ""
+msgstr "Suppression des fichiers temporaires pour:"
 
 #: web/pizza.cgi:161
 msgid "Start over"
@@ -127,7 +132,7 @@ msgstr "La saveur est en construction ou toujours dans la liste d'attente"
 
 #: web/pizza.cgi:260
 msgid "Status for:"
-msgstr "Status por:"
+msgstr "Status pour:"
 
 #: web/pizza.cgi:262
 msgid "Flavor description:"
@@ -156,6 +161,9 @@ msgid ""
 "Please read the SliTaz Pizza <a href=?help>Help</a> before starting \n"
 "a new flavor."
 msgstr ""
+"SliTaz Pizza vous permet de créer votre propre version de SliTaz en ligne. \n"
+"Cette image iso pourra être gravé sur un cdrom ou écrite sur une clé USB. \n"
+"Merci de lire <a href=?help>l'aide</a> avant de commencer une nouvelle saveur."
 
 #: web/pizza.cgi:353
 msgid "Create a new flavor"
@@ -188,7 +196,7 @@ msgid ""
 "can also search for a packages name and description to find a package name"
 msgstr ""
 "Ici vous pouvez ajouter ou supprimer des paquets de votre saveur.\n"
-"Vous pouvez aussi chercher pour un non ou une description de paquet."
+"Vous pouvez aussi chercher par nom ou description du paquet."
 
 #: web/pkgs.cgi:164
 msgid "Search"
