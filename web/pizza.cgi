@@ -182,7 +182,7 @@ EOT
 		fi
 		if ! fgrep NOTE $receipt; then
 			echo "NOTE=\"$note\"" | \
-			sed 's/\$/\\$/g;s/`/\\`/g;s/\\/\\\\/g' >> $receipt
+			sed 's/\\/\\\\/g;s/\$/\\$/g;s/`/\\`/g' >> $receipt
 		fi
 		
 		# The rootcd README
