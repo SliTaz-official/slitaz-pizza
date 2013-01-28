@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: SliTaz Pizza\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-01 20:02+0000\n"
-"PO-Revision-Date: 2013-01-22 22:00-0300\n"
+"PO-Revision-Date: 2013-01-28 02:10-0300\n"
 "Last-Translator: Claudinei Pereira <claudinei@slitaz.org>\n"
 "Language-Team: Brazilian Portuguese <i18n@slitaz.org>\n"
 "Language: pt_BR\n"
@@ -27,7 +27,7 @@ msgid ""
 "\tbase. We need your mail to notify you when your SliTaz Flavor is built \n"
 "\tand if anything goes wrong."
 msgstr ""
-"Escolha o nome de sua distribuição e o daquela que deseja usar como\"
+"Escolha o nome de sua distribuição e o daquela que deseja usar como\n"
 "\tbase. É necessário informar seu email para notificações sobre a variante \n"
 "\te possíveis mensagens de erro."
 
@@ -41,7 +41,7 @@ msgstr "Descrição"
 
 #: web/pizza.cgi:85
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: web/pizza.cgi:89
 msgid "Based on"
@@ -118,11 +118,11 @@ msgstr "Download do tarball: "
 
 #: web/pizza.cgi:227
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: web/pizza.cgi:248
 msgid "Download ISO:"
-msgstr ""
+msgstr "Baixar ISO:"
 
 #: web/pizza.cgi:252
 msgid "Flavor is building or still in the build queue"
