@@ -181,7 +181,8 @@ EOT
 			echo "ADDFILES=\"$addfiles\"" >> $receipt
 		fi
 		if ! fgrep NOTE $receipt; then
-			echo "NOTE=\"$note\"" >> $receipt
+			echo "NOTE=\"$note\"" | \
+			sed 's/\$/\\$/g;s/`/\\`/g;s/\\/\\\\/g' >> $receipt
 		fi
 		
 		# The rootcd README
