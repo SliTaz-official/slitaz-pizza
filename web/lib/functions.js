@@ -2,7 +2,7 @@
 //
 
 function charactersOK(field, name) {
-	var str = "`!@#$%^&*()+=[]\\\';,./{}|\":<>?";
+	var str = "`!#$%^&*()+=[]\\\';,/{}|\":<>?";
 	if(document.forms["pizza"][field].value == "") {
         	alert("Please enter"+name);
 		document.forms["pizza"][field].focus();
