@@ -1,10 +1,9 @@
 // SliTaz Pizza Javascript functions.
 //
 
-function charactersOK(field, name) {
-	var str = "`!#$%^&*()+=[]\\\';,/{}|\":<>?";
+function charactersOK(field, name, str) {
 	if(document.forms["pizza"][field].value == "") {
-        	alert("Please enter"+name);
+        	alert("Please enter the "+name);
 		document.forms["pizza"][field].focus();
 		return false;
 	}
