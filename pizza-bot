@@ -8,6 +8,8 @@
 # Authors : Christophe Lincoln <pankso@slitaz.org>
 #
 
+VERSION=1.0
+
 . /etc/slitaz/pizza-bot.conf
 
 # Pizza DB files.
