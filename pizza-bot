@@ -6,6 +6,7 @@
 #
 # Copyright (C) 2012 SliTaz GNU/Linux - GNU gpl v2
 # Authors : Christophe Lincoln <pankso@slitaz.org>
+#			Eric Joseph-Alexandre <erjo@slitaz.org>
 #
 
 VERSION=1.0
@@ -22,6 +23,32 @@ builds="$cache/builds"
 lockfile="/var/lock/pizza.lock"
 feeds="$pizza/xml"
 
+trap 'rm -f $lockfile ; exit 1' TERM INT
+
+# Help
+usage() {
+		echo "PizzaBot v$VERSION"
+		echo "Usage: $(basename $0) [lock|unlock]"
+		exit 0
+}
+
+# Get status
+status(){
+	if [ -f "$lockfile" ]; then
+		ps | grep ^`cat $lockfile`  \
+			&& echo "Pizza is running." \
+			|| echo  "Pizza is locked but not running!"
+	else
+		echo  "Pizza iis not running."
+	fi
+	echo  "Flavor in queue: $(ls $queue | wc -l)"
+}
+
+
+# Logger: Write log
+_logger() {
+	printf "%s pizza-bot: %s\n"  `date '+%D %H'` $@
+}
 
 # Log activities, we want first letter capitalized.
 log() {
@@ -83,15 +110,17 @@ EOT
 
 # Run as daemon by default.
 case "$1" in
-	usage)
-		echo "Usage: $(basename $0) [lock|unlock]" ;;
+	help|-h)
+		usage ;;
+	status)
+		status ;;
 	lock)
 		echo $$ > $lockfile ;;
 	unlock)
 		rm -f $lockfile ;;
 	*)
 		[ -f "$lockfile" ] && echo "Pizza is locked" && exit 0
-		trap 'rm -f $command && exit 1' INT TERM
+		#~ trap 'rm -f $command && exit 1' INT TERM
 		echo $$ > $lockfile
 		name=$(ls -rt $queue | head -n 1)
 		log="$public/$name/distro.log"
