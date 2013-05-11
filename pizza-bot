@@ -39,9 +39,9 @@ status(){
 			&& echo "Pizza is running." \
 			|| echo  "Pizza is locked but not running!"
 	else
-		echo  "Pizza iis not running."
+		echo  "Pizza is not running."
 	fi
-	echo  "Flavor in queue: $(ls $queue | wc -l)"
+	echo  "Flavors in queue: $(ls $queue | wc -l)"
 }
 
 
