@@ -22,8 +22,9 @@ public="$pizza/public"
 builds="$cache/builds"
 lockfile="/var/lock/pizza.lock"
 feeds="$pizza/xml"
+logfile="/var/log/pizza.log"
 
-trap 'rm -f $lockfile ; exit 1' TERM INT
+trap 'rm -f $lockfile ; exit 1' TERM INT EXIT
 
 # Help
 usage() {
@@ -37,7 +38,7 @@ status(){
 	if [ -f "$lockfile" ]; then
 		ps | grep ^`cat $lockfile`  \
 			&& echo "Pizza is running." \
-			|| echo  "Pizza is locked but not running!"
+			|| echo "Pizza is locked but not running!"  
 	else
 		echo  "Pizza is not running."
 	fi
@@ -47,7 +48,7 @@ status(){
 
 # Logger: Write log
 _logger() {
-	printf "%s pizza-bot: %s\n"  `date '+%D %H'` $@
+	 echo  "$(date '+%Y-%m-%d %T') - $@" >> $logfile
 }
 
 # Log activities, we want first letter capitalized.
