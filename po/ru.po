@@ -1,0 +1,204 @@
+# Russian translations for SliTaz Pizza package.
+# Copyright (C) 2013 SliTaz GNU/Linux
+# This file is distributed under the same license as the SliTaz Pizza package.
+# Hiri Hitiare <hitiare@mail.ru>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SliTaz Pizza\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-01 20:02+0000\n"
+"PO-Revision-Date: 2013-09-04 12:23+0300\n"
+"Last-Translator: Hiri Hitiare <hitiare@mail.ru>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: web/pizza.cgi:67
+msgid "First step"
+msgstr "Первый шаг"
+
+#: web/pizza.cgi:69
+msgid ""
+"Choose your distribution name and the one you want to use as\n"
+"\tbase. We need your mail to notify you when your SliTaz Flavor is built \n"
+"\tand if anything goes wrong."
+msgstr ""
+"Выберите имя вашего дистрибутива, а также выберите, что вы возьмете за "
+"основу\n"
+"\tУкажите, пожалуйста, свой e-mail, чтобы мы могли вам сообщить, когда ваша "
+"сборка SliTaz\n"
+"\tбудет готова, или же в случае, если что-то пойдет не так."
+
+#: web/pizza.cgi:77
+msgid "Flavor name"
+msgstr "Имя дистрибутива"
+
+#: web/pizza.cgi:81
+msgid "Short description"
+msgstr "Короткое описание"
+
+#: web/pizza.cgi:85
+msgid "Email"
+msgstr "Электронная почта"
+
+#: web/pizza.cgi:89
+msgid "Based on"
+msgstr "Основан на"
+
+#: web/pizza.cgi:93
+msgid "Text mode system"
+msgstr "Система в текстовом режиме"
+
+#: web/pizza.cgi:95
+msgid "X without GTK or QT"
+msgstr "Только X, без GTK или QT"
+
+#: web/pizza.cgi:97
+msgid "Clean GTK desktop"
+msgstr "Чистый GTK десктоп"
+
+#: web/pizza.cgi:99
+msgid "Default SliTaz desktop"
+msgstr "SliTaz по умолчанию"
+
+#: web/pizza.cgi:110 web/pkgs.cgi:179
+msgid "Continue"
+msgstr "Продолжить"
+
+#: web/pizza.cgi:125
+msgid "Generate"
+msgstr "Создать"
+
+#: web/pizza.cgi:127
+msgid ""
+"Last chance to stop process or start over. Next step will pack\n"
+"your flavor and add it to the build queue. Here you can also add a note to\n"
+"your receipt flavor, this will be displayed on your flavor ID page and \n"
+"can be used to give more info to other users and SliTaz developers."
+msgstr ""
+"Последний шанс остановить процесс или начать всё сначала.\n"
+"Сейчас ваш дистрибутив будет направлен в очередь на создание. Вы можете "
+"добавить к нему\n"
+"заметку (она отобразится на странице вашего дистрибутива, и предоставит\n"
+"более подробную информацию другим пользователям SliTaz, а также "
+"разработчикам)."
+
+#: web/pizza.cgi:147
+msgid "Cancel"
+msgstr "Отмена"
+
+#: web/pizza.cgi:150
+msgid "Build flavor"
+msgstr "Создание дистрибутива"
+
+#: web/pizza.cgi:157
+msgid "Removing temporary files for:"
+msgstr "Удаление временных файлов для:"
+
+#: web/pizza.cgi:161
+msgid "Start over"
+msgstr "Начать сначала"
+
+#: web/pizza.cgi:177
+msgid "Packing:"
+msgstr "Упаковка:"
+
+#: web/pizza.cgi:210
+msgid "Your ISO will be built on next Pizza Bot run"
+msgstr "Ваш ISO будет создан при следующем запуске Pizza Bot."
+
+#: web/pizza.cgi:212
+#, sh-format
+msgid "There is $inqueue flavors in queue"
+msgstr "Всего сборок в очереди: $inqueue"
+
+#: web/pizza.cgi:220
+msgid "Download tarball: "
+msgstr "Скачать архивом tar: "
+
+#: web/pizza.cgi:227
+msgid "Status"
+msgstr "Статус"
+
+#: web/pizza.cgi:248
+msgid "Download ISO:"
+msgstr "Скачать  ISO:"
+
+#: web/pizza.cgi:252
+msgid "Flavor is building or still in the build queue"
+msgstr "Ваша сборка либо создается, либо еще только в очереди"
+
+#: web/pizza.cgi:260
+msgid "Status for:"
+msgstr "Статус для:"
+
+#: web/pizza.cgi:262
+msgid "Flavor description:"
+msgstr "Описание дистрибутива:"
+
+#: web/pizza.cgi:277
+msgid "Download tarball:"
+msgstr "Скачать архивом tar:"
+
+#: web/pizza.cgi:300
+msgid "Help"
+msgstr "Справка"
+
+#: web/pizza.cgi:323 web/pizza.cgi:372
+msgid "Activity"
+msgstr "Активность"
+
+#: web/pizza.cgi:340
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: web/pizza.cgi:343
+msgid ""
+"SliTaz Pizza lets you create your own SliTaz ISO flavor \n"
+"online. The ISO image can be burnt on a cdrom or installed on USB media. \n"
+"Please read the SliTaz Pizza <a href=?help>Help</a> before starting \n"
+"a new flavor."
+msgstr ""
+"SLiTaz Pizza дает вам возможность создать собственную сборку SliTaz\n"
+"в режиме онлайн. Образ ISO можно потом записать на CD или USB-устройство.\n"
+"Пожалуйста, прочтите сперва <a href=?help>Справку</a> SliTaz Pizza, \n"
+"перед созданием собственной сборки."
+
+#: web/pizza.cgi:353
+msgid "Create a new flavor"
+msgstr "Создание новой сборки"
+
+#: web/pizza.cgi:357
+msgid "Latest builds"
+msgstr "Последние сборки"
+
+#: web/pizza.cgi:376
+msgid "More activity"
+msgstr "Больше активности"
+
+#: web/pkgs.cgi:109
+msgid "Creating receipt and packages list"
+msgstr "Создание рецепта и списка пакетов"
+
+#: web/pkgs.cgi:144
+msgid "Remove package(s)"
+msgstr "Удаление пакетов"
+
+#: web/pkgs.cgi:151
+msgid "Add package(s)"
+msgstr "Добавление пакетов"
+
+#: web/pkgs.cgi:158
+msgid ""
+"Here you can add or remove some packages to your flavor. You\n"
+"can also search for a packages name and description to find a package name"
+msgstr ""
+"Здесь вы можете добавить или удалить пакеты в ваш дистрибутив. Вы\n"
+"также можете искать пакеты, по их названию либо описанию"
+
+#: web/pkgs.cgi:164
+msgid "Search"
+msgstr "Поиск"
