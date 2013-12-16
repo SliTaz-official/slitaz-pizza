@@ -19,6 +19,7 @@ builds="$cache/builds"
 public="$VHOST/public"
 bindpub="${chroot}$SLITAZ/public"
 hgflavors="$cache/flavors"
+crontabs="$chroot/var/spool/cron/crontabs"
 
 #
 # Functions
@@ -102,13 +103,13 @@ log() {
 case "$1" in
 	setup)
 		# Setup build host.
-		crontabs="$chroot/var/spool/cron/crontabs"
+		
 		if [ -d "$chroot/proc" ]; then
 			echo "Chroot already exists: $chroot" && exit 0
 		fi
 		echo ""
 		echo "Setting up Pizza environment..."
-		mkdir -p $crontabs $cache $pkgs $tmp $queue $bindpub $feeds
+		mkdir -p $crontabs $cache $pkgs $tmp $queue $bindpub $feeds $crontabs
 		touch $activity $builds
 		chmod 0777 $tmp $queue $cache
 		chmod 0666 $activity
@@ -174,32 +175,38 @@ case "$1" in
 		# Chroot in Pizza environment.
 		echo -e "\nChrooting to: $chroot\n"
 		chroot $chroot /bin/sh --login
-		echo -e "\nExiting Pizza chroot...\n" ;;
+		echo -e "\nExiting Pizza chroot...\n"
+		;;
 	start)
 		# Mount and start Pizza
 		if ! mount | fgrep -q "pizza/chroot"; then
 			gettext -e "Mounting packages and public...\n"
 			mount -o bind $SLITAZ/$SLITAZ_VERSION/packages $pkgs
 			mount -o bind $public $bindpub
+			mount -t proc proc $chroot/proc
 		fi
-		chroot $chroot /etc/init.d/crond start
-		[ "$MAIL_DOMAIN" ] && chroot $chroot /etc/init.d/postfix start ;;
+		#~ chroot $chroot /etc/init.d/crond start
+		#~ [ "$MAIL_DOMAIN" ] && chroot $chroot /etc/init.d/postfix start
+		;;
 	stop)
 		# Unmount and stop Pizza
 		if mount | fgrep -q "pizza/chroot"; then
 			gettext -e "Unmounting packages and public...\n"
 			umount $pkgs
 			umount $bindpub
+			umount $chroot/proc 
 		fi
-		chroot $chroot /etc/init.d/crond stop
-		[ "$MAIL_DOMAIN" ] && chroot $chroot /etc/init.d/postfix stop ;;
+		#~ chroot $chroot /etc/init.d/crond stop
+		#~ [ "$MAIL_DOMAIN" ] && chroot $chroot /etc/init.d/postfix stop
+		;;
 	get-lists)
 		get_pkgs_lists ;;
 	sync-pkgs)
 		echo "Syncing all $SLITAZ_VERSION packages..."
 		echo "Syncing all $SLITAZ_VERSION packages" | log
 		rsync -azHv --delete $RSYNC_PKGS $LOCAL_PKGS
-		du -sh $LOCAL_PKGS ;;
+		du -sh $LOCAL_PKGS
+		;;
 	backup)
 		echo "Creating Pizza backup..."
 		bak="pizza-$(date "+%Y%m%d")"
@@ -218,7 +225,8 @@ case "$1" in
 		done
 		tar cf $bak.tar $bak && rm -rf $bak
 		lzma e $bak.tar $bak.tar.lzma
-		du -sh $bak.tar.lzma ;;
+		du -sh $bak.tar.lzma
+		;;
 	purge)
 		# Remove tmp file older than 24 hours and ISO older than 15 days.
 		# TODO: Improve and use configs from pizza.conf
@@ -226,7 +234,8 @@ case "$1" in
 		echo "Purging tmp files..."
 		find $tmp -mtime +1 | xargs rm -rf
 		echo "Purging ISO's..."
-		find $public -mtime +15 | xargs rm -rf ;;
+		find $public -mtime +15 | xargs rm -rf
+		;;
 	clean)
 		# Clean all chroot.
 		echo -e "\nCleaning: $chroot"
@@ -234,7 +243,8 @@ case "$1" in
 		for i in *
 		do
 			[ "$i" == "home" ] || rm -rf $i
-		done && echo "" ;;
+		done && echo ""
+		;;
 	*)
 		usage ;;
 esac
