@@ -36,10 +36,14 @@ IFS=","
 for lang in $HTTP_ACCEPT_LANGUAGE
 do
 	lang=${lang%;*} lang=${lang# } lang=${lang%-*}
-	[ -d "$lang" ] &&  break
 	case "$lang" in
-		en) lang="C" ;;
-		fr) lang="fr_FR" ;;
+		en) lang="C" && break ;;
+		fr) lang="fr_FR" && break ;;
+		pt) lang="pt_BR" && break ;;
+		ru) lang="ru_RU" && break ;;
+		sv) lang="sv_SE" && break ;;
+		pl) lang="pl_PL" && break ;;
+		el) lang="el_GR" && break ;;
 	esac
 done
 unset IFS
