@@ -178,7 +178,7 @@ $(gettext "Desktop Wallpaper in JPG format"):
 <p>
 $(gettext "Files on user desktop such as README, desktop files or documentation.
 The files will be copied in the Home directory of each new user. SliTaz creates
-the default Live user at boot. Allowed files and extentions are:") README 
+the default Live user at boot. Allowed files and extensions are:") README 
 .desktop .html .png .jpg:
 <p>
 

@@ -150,7 +150,7 @@ cat << EOT
 <p>
 
 $(gettext "Here you can add or remove some packages to your flavor. You
-can also search for a packages name and description to find a package name")
+can also search for a package name and description to find a package name")
 
 </p>
 	<input type="text" name="search" style="width: 300px;" />
