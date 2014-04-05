@@ -62,8 +62,8 @@ Developers and translators
 --------------------------
 SHell script as you would expect. Keep speed in mind and security. Always
 think to have a simple option and an advanced option, for example in rootfs
-modification let users add custom wallpaper easily and advanced users can
-upload a full roootfs.
+modification let users add custom wallpaper easily and advanced users to
+upload a full rootfs.
 
 Pizza has been coded from the beginning with gettext support. Please forget
 'echo' and use gettext, but remember that gettext "" is equivalent to echo -n.
