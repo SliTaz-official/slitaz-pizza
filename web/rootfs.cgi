@@ -15,48 +15,48 @@ export TEXTDOMAIN
 # Handle rootfs.* file upload.
 tarball_handler() {
 	echo "<pre>"
-	echo "File name : $tarball"
-	echo "File size : $size Bytes"
-	gettext "Moving rootfs tarball to slitaz-$id"
+	eval_gettext 'File name: $tarball'
+	eval_gettext 'File size: $size Bytes'
+	eval_gettext 'Moving rootfs tarball to slitaz-$id...'
 	upload=$tmpdir/slitaz-$id/upload-$$
 	mkdir -p $upload && cd $upload
 	mv $tmpname "$upload/$tarball" && rm -rf $(dirname $tmpname)
 	chmod a+r $upload/$tarball
 	status
-	
+
 	# Extract into the tmp upload dir.
-	gettext "Extracting archive for sanity checks..."
+	gettext 'Extracting archive for sanity checks...'
 	case "$tarball" in
 		*.tar.gz) tar xzf $tarball && status ;;
 		*.tar.bz2) tar xjf $tarball && status ;;
 		*.tar.lzma) tar xaf $tarball && status ;;
-		*) echo && error "Unsupported tarball format" && rm -rf $upload
+		*) echo; error 'Unsupported tarball format'; rm -rf $upload
 	esac
-	
-	# Upload dir is removed if bad tarball so we stop here. Now be a bit
+
+	# Upload dir is removed if bad tarball, so we stop here. Now be a bit
 	# restrictive using only rootfs as archive name and check FSH in root.
-	# Dont allow files in /dev /proc /sys /tmp /mnt
+	# Don't allow files in /dev /proc /sys /tmp /mnt
 	if [ -d "$upload/rootfs" ]; then
-		gettext "Checking Filesystem Standard..."
+		gettext 'Checking Filesystem Standard...'
 		for i in $(ls $upload/rootfs)
 		do
 			case "$i" in
 				bin|boot|etc|home|init|lib|root|sbin|usr|var) continue ;;
-				*) echo "Bad FSH path for: $i" && rm -rf $upload ;;
+				*) eval_gettext 'Bad FSH path for: $i'; rm -rf $upload ;;
 			esac
 		done && status
-		# Dont allow too big rootfs content.
+		# Don't allow too big rootfs content.
 		size=$(du -s $upload/rootfs | awk '{print $1}')
-		gettext "Checking uploaded rootfs size..."
+		gettext 'Checking uploaded rootfs size...'
 		if [ "$size" -lt "$MAX_UPLOAD" ]; then
 			status
 		else
-			echo && error "Tarball is too big"
+			echo; error 'Tarball is too big'
 			rm -rf $upload
 		fi
 	fi
 	
-	# So now it time to move the addfile to flavor files.
+	# So, now it time to move the addfile to flavor files.
 	if [ -d "$upload/rootfs" ]; then
 		echo "Additional rootfs: accepted" | tee -a $log
 		mkdir -p $tmpdir/slitaz-$id/rootfs
@@ -81,9 +81,9 @@ case " $(FILE) " in
 			mkdir -p $images
 			mv $tmpname $images/slitaz-background.jpg
 			chmod a+r $images/*.jpg
-			notify "$(gettext "Added image:") $wallpaper ($size Bytes)"
+			notify "$(eval_gettext 'Added image: $wallpaper ($size Bytes)')"
 		else
-			notify "$(gettext "Unsupported image format")" "error"
+			notify "$(gettext 'Unsupported image format')" "error"
 		fi ;;
 	*\ desktop\ *)
 		id="$(POST id)"
@@ -93,12 +93,12 @@ case " $(FILE) " in
 		path="$tmpdir/slitaz-$id/rootfs/etc/skel/Desktop"
 		mkdir -p $path
 		case "$file" in
-			*README*|*.desktop|*.html|*.png|*.jpg) 
+			*README*|*.desktop|*.html|*.png|*.jpg)
 				mv $tmpname $path/$file
 				chmod a+r $path/$file
-				notify "$(gettext "Added file:") $file ($size Bytes)" ;;
-			*) 
-				notify "$(gettext "Unsupported file type")" "error" ;;
+				notify "$(gettext 'Added file: $file ($size Bytes)')" ;;
+			*)
+				notify "$(gettext 'Unsupported file type')" "error" ;;
 		esac
 		;;
 	*\ tarball\ *)
@@ -113,7 +113,7 @@ esac
 
 if [ "$(POST fastboot)" != "" ]; then
 	echo "Fast boot conversion" >> $log
-	notify "$(gettext "Fast boot conversion")"
+	notify "$(gettext 'Fast boot conversion')"
 	mkdir -p $tmpdir/slitaz-$id/rootfs/etc/tazlito 2> /dev/null
 	# lzo decompression crash with 2.6.37...
 	false && cat > $tmpdir/slitaz-$id/rootfs/etc/tazlito/fastboot.iso <<EOT
@@ -132,7 +132,7 @@ fi
 
 if [ "$(POST loram)" != "none" ] && [ "$(POST loram)" != "" ]; then
 	echo "Low RAM conversion: $(POST loram)" >> $log
-	notify "$(gettext "Low RAM conversion:") $(POST loram)"
+	notify "$(gettext 'Low RAM conversion:') $(POST loram)"
 	mkdir -p $tmpdir/slitaz-$id/rootfs/etc/tazlito 2> /dev/null
 	rm -f $tmpdir/slitaz-$id/rootfs/etc/tazlito/fastboot.iso 2> /dev/null
 	cat > $tmpdir/slitaz-$id/rootfs/etc/tazlito/loram.final <<EOT
@@ -154,12 +154,12 @@ fi
 #
 . $tmpdir/slitaz-$id/receipt
 cat << EOT
-<h2>Rootfs</h2>
+<h2>RootFS</h2>
 <form method="post" action="rootfs.cgi" enctype="multipart/form-data">
 
 <p>
-	SliTaz root filesystem modification can be done via an easy to use form,
-	a single tarball or by uploading files one by one in the wanted directory.
+$(gettext "SliTaz root filesystem modification can be done via an easy to use form, \
+a single tarball or by uploading files one by one in the wanted directory.")
 </p>
 
 <h3>$(gettext "Easy customization")</h3>
@@ -173,11 +173,11 @@ $(gettext "Desktop Wallpaper in JPG format"):
 		<input type="file" name="wallpaper" size="48" />
 	</div>
 </div>
-<input type="submit" value="Upload Image" style="margin-left: 6px;" />
+<input type="submit" value="$(gettext 'Upload Image')" style="margin-left: 6px;" />
 
 <p>
-$(gettext "Files on user desktop such as README, desktop files or documentation.
-The files will be copied in the Home directory of each new user. SliTaz creates
+$(gettext "Files on user desktop such as README, desktop files or documentation. \
+The files will be copied in the Home directory of each new user. SliTaz creates \
 the default Live user at boot. Allowed files and extensions are:") README 
 .desktop .html .png .jpg:
 <p>
@@ -187,17 +187,17 @@ the default Live user at boot. Allowed files and extensions are:") README
 		<input type="file" name="desktop" size="48" />
 	</div>
 </div>
-<input type="submit" value="Upload File" style="margin-left: 6px;" />
+<input type="submit" value="$(gettext 'Upload File')" style="margin-left: 6px;" />
 
 
-<h3>$(gettext "Rootfs tarball")</h3>
+<h3>$(gettext "RootFS tarball")</h3>
 <p>
-	The files in the rootfs archive must have the same directory structure
-	as any standard SliTaz or Linux system. For example if you wish to
-	have a custom boot configuration file, you will have: rootfs/etc/rcS.conf.
-	Accepted tarball formats are: <strong>tar.gz tar.bz2 tar.lzma</strong>
-	and the archived directory must be named rootfs with a valid file system
-	hierachy such as: /usr/bin /etc /var/www
+$(gettext "The files in the rootfs archive must have the same directory structure \
+as any standard SliTaz or Linux system. For example if you wish to \
+have a custom boot configuration file, you will have: rootfs/etc/rcS.conf. \
+Accepted tarball formats are: <strong>tar.gz tar.bz2 tar.lzma</strong> \
+and the archived directory must be named rootfs with a valid file system \
+hierachy such as: /usr/bin /etc /var/www")
 </p>
 
 <div class="inputfile">
@@ -205,7 +205,7 @@ the default Live user at boot. Allowed files and extensions are:") README
 		<input type="file" name="tarball" size="48" />
 	</div>
 </div>
-<input type="submit" value="Upload rootfs" style="margin-left: 6px;" />
+<input type="submit" value="$(gettext 'Upload rootFS')" style="margin-left: 6px;" />
 
 <h3>$(gettext "ISO image conversion")</h3>
 
@@ -215,10 +215,10 @@ the default Live user at boot. Allowed files and extensions are:") README
 	<select name="loram">
 		<option value="none">$(gettext "No")</option>
 		<option value="ram">$(gettext "In RAM only")</option>
-		<option value="smallcdrom">$(gettext "Small CDROM or RAM")</option>
-		<option value="cdrom">$(gettext "Large CDROM or RAM")</option>
+		<option value="smallcdrom">$(gettext "Small CD-ROM or RAM")</option>
+		<option value="cdrom">$(gettext "Large CD-ROM or RAM")</option>
 	</select>
-	<input type="submit" value="Convert" />
+	<input type="submit" value="$(gettext 'Convert')" />
 
 <input type="hidden" name="id" value="$id" />
 </form>
@@ -226,14 +226,14 @@ the default Live user at boot. Allowed files and extensions are:") README
 $([ "$tarball" ] && tarball_handler)
 
 <pre>
-Uniq ID    : $id
-Flavor     : $FLAVOR
-Short desc : $SHORT_DESC
+$(gettext 'Uniq ID    :') $id
+$(gettext 'Flavor     :') $FLAVOR
+$(gettext 'Short desc :') $SHORT_DESC
 </pre>
 <div class="next">
 	<form method="get" action="./">
 		<input type="hidden" name="id" value="$id" />
-		<input type="submit" name="gen" value="$(gettext "Continue")">
+		<input type="submit" name="gen" value="$(gettext 'Continue')">
 	</form>
 </div>
 EOT

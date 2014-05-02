@@ -15,9 +15,9 @@ cat lib/header.html || exit 1
 # Status function.
 status() {
 	if [ $? = 0 ]; then
-		echo " <span class="span-ok">OK</span>"
+		echo ' <span class="span-ok">OK</span>'
 	else
-		echo " <span class="span-red">Failed</span>"
+		echo ' <span class="span-red">Failed</span>'
 	fi
 }
 
@@ -45,7 +45,7 @@ log() {
 
 # Usage: error string
 error() {
-	echo "<span class="span-red">ERROR: $@</span>"
+	echo "<span class=\"span-red\">ERROR: $@</span>"
 }
 
 # Pizza notification function: notify "message" "icon"

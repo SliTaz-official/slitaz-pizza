@@ -135,27 +135,27 @@ cat << EOT
 	</table>
 	</div>
 	<input type="hidden" name="id" value="$id" />
-	<input type="submit" name="rm" value="$(gettext "Remove package(s)")" />
+	<input type="submit" name="rm" value="$(gettext 'Remove package(s)')" />
 </form>
 
 <form method="get" action="pkgs.cgi">
 <div style="float: right;">
 	<input type="text" name="add" style="width: 400px;" />
 	<input type="hidden" name="id" value="$id" />
-	<input type="submit" name="pkgs" value="$(gettext "Add package(s)")" />
+	<input type="submit" name="pkgs" value="$(gettext 'Add package(s)')" />
 </div>
 </form>
 
 <form method="get" action="pkgs.cgi">
 <p>
 
-$(gettext "Here you can add or remove some packages to your flavor. You
+$(gettext "Here you can add or remove some packages to your flavor. You \
 can also search for a package name and description to find a package name")
 
 </p>
 	<input type="text" name="search" style="width: 300px;" />
 	<input type="hidden" name="id" value="$id" />
-	<input type="submit" value="$(gettext "Search")" />
+	<input type="submit" value="$(gettext 'Search')" />
 	<div id="pkgs-search">
 		$([ "$search" ] && search_pkgs)
 	</div>
@@ -170,7 +170,7 @@ Short desc : $SHORT_DESC
 <div class="next">
 	<form method="get" action="rootfs.cgi">
 		<input type="hidden" name="id" value="$id" />
-		<input type="submit" value="$(gettext "Continue")">
+		<input type="submit" value="$(gettext 'Continue')">
 	</form>
 </div>
 

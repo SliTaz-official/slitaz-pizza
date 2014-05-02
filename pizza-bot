@@ -2,9 +2,9 @@
 #
 # SliTaz Pizza chroot cmdline utility. This tool is designed to be run 
 # by cron and automatically build flavors in the queue. We build one ISO
-# at a time so we don't use too many resources.
+# at a time, so we don't use too many resources.
 #
-# Copyright (C) 2012 SliTaz GNU/Linux - GNU gpl v2
+# Copyright (C) 2012 SliTaz GNU/Linux - GNU GPL v2
 # Authors : Christophe Lincoln <pankso@slitaz.org>
 #			Eric Joseph-Alexandre <erjo@slitaz.org>
 #
@@ -150,7 +150,7 @@ case "$1" in
 		# Create an XML feed
 		gen_rss
 		
-		# We want a public packages list md5sum file and move ISO so users
+		# We want a public packages list md5sum file and move ISO, so users
 		# can download it. Keep original pkgs list and build a complete one.
 		cp -f $FLAVOR/packages.list $public/$name
 		cd $pizza/distro

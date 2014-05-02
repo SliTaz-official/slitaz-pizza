@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Pizza\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-01 20:02+0000\n"
+"POT-Creation-Date: 2014-05-02 16:31+0000\n"
 "PO-Revision-Date: 2012-07-10 19:30-0000\n"
 "Last-Translator: Emil Eklund <emileklund123@gmail.com>\n"
 "Language-Team: Swedish\n"
@@ -17,162 +17,168 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: web/pizza.cgi:67
+#: web/pizza.cgi:71
 msgid "First step"
 msgstr "Första steget"
 
-#: web/pizza.cgi:69
+#: web/pizza.cgi:73
 msgid ""
-"Choose your distribution name and the one you want to use as\n"
-"\tbase. We need your mail to notify you when your SliTaz Flavor is built \n"
-"\tand if anything goes wrong."
+"Choose your distribution name and the one you want to use as base. We need "
+"your mail to notify you when your SliTaz Flavor is built and if anything "
+"goes wrong."
 msgstr ""
-"Välj ditt distrobutions namn och den du vill använda som bas.\n"
-"\tVi behöver din mail för att meddela dig när din SliTaz smak är byggd\n"
-"\toch om något går fel."
+"Välj ditt distrobutions namn och den du vill använda som bas. Vi behöver din "
+"mail för att meddela dig när din SliTaz smak är byggd och om något går fel."
 
-#: web/pizza.cgi:77
+#: web/pizza.cgi:81
 msgid "Flavor name"
 msgstr "Smak namn"
 
-#: web/pizza.cgi:81
+#: web/pizza.cgi:85
 msgid "Short description"
 msgstr "Kort beskrivning"
 
-#: web/pizza.cgi:85
+#: web/pizza.cgi:89
 msgid "Email"
 msgstr "Email"
 
-#: web/pizza.cgi:89
+#: web/pizza.cgi:93
 msgid "Based on"
 msgstr "Baserad på"
 
-#: web/pizza.cgi:93
+#: web/pizza.cgi:97
 msgid "Text mode system"
 msgstr "Text-läges-system"
 
-#: web/pizza.cgi:95
+#: web/pizza.cgi:99
 msgid "X without GTK or QT"
 msgstr "X utan GTK eller QT"
 
-#: web/pizza.cgi:97
+#: web/pizza.cgi:101
 msgid "Clean GTK desktop"
 msgstr "Rent GTK skrivbord"
 
-#: web/pizza.cgi:99
+#: web/pizza.cgi:103
 msgid "Default SliTaz desktop"
 msgstr "Standard SliTaz skrivbord"
 
-#: web/pizza.cgi:110 web/pkgs.cgi:179
+#: web/pizza.cgi:114 web/pkgs.cgi:173 web/rootfs.cgi:236
 msgid "Continue"
 msgstr "Fortsätt"
 
-#: web/pizza.cgi:125
+#: web/pizza.cgi:129
 msgid "Generate"
 msgstr "Generera"
 
-#: web/pizza.cgi:127
+#: web/pizza.cgi:131
 msgid ""
-"Last chance to stop process or start over. Next step will pack\n"
-"your flavor and add it to the build queue. Here you can also add a note to\n"
-"your receipt flavor, this will be displayed on your flavor ID page and \n"
-"can be used to give more info to other users and SliTaz developers."
+"Last chance to stop process or start over. Next step will pack your flavor "
+"and add it to the build queue. Here you can also add a note to your receipt "
+"flavor, this will be displayed on your flavor ID page and can be used to "
+"give more info to other users and SliTaz developers."
 msgstr ""
-"Sista chansen att avbryta eller starta om. Sen kommer vi packa\n"
-"din smak och lägga till den till byggkön. Här kan du också lägga till en\n"
-"anteckning till din smaks recept, det kommer att visas på din smaks ID sida\n"
-"och kan användas till att ge info till andra användare och SliTaz utvecklare."
+"Sista chansen att avbryta eller starta om. Sen kommer vi packa din smak och "
+"lägga till den till byggkön. Här kan du också lägga till en anteckning till "
+"din smaks recept, det kommer att visas på din smaks ID sida och kan användas "
+"till att ge info till andra användare och SliTaz utvecklare."
 
-#: web/pizza.cgi:147
+#: web/pizza.cgi:151
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: web/pizza.cgi:150
+#: web/pizza.cgi:154
 msgid "Build flavor"
 msgstr "Bygg smak"
 
-#: web/pizza.cgi:157
-msgid "Removing temporary files for:"
-msgstr "Tar bort temporära filer för:"
-
 #: web/pizza.cgi:161
+#, sh-format
+msgid "Removing temporary files for: $id"
+msgstr "Tar bort temporära filer för: $id"
+
+#: web/pizza.cgi:165
 msgid "Start over"
 msgstr "Börja om"
 
-#: web/pizza.cgi:177
-msgid "Packing:"
-msgstr "Packar:"
+#: web/pizza.cgi:181
+#, sh-format
+msgid "Packing: $FLAVOR"
+msgstr "Packar: $FLAVOR"
 
-#: web/pizza.cgi:210
+#: web/pizza.cgi:193
+msgid "Creating SliTaz CD-ROM README..."
+msgstr ""
+
+#: web/pizza.cgi:200
+msgid "Creating flavor tarball..."
+msgstr ""
+
+#: web/pizza.cgi:215
 msgid "Your ISO will be built on next Pizza Bot run"
 msgstr "Din ISO kommer att byggas vid nästa Pizza Bot körning"
 
-#: web/pizza.cgi:212
+#: web/pizza.cgi:218
 #, sh-format
-msgid "There is $inqueue flavors in queue"
-msgstr "Det finns $inqueue smaker i kön"
+msgid "There is $inqueue flavor in queue"
+msgid_plural "There are $inqueue flavors in queue"
+msgstr[0] "Det finns $inqueue smaker i kön"
+msgstr[1] "Det finns $inqueue smaker i kön"
 
-#: web/pizza.cgi:220
-msgid "Download tarball: "
-msgstr "Ladda ner tarboll: "
-
-#: web/pizza.cgi:227
-msgid "Status"
-msgstr "Status"
-
-#: web/pizza.cgi:248
-msgid "Download ISO:"
-msgstr "Ladda ner ISO:"
-
-#: web/pizza.cgi:252
-msgid "Flavor is building or still in the build queue"
-msgstr "Din smak byggs eller är fortfarande i kö"
-
-#: web/pizza.cgi:260
-msgid "Status for:"
-msgstr "Status för:"
-
-#: web/pizza.cgi:262
-msgid "Flavor description:"
-msgstr "Smakbeskrivning"
-
-#: web/pizza.cgi:277
+#: web/pizza.cgi:227 web/pizza.cgi:284
 msgid "Download tarball:"
 msgstr "Ladda ner tarboll:"
 
-#: web/pizza.cgi:300
+#: web/pizza.cgi:234
+msgid "Status"
+msgstr "Status"
+
+#: web/pizza.cgi:255
+msgid "Download ISO:"
+msgstr "Ladda ner ISO:"
+
+#: web/pizza.cgi:259
+msgid "Flavor is building or still in the build queue"
+msgstr "Din smak byggs eller är fortfarande i kö"
+
+#: web/pizza.cgi:267
+#, sh-format
+msgid "Status for: $FLAVOR"
+msgstr "Status för: $FLAVOR"
+
+#: web/pizza.cgi:269
+msgid "Flavor description:"
+msgstr "Smakbeskrivning"
+
+#: web/pizza.cgi:307
 msgid "Help"
 msgstr "Hjälp"
 
-#: web/pizza.cgi:323 web/pizza.cgi:372
+#: web/pizza.cgi:330 web/pizza.cgi:379
 msgid "Activity"
 msgstr "Aktivitet"
 
-#: web/pizza.cgi:340
+#: web/pizza.cgi:347
 msgid "Welcome"
 msgstr "Välkommen"
 
-#: web/pizza.cgi:343
+#: web/pizza.cgi:350
 msgid ""
-"SliTaz Pizza lets you create your own SliTaz ISO flavor \n"
-"online. The ISO image can be burnt on a cdrom or installed on USB media. \n"
-"Please read the SliTaz Pizza <a href=?help>Help</a> before starting \n"
-"a new flavor."
+"SliTaz Pizza lets you create your own SliTaz ISO flavor online. The ISO "
+"image can be burnt on a cdrom or installed on USB media. Please read the "
+"SliTaz Pizza <a href=\"?help\">Help</a> before starting a new flavor."
 msgstr ""
-"SliTaz pizza låter dig skapa din egen Slitaz ISO smak online.\n"
-"ISO-bilden kan bli brännd på en CD-skriva eller installerad på ett USB-minne.\n"
-"Var god läs SliTaz Pizza <a href=?help>Hjälpen</a> innan du startar en\n"
-"ny smak."
+"SliTaz pizza låter dig skapa din egen Slitaz ISO smak online. ISO-bilden kan "
+"bli brännd på en CD-skriva eller installerad på ett USB-minne. Var god läs "
+"SliTaz Pizza <a href=\"?help\">Hjälpen</a> innan du startar en ny smak."
 
-#: web/pizza.cgi:353
+#: web/pizza.cgi:360
 msgid "Create a new flavor"
 msgstr "Skapa en ny smak"
 
-#: web/pizza.cgi:357
+#: web/pizza.cgi:364
 msgid "Latest builds"
 msgstr "Senaste byggena"
 
-#: web/pizza.cgi:376
+#: web/pizza.cgi:383
 msgid "More activity"
 msgstr "Mer aktivitet"
 
@@ -180,22 +186,171 @@ msgstr "Mer aktivitet"
 msgid "Creating receipt and packages list"
 msgstr "Skapar recept och paket lista"
 
-#: web/pkgs.cgi:144
+#: web/pkgs.cgi:138
 msgid "Remove package(s)"
 msgstr "Tar bort paket"
 
-#: web/pkgs.cgi:151
+#: web/pkgs.cgi:145
 msgid "Add package(s)"
 msgstr "Lägg till paket"
 
-#: web/pkgs.cgi:158
+#: web/pkgs.cgi:152
 msgid ""
-"Here you can add or remove some packages to your flavor. You\n"
-"can also search for a packages name and description to find a package name"
+"Here you can add or remove some packages to your flavor. You can also search "
+"for a package name and description to find a package name"
 msgstr ""
-"Här kan du lägga till eller ta bort några paket från din smak. Du\n"
-"kan också söka efter paketnamn och beskrivning för att hitta paket."
+"Här kan du lägga till eller ta bort några paket från din smak. Du kan också "
+"söka efter paketnamn och beskrivning för att hitta paket."
 
-#: web/pkgs.cgi:164
+#: web/pkgs.cgi:158
 msgid "Search"
 msgstr "Sök"
+
+#: web/rootfs.cgi:18
+#, sh-format
+msgid "File name: $tarball"
+msgstr ""
+
+#: web/rootfs.cgi:19
+#, sh-format
+msgid "File size: $size Bytes"
+msgstr ""
+
+#: web/rootfs.cgi:20
+#, sh-format
+msgid "Moving rootfs tarball to slitaz-$id..."
+msgstr ""
+
+#: web/rootfs.cgi:28
+msgid "Extracting archive for sanity checks..."
+msgstr ""
+
+#: web/rootfs.cgi:40
+msgid "Checking Filesystem Standard..."
+msgstr ""
+
+#: web/rootfs.cgi:45
+#, sh-format
+msgid "Bad FSH path for: $i"
+msgstr ""
+
+#: web/rootfs.cgi:50
+msgid "Checking uploaded rootfs size..."
+msgstr ""
+
+#: web/rootfs.cgi:84
+#, sh-format
+msgid "Added image: $wallpaper ($size Bytes)"
+msgstr ""
+
+#: web/rootfs.cgi:86
+msgid "Unsupported image format"
+msgstr ""
+
+#: web/rootfs.cgi:99
+#, sh-format
+msgid "Added file: $file ($size Bytes)"
+msgstr ""
+
+#: web/rootfs.cgi:101
+msgid "Unsupported file type"
+msgstr ""
+
+#: web/rootfs.cgi:116
+msgid "Fast boot conversion"
+msgstr ""
+
+#: web/rootfs.cgi:135
+msgid "Low RAM conversion:"
+msgstr ""
+
+#: web/rootfs.cgi:161
+msgid ""
+"SliTaz root filesystem modification can be done via an easy to use form, a "
+"single tarball or by uploading files one by one in the wanted directory."
+msgstr ""
+
+#: web/rootfs.cgi:165
+msgid "Easy customization"
+msgstr ""
+
+#: web/rootfs.cgi:168
+msgid "Desktop Wallpaper in JPG format"
+msgstr ""
+
+#: web/rootfs.cgi:176
+msgid "Upload Image"
+msgstr ""
+
+#: web/rootfs.cgi:179
+msgid ""
+"Files on user desktop such as README, desktop files or documentation. The "
+"files will be copied in the Home directory of each new user. SliTaz creates "
+"the default Live user at boot. Allowed files and extensions are:"
+msgstr ""
+
+#: web/rootfs.cgi:190
+msgid "Upload File"
+msgstr ""
+
+#: web/rootfs.cgi:193
+msgid "RootFS tarball"
+msgstr ""
+
+#: web/rootfs.cgi:195
+msgid ""
+"The files in the rootfs archive must have the same directory structure as "
+"any standard SliTaz or Linux system. For example if you wish to have a "
+"custom boot configuration file, you will have: rootfs/etc/rcS.conf. Accepted "
+"tarball formats are: <strong>tar.gz tar.bz2 tar.lzma</strong> and the "
+"archived directory must be named rootfs with a valid file system hierachy "
+"such as: /usr/bin /etc /var/www"
+msgstr ""
+
+#: web/rootfs.cgi:208
+msgid "Upload rootFS"
+msgstr ""
+
+#: web/rootfs.cgi:210
+msgid "ISO image conversion"
+msgstr ""
+
+#: web/rootfs.cgi:213
+msgid "Fast boot"
+msgstr ""
+
+#: web/rootfs.cgi:214
+msgid "Low RAM support"
+msgstr ""
+
+#: web/rootfs.cgi:216
+msgid "No"
+msgstr ""
+
+#: web/rootfs.cgi:217
+msgid "In RAM only"
+msgstr ""
+
+#: web/rootfs.cgi:218
+msgid "Small CD-ROM or RAM"
+msgstr ""
+
+#: web/rootfs.cgi:219
+msgid "Large CD-ROM or RAM"
+msgstr ""
+
+#: web/rootfs.cgi:221
+msgid "Convert"
+msgstr ""
+
+#: web/rootfs.cgi:229
+msgid "Uniq ID    :"
+msgstr ""
+
+#: web/rootfs.cgi:230
+msgid "Flavor     :"
+msgstr ""
+
+#: web/rootfs.cgi:231
+msgid "Short desc :"
+msgstr ""

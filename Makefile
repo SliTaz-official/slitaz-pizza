@@ -12,7 +12,7 @@ all:
 
 pot:
 	xgettext -o po/pizza.pot -L Shell --package-name="SliTaz Pizza" \
-		./web/pizza.cgi ./web/pkgs.cgi
+		./web/pizza.cgi ./web/pkgs.cgi ./web/rootfs.cgi
 
 msgmerge:
 	@for l in $(LINGUAS); do \
@@ -59,4 +59,4 @@ uninstall:
 clean:
 	rm -rf po/*~
 	rm -rf po/mo
-	
+	rm -rf po/*.mo

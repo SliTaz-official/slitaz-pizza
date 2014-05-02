@@ -70,9 +70,9 @@ case " $(GET) " in
 		cat << EOT
 <h2>$(gettext "First step")</h2>
 <p>
-	$(gettext "Choose your distribution name and the one you want to use as
-	base. We need your mail to notify you when your SliTaz Flavor is built 
-	and if anything goes wrong.")
+	$(gettext "Choose your distribution name and the one you want to use as \
+base. We need your mail to notify you when your SliTaz Flavor is built \
+and if anything goes wrong.")
 </p>
 <form method="get" action="pkgs.cgi" name="pizza" onsubmit="return checkForm();">
 <table>
@@ -111,7 +111,7 @@ Uniq ID : $id
 </pre>
 <div class="next">
 	<input type="hidden" name="id" value="$id" />
-	<input type="submit" value="$(gettext "Continue")">
+	<input type="submit" value="$(gettext 'Continue')">
 </div>
 </form>
 EOT
@@ -128,9 +128,9 @@ EOT
 		cat << EOT
 <h2>$(gettext "Generate")</h2>
 <p>
-$(gettext "Last chance to stop process or start over. Next step will pack
-your flavor and add it to the build queue. Here you can also add a note to
-your receipt flavor, this will be displayed on your flavor ID page and 
+	$(gettext "Last chance to stop process or start over. Next step will pack \
+your flavor and add it to the build queue. Here you can also add a note to \
+your receipt flavor, this will be displayed on your flavor ID page and \
 can be used to give more info to other users and SliTaz developers.")
 </p>
 
@@ -148,21 +148,21 @@ Addfiles   : $addfiles
 	<input type="text" name="note" style="width: 720px;" />
 </div>
 	<div class="next">
-		<input type="submit" name="cancel" value="$(gettext "Cancel")">
+		<input type="submit" name="cancel" value="$(gettext 'Cancel')">
 		<input type="hidden" name="addfiles" value="$addfiles" />
 		<input type="hidden" name="id" value="$id" />
-		<input type="submit" name="pack" value="$(gettext "Build flavor")">
+		<input type="submit" name="pack" value="$(gettext 'Build flavor')">
 	</div>
 </form>
 EOT
 		;;
 	*\ cancel\ *)
 		id="$(GET id)"
-		echo "<p>$(gettext "Removing temporary files for:") $id</p>" 
+		echo "<p>$(eval_gettext 'Removing temporary files for: $id')</p>"
 		[ -d "$tmpdir/slitaz-$id" ] && rm -rf $tmpdir/slitaz-$id/
 		cat << EOT
 <form method="get" action="./">
-	<input type="submit" name="start" value="$(gettext "Start over")">
+	<input type="submit" name="start" value="$(gettext 'Start over')">
 </form>
 EOT
 		;;
@@ -178,7 +178,7 @@ EOT
 		inqueue=$(ls $queue | wc -l)
 		. $receipt
 		cat << EOT
-<h2>$(gettext "Packing:") $FLAVOR</h2>
+<h2>$(gettext 'Packing: $FLAVOR')</h2>
 <pre>
 EOT
 		if ! fgrep ADDFILES $receipt; then
@@ -190,14 +190,14 @@ EOT
 		fi
 		
 		# The rootcd README
-		echo -n "Creating SliTaz cdrom README..."
+		gettext "Creating SliTaz CD-ROM README..."
 		date=$(date '+%Y-%m-%d %H:%M')
 		mkdir -p $tmpdir/slitaz-$id/rootcd
 		cp $DATA/README.distro $tmpdir/slitaz-$id/rootcd/README
 		sed -i s"/_DATE_/$date/" $tmpdir/slitaz-$id/rootcd/README
 		status
 		
-		echo -n "Creating flavor tarball..."
+		gettext "Creating flavor tarball..."
 		cd $tmpdir && tar cjf $FLAVOR.tar.bz2 slitaz-$id
 		mkdir -p $public/slitaz-$id
 		mv $FLAVOR.tar.bz2 $public/slitaz-$id
@@ -205,7 +205,7 @@ EOT
 		
 		# Keep a public receipt copy and move everything from tmp to queue.
 		echo "Flavor packed   : $(date '+%Y-%m-%d %H:%M')" | tee -a $log
-		echo -n "Moving $id to Pizza build queue..."
+		gettext "Moving $id to Pizza build queue..."
 		mv -f $tmpdir/slitaz-$id/distro.log $public/slitaz-$id
 		cp -f $tmpdir/slitaz-$id/receipt $public/slitaz-$id
 		mv $tmpdir/slitaz-$id $queue
@@ -214,7 +214,9 @@ EOT
 		if [ "$inqueue" == "1" ]; then
 			gettext "Your ISO will be built on next Pizza Bot run"
 		else
-			eval_gettext "There are \$inqueue flavors in queue"
+			eval_ngettext \
+				'There is $inqueue flavor in queue' \
+				'There are $inqueue flavors in queue' $inqueue
 		fi
 		echo ""
 		echo "New flavor added to queue: <a href='?id=$id'>$id</a> ($FLAVOR)" | log
@@ -222,14 +224,14 @@ EOT
 </pre>
 <div>
 	<img src="images/archive.png" alt="[ tarball ]" />
-	$(gettext "Download tarball: ")
+	$(gettext "Download tarball:")
 	<a href="public/slitaz-$id/$FLAVOR.tar.bz2">$FLAVOR.tar.bz2</a>
 	- Browse <a href="public/slitaz-$id/">the flavor</a>
 </div>
 <div class="next">
 	<form method="get" action="./">
 		<input type="hidden" name="id" value="$id" />
-		<input type="submit" value="$(gettext "Status")">
+		<input type="submit" value="$(gettext 'Status')">
 	</form>
 </div>
 EOT
@@ -243,18 +245,18 @@ EOT
 		[ -f "public/slitaz-$id/receipt" ] && . public/slitaz-$id/receipt
 		log="$public/slitaz-$id/distro.log"
 		if [ ! -d "public/slitaz-$id" ]; then
-			echo "Sorry, can't find flavor ID: $id"
+			gettext "Sorry, can't find flavor ID: $id"
 			cat lib/footer.html && exit 0
 		fi
 		if [ -f "$public/slitaz-$id/$FLAVOR.iso" ]; then
 			dir="public/slitaz-$id"
 			list="$dir/packages.list"
 			iso="$dir/$FLAVOR.iso"
-			msg="$(gettext "Download ISO:") <a href='$dir/$FLAVOR.iso'>$FLAVOR.iso</a>
-				[ <a href='$dir/$FLAVOR.md5'>md5</a> ]"
+			msg="$(gettext 'Download ISO:') <a href=\"$dir/$FLAVOR.iso\">$FLAVOR.iso</a>
+				[ <a href=\"$dir/$FLAVOR.md5\">md5</a> ]"
 		else
 			list="$queue/slitaz-$id/packages.list"
-			msg="$(gettext "Flavor is building or still in the build queue")"
+			msg="$(gettext 'Flavor is building or still in the build queue')"
 		fi
 		pkgslist=$(cat $list | wc -l)
 		pkgsinst=$(cat $installed | wc -l)
@@ -262,7 +264,7 @@ EOT
 		[ "$ISO_SIZE" ] || ISO_SIZE="N/A"
 		[ "$ROOTFS_SIZE" ] || ROOTFS_SIZE="N/A"
 		cat << EOT
-<h2>$(gettext "Status for:") $FLAVOR</h2>
+<h2>$(gettext 'Status for: $FLAVOR')</h2>
 <div>
 	$(get_gravatar $MAINTAINER) $(gettext "Flavor description:") $SHORT_DESC
 </div>
@@ -302,7 +304,7 @@ EOT
 			echo '</pre>'
 		fi ;;
 	*\ help\ *)
-		echo "<h2>$(gettext "Help")</h2>"
+		echo "<h2>$(gettext 'Help')</h2>"
 		cat /usr/share/doc/pizza/help.en.html
 		cat /usr/share/doc/pizza/faq.en.html
 		echo '<h3>README</h3>'
@@ -316,7 +318,7 @@ EOT
 		else
 			mounted="WARRNING: Public is not mounted"
 		fi
-		echo '<h2><img src="images/monitor.png" alt="" />Pizza Info</h2>'
+		echo '<h2><img src="images/monitor.png" alt="(i)" />Pizza Info</h2>'
 		echo '<pre>'
 		[ "$mounted" ] && echo "$mounted"
 		echo -n "Public flavors : " && ls -1 public | wc -l
@@ -345,9 +347,9 @@ EOT
 <h2>$(gettext "Welcome")</h2>
 <form method="get" action="./">
 <p>
-$(gettext "SliTaz Pizza lets you create your own SliTaz ISO flavor 
-online. The ISO image can be burnt on a cdrom or installed on USB media. 
-Please read the SliTaz Pizza <a href="?help">Help</a> before starting 
+	$(gettext "SliTaz Pizza lets you create your own SliTaz ISO flavor \
+online. The ISO image can be burnt on a cdrom or installed on USB media. \
+Please read the SliTaz Pizza <a href=\"?help\">Help</a> before starting \
 a new flavor.")
 </p>
 <pre>
@@ -355,11 +357,11 @@ Flavors: $inqueue in queue - $builds builds - $pubiso <a href="/public">public</
 </pre>
 
 <div class="start">
-		<input type="submit" name="start" value="$(gettext "Create a new flavor")">
+		<input type="submit" name="start" value="$(gettext 'Create a new flavor')">
 </div>
 
 EOT
-		echo "<h2>$(gettext "Latest builds")</h2>"
+		echo "<h2>$(gettext 'Latest builds')</h2>"
 		echo '<pre>'
 		for flavor in $(ls -1t public | head -n 5)
 		do
@@ -378,7 +380,7 @@ EOT
 <pre>
 $(tac $activity | head -n 12 | highlighter activity)
 </pre>
-	<input type="submit" name="activity" value="$(gettext "More activity")">
+	<input type="submit" name="activity" value="$(gettext 'More activity')">
 </form>
 EOT
 		;;
