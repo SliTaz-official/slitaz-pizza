@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: SliTaz Pizza\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-02 16:31+0000\n"
-"PO-Revision-Date: 2013-01-28 02:10-0300\n"
+"PO-Revision-Date: 2014-06-16 19:50-0300\n"
 "Last-Translator: Claudinei Pereira <claudinei@slitaz.org>\n"
 "Language-Team: Brazilian Portuguese <i18n@slitaz.org>\n"
 "Language: pt_BR\n"
@@ -107,11 +107,11 @@ msgstr "Comprimindo: $FLAVOR"
 
 #: web/pizza.cgi:193
 msgid "Creating SliTaz CD-ROM README..."
-msgstr ""
+msgstr "Criando arquivo README para o CD-ROM do SliTaz"
 
 #: web/pizza.cgi:200
 msgid "Creating flavor tarball..."
-msgstr ""
+msgstr "Criando tarball da variante..."
 
 #: web/pizza.cgi:215
 msgid "Your ISO will be built on next Pizza Bot run"
@@ -211,78 +211,80 @@ msgstr "Procurar"
 #: web/rootfs.cgi:18
 #, sh-format
 msgid "File name: $tarball"
-msgstr ""
+msgstr "Nome do arquivo: $tarball"
 
 #: web/rootfs.cgi:19
 #, sh-format
 msgid "File size: $size Bytes"
-msgstr ""
+msgstr "Tamanho do arquivo: $size bytes"
 
 #: web/rootfs.cgi:20
 #, sh-format
 msgid "Moving rootfs tarball to slitaz-$id..."
-msgstr ""
+msgstr "Movendo tarball contendo o rootfs para slitaz-$id..."
 
 #: web/rootfs.cgi:28
 msgid "Extracting archive for sanity checks..."
-msgstr ""
+msgstr "Extraindo o arquivo para teste..."
 
 #: web/rootfs.cgi:40
 msgid "Checking Filesystem Standard..."
-msgstr ""
+msgstr "Verificando padrões do sistema de arquivo..."
 
 #: web/rootfs.cgi:45
 #, sh-format
 msgid "Bad FSH path for: $i"
-msgstr ""
+msgstr "Caminho FSH incorreto para: $i"
 
 #: web/rootfs.cgi:50
 msgid "Checking uploaded rootfs size..."
-msgstr ""
+msgstr "Verificando tamanho do rootfs enviado..."
 
 #: web/rootfs.cgi:84
 #, sh-format
 msgid "Added image: $wallpaper ($size Bytes)"
-msgstr ""
+msgstr "Imagem adicionada: $wallpaper ($size bytes)"
 
 #: web/rootfs.cgi:86
 msgid "Unsupported image format"
-msgstr ""
+msgstr "Formato de imagem não suportado"
 
 #: web/rootfs.cgi:99
 #, sh-format
 msgid "Added file: $file ($size Bytes)"
-msgstr ""
+msgstr "Arquivo adicionado: $file ($size bytes)"
 
 #: web/rootfs.cgi:101
 msgid "Unsupported file type"
-msgstr ""
+msgstr "Formato de arquivo não suportado"
 
 #: web/rootfs.cgi:116
 msgid "Fast boot conversion"
-msgstr ""
+msgstr "Conversão para boot rápido"
 
 #: web/rootfs.cgi:135
 msgid "Low RAM conversion:"
-msgstr ""
+msgstr "Conversão para variante Low RAM:"
 
 #: web/rootfs.cgi:161
 msgid ""
 "SliTaz root filesystem modification can be done via an easy to use form, a "
 "single tarball or by uploading files one by one in the wanted directory."
 msgstr ""
+"Modificações no sistema de arquivos do SliTaz podem ser feitas pelo formulário"
+", arquivo tarball único ou enviando arquivos um a um no diretório desejado."
 
 #: web/rootfs.cgi:165
 msgid "Easy customization"
-msgstr ""
+msgstr "Customização simples"
 
 #: web/rootfs.cgi:168
 msgid "Desktop Wallpaper in JPG format"
-msgstr ""
+msgstr "Wallpaper da área de trabalho no formato JPG"
 
 #: web/rootfs.cgi:176
 msgid "Upload Image"
-msgstr ""
+msgstr "Enviar imagem"
 
 #: web/rootfs.cgi:179
 msgid ""
@@ -290,14 +292,17 @@ msgid ""
 "files will be copied in the Home directory of each new user. SliTaz creates "
 "the default Live user at boot. Allowed files and extensions are:"
 msgstr ""
+"Arquivos na área de trabalho do usuário, como README, ícones ou documentação. "
+"Serão copiados no diretório HOME de cada novo usuário. O SliTaz cria "
+"o usuário padrão durante o boot. Extensões de arquivo permitidas são:"
 
 #: web/rootfs.cgi:190
 msgid "Upload File"
-msgstr ""
+msgstr "Enfiar arquivo"
 
 #: web/rootfs.cgi:193
 msgid "RootFS tarball"
-msgstr ""
+msgstr "Tarball contendo o rootfs"
 
 #: web/rootfs.cgi:195
 msgid ""
@@ -308,51 +313,57 @@ msgid ""
 "archived directory must be named rootfs with a valid file system hierachy "
 "such as: /usr/bin /etc /var/www"
 msgstr ""
+"Os arquivos no rootfs devem possuir a mesma estrutura de arquivos convencionada "
+"para sistemas GNU/Linux. Por exemplo, o arquivo de configuração personalizado "
+"para boot deve se encontrar em: rootfs/etc/rcS.conf. Formatos de tarball aceitos "
+"são: <strong>tar.gz tar.bz2 tar.lzma</string>  e o diretório arquivado deve "
+"ser nomeado rootfs com uma estrutura de pastas válida abaixo dele, como "
+"/usr/bin /etc /var/www"
 
 #: web/rootfs.cgi:208
 msgid "Upload rootFS"
-msgstr ""
+msgstr "Enviar rootfs"
 
 #: web/rootfs.cgi:210
 msgid "ISO image conversion"
-msgstr ""
+msgstr "Conversão de imagem ISO"
 
 #: web/rootfs.cgi:213
 msgid "Fast boot"
-msgstr ""
+msgstr "Boot rápido"
 
 #: web/rootfs.cgi:214
 msgid "Low RAM support"
-msgstr ""
+msgstr "Suporte a Low RAM"
 
 #: web/rootfs.cgi:216
 msgid "No"
-msgstr ""
+msgstr "Não"
 
 #: web/rootfs.cgi:217
 msgid "In RAM only"
-msgstr ""
+msgstr "Somente na RAM"
 
 #: web/rootfs.cgi:218
 msgid "Small CD-ROM or RAM"
-msgstr ""
+msgstr "RAM ou CD-ROM pequenas"
 
 #: web/rootfs.cgi:219
 msgid "Large CD-ROM or RAM"
-msgstr ""
+msgstr "RAM ou CD-ROM grandes"
 
 #: web/rootfs.cgi:221
 msgid "Convert"
-msgstr ""
+msgstr "Converter"
 
 #: web/rootfs.cgi:229
 msgid "Uniq ID    :"
-msgstr ""
+msgstr "ID único  :"
 
 #: web/rootfs.cgi:230
 msgid "Flavor     :"
-msgstr ""
+msgstr "Variante  :"
 
 #: web/rootfs.cgi:231
 msgid "Short desc :"
-msgstr ""
+msgstr "Descrição :"
