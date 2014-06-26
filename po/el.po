@@ -1,6 +1,6 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Greek translations for SliTaz Pizza package.
+# Copyright (C) 2014 SliTaz
+# This file is distributed under the same license as the SliTaz Pizza package.
 # Constantine Mousafiris <kvisitor@gnugr.org>, 2012.
 msgid ""
 msgstr ""
