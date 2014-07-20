@@ -1,0 +1,361 @@
+# Simplified Chinese translations for slitaz-pizza package.
+# Copyright (C) 2014 Slitaz Association
+# This file is distributed under the same license as the slitaz-pizza package.
+# Rhsky <rhsky@qq.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SliTaz Pizza\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-02 16:31+0000\n"
+"PO-Revision-Date: 2014-07-20 16:52+0800\n"
+"Last-Translator: rhsky <rhsky@qq.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.6.5\n"
+"Language: zh_CN\n"
+
+#: web/pizza.cgi:71
+msgid "First step"
+msgstr "第一步"
+
+#: web/pizza.cgi:73
+msgid ""
+"Choose your distribution name and the one you want to use as base. We need "
+"your mail to notify you when your SliTaz Flavor is built and if anything "
+"goes wrong."
+msgstr ""
+"选择你的发行名称和你使用的系统基础。我们需要你的邮箱，以方便当你的 SliTaz 版"
+"本编译完或出错时通知你。"
+
+#: web/pizza.cgi:81
+msgid "Flavor name"
+msgstr "版本名称"
+
+#: web/pizza.cgi:85
+msgid "Short description"
+msgstr "简要描述"
+
+#: web/pizza.cgi:89
+msgid "Email"
+msgstr "邮箱"
+
+#: web/pizza.cgi:93
+msgid "Based on"
+msgstr "基于"
+
+#: web/pizza.cgi:97
+msgid "Text mode system"
+msgstr "文本模式系统"
+
+#: web/pizza.cgi:99
+msgid "X without GTK or QT"
+msgstr "X 界面无 GTK 或 QT"
+
+#: web/pizza.cgi:101
+msgid "Clean GTK desktop"
+msgstr "干净的 GTK 桌面"
+
+#: web/pizza.cgi:103
+msgid "Default SliTaz desktop"
+msgstr "默认 SliTaz 桌面"
+
+#: web/pizza.cgi:114 web/pkgs.cgi:173 web/rootfs.cgi:236
+msgid "Continue"
+msgstr "继续"
+
+#: web/pizza.cgi:129
+msgid "Generate"
+msgstr "生成"
+
+#: web/pizza.cgi:131
+msgid ""
+"Last chance to stop process or start over. Next step will pack your flavor "
+"and add it to the build queue. Here you can also add a note to your receipt "
+"flavor, this will be displayed on your flavor ID page and can be used to "
+"give more info to other users and SliTaz developers."
+msgstr ""
+"最后终止或重新开始的机会、下一步会打包你的版本，并把它添加到编译队列中。在这"
+"里你也可以添加注释到你的发行包，它会显示在你的发行版本页面，这可以提供给其他"
+"用户和开发者更多的信息。"
+
+#: web/pizza.cgi:151
+msgid "Cancel"
+msgstr "取消"
+
+#: web/pizza.cgi:154
+msgid "Build flavor"
+msgstr "编译版本"
+
+#: web/pizza.cgi:161
+#, sh-format
+msgid "Removing temporary files for: $id"
+msgstr "移除  $id  的临时文件"
+
+#: web/pizza.cgi:165
+msgid "Start over"
+msgstr "重新开始"
+
+#: web/pizza.cgi:181
+#, sh-format
+msgid "Packing: $FLAVOR"
+msgstr "打包 $FLAVOR"
+
+#: web/pizza.cgi:193
+msgid "Creating SliTaz CD-ROM README..."
+msgstr "创建 SliTaz CD 镜像 自述文件……"
+
+#: web/pizza.cgi:200
+msgid "Creating flavor tarball..."
+msgstr "创建发行包……"
+
+#: web/pizza.cgi:215
+msgid "Your ISO will be built on next Pizza Bot run"
+msgstr "下一次 Pizza 运行时，你的镜像会自动编译。"
+
+#: web/pizza.cgi:218
+#, sh-format
+msgid "There is $inqueue flavor in queue"
+msgid_plural "There are $inqueue flavors in queue"
+msgstr[0] "队列中有  $inqueue 个发行包。"
+
+#: web/pizza.cgi:227 web/pizza.cgi:284
+msgid "Download tarball:"
+msgstr "下载包："
+
+#: web/pizza.cgi:234
+msgid "Status"
+msgstr "状态"
+
+#: web/pizza.cgi:255
+msgid "Download ISO:"
+msgstr "下载镜像："
+
+#: web/pizza.cgi:259
+msgid "Flavor is building or still in the build queue"
+msgstr "发行包正在编译或仍然在编译队列中"
+
+#: web/pizza.cgi:267
+#, sh-format
+msgid "Status for: $FLAVOR"
+msgstr "$FLAVOR 的状态"
+
+#: web/pizza.cgi:269
+msgid "Flavor description:"
+msgstr "发行包描述："
+
+#: web/pizza.cgi:307
+msgid "Help"
+msgstr "帮助"
+
+#: web/pizza.cgi:330 web/pizza.cgi:379
+msgid "Activity"
+msgstr "活动"
+
+#: web/pizza.cgi:347
+msgid "Welcome"
+msgstr "欢迎"
+
+#: web/pizza.cgi:350
+msgid ""
+"SliTaz Pizza lets you create your own SliTaz ISO flavor online. The ISO "
+"image can be burnt on a cdrom or installed on USB media. Please read the "
+"SliTaz Pizza <a href=\"?help\">Help</a> before starting a new flavor."
+msgstr ""
+"SliTaz Pizza 允许你在线创建你自己的发行版本。镜像文件可以烧录到光盘或安装到 "
+"USB 媒介中。开始创建新的发行版本钱请阅读 Pizza <a href=\"?help\"> 帮助 </"
+"a> 。"
+
+#: web/pizza.cgi:360
+msgid "Create a new flavor"
+msgstr "创建新的发行包"
+
+#: web/pizza.cgi:364
+msgid "Latest builds"
+msgstr "最近的编译"
+
+#: web/pizza.cgi:383
+msgid "More activity"
+msgstr "更多活动"
+
+#: web/pkgs.cgi:109
+msgid "Creating receipt and packages list"
+msgstr "创建 回执和软件包列表"
+
+#: web/pkgs.cgi:138
+msgid "Remove package(s)"
+msgstr "移除软件"
+
+#: web/pkgs.cgi:145
+msgid "Add package(s)"
+msgstr "添加软件"
+
+#: web/pkgs.cgi:152
+msgid ""
+"Here you can add or remove some packages to your flavor. You can also search "
+"for a package name and description to find a package name"
+msgstr ""
+"在这你可以添加或删除软件包。你也可以搜索软件包名字和描述来找到一个软件包名"
+"称。"
+
+#: web/pkgs.cgi:158
+msgid "Search"
+msgstr "搜索"
+
+#: web/rootfs.cgi:18
+#, sh-format
+msgid "File name: $tarball"
+msgstr "文件名称： $tarball"
+
+#: web/rootfs.cgi:19
+#, sh-format
+msgid "File size: $size Bytes"
+msgstr "文件大小： $size "
+
+#: web/rootfs.cgi:20
+#, sh-format
+msgid "Moving rootfs tarball to slitaz-$id..."
+msgstr "移动根文件到  slitaz-$id ……"
+
+#: web/rootfs.cgi:28
+msgid "Extracting archive for sanity checks..."
+msgstr "提取文档验证……"
+
+#: web/rootfs.cgi:40
+msgid "Checking Filesystem Standard..."
+msgstr "检查文件系统标准……"
+
+#: web/rootfs.cgi:45
+#, sh-format
+msgid "Bad FSH path for: $i"
+msgstr "损坏的文件 路径 ： $i"
+
+#: web/rootfs.cgi:50
+msgid "Checking uploaded rootfs size..."
+msgstr "检查上传文件大小……"
+
+#: web/rootfs.cgi:84
+#, sh-format
+msgid "Added image: $wallpaper ($size Bytes)"
+msgstr "添加的图片： $wallpaper ($size Bytes)"
+
+#: web/rootfs.cgi:86
+msgid "Unsupported image format"
+msgstr "不支持的图像格式"
+
+#: web/rootfs.cgi:99
+#, sh-format
+msgid "Added file: $file ($size Bytes)"
+msgstr "添加的文件： $file ($size Bytes)"
+
+#: web/rootfs.cgi:101
+msgid "Unsupported file type"
+msgstr "不支持的文件类型"
+
+#: web/rootfs.cgi:116
+msgid "Fast boot conversion"
+msgstr "快速转换"
+
+#: web/rootfs.cgi:135
+msgid "Low RAM conversion:"
+msgstr "低内存占用转换 ："
+
+#: web/rootfs.cgi:161
+msgid ""
+"SliTaz root filesystem modification can be done via an easy to use form, a "
+"single tarball or by uploading files one by one in the wanted directory."
+msgstr "SliTaz 根文件系统更改可以通过简单地上传文件到想要的目录实现。"
+
+#: web/rootfs.cgi:165
+msgid "Easy customization"
+msgstr "简单定制"
+
+#: web/rootfs.cgi:168
+msgid "Desktop Wallpaper in JPG format"
+msgstr "JPG 格式桌面壁纸"
+
+#: web/rootfs.cgi:176
+msgid "Upload Image"
+msgstr "上传的图像"
+
+#: web/rootfs.cgi:179
+msgid ""
+"Files on user desktop such as README, desktop files or documentation. The "
+"files will be copied in the Home directory of each new user. SliTaz creates "
+"the default Live user at boot. Allowed files and extensions are:"
+msgstr ""
+"用户桌面的文件如自述文件、桌面文档都会复制到每一个新用户的 Home 目录下。"
+"SliTaz启动时创建了默认的即时账户。允许的文件和文件扩展："
+
+#: web/rootfs.cgi:190
+msgid "Upload File"
+msgstr "上传的文件"
+
+#: web/rootfs.cgi:193
+msgid "RootFS tarball"
+msgstr "根文件系统"
+
+#: web/rootfs.cgi:195
+msgid ""
+"The files in the rootfs archive must have the same directory structure as "
+"any standard SliTaz or Linux system. For example if you wish to have a "
+"custom boot configuration file, you will have: rootfs/etc/rcS.conf. Accepted "
+"tarball formats are: <strong>tar.gz tar.bz2 tar.lzma</strong> and the "
+"archived directory must be named rootfs with a valid file system hierachy "
+"such as: /usr/bin /etc /var/www"
+msgstr ""
+"根文件系统的文件必须和标准的 SliTaz 或其它 Linux 系统一样的目录结构。例如，你"
+"想配置一个启动配置文件，你必须在： rootfs/etc/rcS.conf  。允许的包格式是："
+"<strong>tar.gz tar.bz2 tar.lzma</strong>  ，文件目录必须命名成有效地文件系统"
+"层次如 /usr/bin /etc /var/www 。"
+
+#: web/rootfs.cgi:208
+msgid "Upload rootFS"
+msgstr "上传的根文件系统"
+
+#: web/rootfs.cgi:210
+msgid "ISO image conversion"
+msgstr "镜像转换"
+
+#: web/rootfs.cgi:213
+msgid "Fast boot"
+msgstr "快速启动"
+
+#: web/rootfs.cgi:214
+msgid "Low RAM support"
+msgstr "低内存支持"
+
+#: web/rootfs.cgi:216
+msgid "No"
+msgstr "否"
+
+#: web/rootfs.cgi:217
+msgid "In RAM only"
+msgstr "仅限内存"
+
+#: web/rootfs.cgi:218
+msgid "Small CD-ROM or RAM"
+msgstr "小容量光盘或内存"
+
+#: web/rootfs.cgi:219
+msgid "Large CD-ROM or RAM"
+msgstr "大容量光盘或内存"
+
+#: web/rootfs.cgi:221
+msgid "Convert"
+msgstr "转换"
+
+#: web/rootfs.cgi:229
+msgid "Uniq ID    :"
+msgstr "唯一的用户名："
+
+#: web/rootfs.cgi:230
+msgid "Flavor     :"
+msgstr "发行版本："
+
+#: web/rootfs.cgi:231
+msgid "Short desc :"
+msgstr "简要描述"
