@@ -27,8 +27,8 @@ msgid ""
 "your mail to notify you when your SliTaz Flavor is built and if anything "
 "goes wrong."
 msgstr ""
-"Veuillez choisir le nom de votre distribution et la version sur laquellevous "
-"voulez vous baser. Nous avons besoin de votre adresse email pour vousavertir "
+"Veuillez choisir le nom de votre distribution et la version sur laquelle vous "
+"voulez vous baser. Nous avons besoin de votre adresse email pour vous avertir "
 "quand votre ISO sera construite ou en cas de problèmes."
 
 #: web/pizza.cgi:81
@@ -37,7 +37,7 @@ msgstr "Nom de la saveur"
 
 #: web/pizza.cgi:85
 msgid "Short description"
-msgstr "Petite description:"
+msgstr "Petite description :"
 
 #: web/pizza.cgi:89
 msgid "Email"
@@ -49,7 +49,7 @@ msgstr "Basé sur"
 
 #: web/pizza.cgi:97
 msgid "Text mode system"
-msgstr "Système en mode text"
+msgstr "Système en mode texte"
 
 #: web/pizza.cgi:99
 msgid "X without GTK or QT"
@@ -78,11 +78,11 @@ msgid ""
 "flavor, this will be displayed on your flavor ID page and can be used to "
 "give more info to other users and SliTaz developers."
 msgstr ""
-"Dernier chance d'arrête le processus. La prochaine étape sera d'empaqueter "
-"votre saveur et de l'ajouter à la file de construction.Ici, vous pouvez "
-"également ajouter une courte note sur la recette de votre saveur,elle sera "
+"Dernière chance d'arrêter le processus. La prochaine étape sera d'empaqueter "
+"votre saveur et de l'ajouter à la file de construction. Ici, vous pouvez "
+"également ajouter une courte note sur la recette de votre saveur, elle sera "
 "visible sur la page de votre saveur, et pourra être utilisé pour que les "
-"utilisateurs et les développeurs SliTaz,aient plus d'information sur votre "
+"utilisateurs et les développeurs SliTaz aient plus d'information sur votre "
 "saveur."
 
 #: web/pizza.cgi:151
@@ -96,7 +96,7 @@ msgstr "Construire la saveur"
 #: web/pizza.cgi:161
 #, sh-format
 msgid "Removing temporary files for: $id"
-msgstr "Suppression des fichiers temporaires pour: $id"
+msgstr "Suppression des fichiers temporaires pour : $id"
 
 #: web/pizza.cgi:165
 msgid "Start over"
@@ -105,15 +105,15 @@ msgstr "Recommencer"
 #: web/pizza.cgi:181
 #, sh-format
 msgid "Packing: $FLAVOR"
-msgstr "Empaquetage de: $FLAVOR"
+msgstr "Empaquetage de : $FLAVOR"
 
 #: web/pizza.cgi:193
 msgid "Creating SliTaz CD-ROM README..."
-msgstr ""
+msgstr "Création du fichier README du CD-ROM SliTaz..."
 
 #: web/pizza.cgi:200
 msgid "Creating flavor tarball..."
-msgstr ""
+msgstr "Création de l'archive de la saveur..."
 
 #: web/pizza.cgi:215
 msgid "Your ISO will be built on next Pizza Bot run"
@@ -123,12 +123,12 @@ msgstr "Votre ISO sera construite à la prochaine exécution du Bot Pizza"
 #, sh-format
 msgid "There is $inqueue flavor in queue"
 msgid_plural "There are $inqueue flavors in queue"
-msgstr[0] "Il y a $inqueue saveur dans la queu"
-msgstr[1] "Il y a $inqueue saveurs dans la queu"
+msgstr[0] "Il y a $inqueue saveur dans la liste d'attente"
+msgstr[1] "Il y a $inqueue saveurs dans la liste d'attente"
 
 #: web/pizza.cgi:227 web/pizza.cgi:284
 msgid "Download tarball:"
-msgstr "Télécharger une archive:"
+msgstr "Télécharger une archive :"
 
 #: web/pizza.cgi:234
 msgid "Status"
@@ -136,7 +136,7 @@ msgstr "Status"
 
 #: web/pizza.cgi:255
 msgid "Download ISO:"
-msgstr "Télécharger l'ISO:"
+msgstr "Télécharger l'ISO :"
 
 #: web/pizza.cgi:259
 msgid "Flavor is building or still in the build queue"
@@ -145,11 +145,11 @@ msgstr "La saveur est en construction ou toujours dans la liste d'attente"
 #: web/pizza.cgi:267
 #, sh-format
 msgid "Status for: $FLAVOR"
-msgstr "Status pour: $FLAVOR"
+msgstr "Status pour : $FLAVOR"
 
 #: web/pizza.cgi:269
 msgid "Flavor description:"
-msgstr "Description:"
+msgstr "Description :"
 
 #: web/pizza.cgi:307
 msgid "Help"
@@ -213,78 +213,81 @@ msgstr "Rechecher"
 #: web/rootfs.cgi:18
 #, sh-format
 msgid "File name: $tarball"
-msgstr ""
+msgstr "Fichier : $tarball"
 
 #: web/rootfs.cgi:19
 #, sh-format
 msgid "File size: $size Bytes"
-msgstr ""
+msgstr "Taille : $size octets"
 
 #: web/rootfs.cgi:20
 #, sh-format
 msgid "Moving rootfs tarball to slitaz-$id..."
-msgstr ""
+msgstr "Place d'archve rootfs dans slitaz-$id..."
 
 #: web/rootfs.cgi:28
 msgid "Extracting archive for sanity checks..."
-msgstr ""
+msgstr "Inspection de l'archive..."
 
 #: web/rootfs.cgi:40
 msgid "Checking Filesystem Standard..."
-msgstr ""
+msgstr "Vérifie d'arborescence..."
 
 #: web/rootfs.cgi:45
 #, sh-format
 msgid "Bad FSH path for: $i"
-msgstr ""
+msgstr "Mauvais chemin FSH pour : $i"
 
 #: web/rootfs.cgi:50
 msgid "Checking uploaded rootfs size..."
-msgstr ""
+msgstr "Vérifie la taille du rootfs envoyé..."
 
 #: web/rootfs.cgi:84
 #, sh-format
 msgid "Added image: $wallpaper ($size Bytes)"
-msgstr ""
+msgstr "Ajoute l'image : $wallpaper ($size octets)"
 
 #: web/rootfs.cgi:86
 msgid "Unsupported image format"
-msgstr ""
+msgstr "Format d'image inconnu"
 
 #: web/rootfs.cgi:99
 #, sh-format
 msgid "Added file: $file ($size Bytes)"
-msgstr ""
+msgstr "Ajoute le fichier : $file ($size octets)"
 
 #: web/rootfs.cgi:101
 msgid "Unsupported file type"
-msgstr ""
+msgstr "Type de fichier inconnu"
 
 #: web/rootfs.cgi:116
 msgid "Fast boot conversion"
-msgstr ""
+msgstr "Activer le démarrage rapide"
 
 #: web/rootfs.cgi:135
 msgid "Low RAM conversion:"
-msgstr ""
+msgstr "Conversion pour utiliser peu de RAM"
 
 #: web/rootfs.cgi:161
 msgid ""
 "SliTaz root filesystem modification can be done via an easy to use form, a "
 "single tarball or by uploading files one by one in the wanted directory."
 msgstr ""
+"La mofication du système de fichiers racine SliTaz peut être faite "
+"facilement avec une simple archive ou envoyant les fichiers un par un dans "
+"le répertoire voulu."
 
 #: web/rootfs.cgi:165
 msgid "Easy customization"
-msgstr ""
+msgstr "Personnalisation facile"
 
 #: web/rootfs.cgi:168
 msgid "Desktop Wallpaper in JPG format"
-msgstr ""
+msgstr "Fond d'écran au format JPG"
 
 #: web/rootfs.cgi:176
 msgid "Upload Image"
-msgstr ""
+msgstr "Envoi l'image"
 
 #: web/rootfs.cgi:179
 msgid ""
@@ -292,14 +295,18 @@ msgid ""
 "files will be copied in the Home directory of each new user. SliTaz creates "
 "the default Live user at boot. Allowed files and extensions are:"
 msgstr ""
+"Fichiers du bureau comme README ou la documentation. Les fichiers seront "
+"copiées dans le répertoire personnel de chaque nouvel utilisateur. "
+"SliTaz va créer l'utilisateur par défaut au démarrage. Les fichiers et "
+"extensions possibles sont :"
 
 #: web/rootfs.cgi:190
 msgid "Upload File"
-msgstr ""
+msgstr "Envoi le fichier"
 
 #: web/rootfs.cgi:193
 msgid "RootFS tarball"
-msgstr ""
+msgstr "Archive RootFS"
 
 #: web/rootfs.cgi:195
 msgid ""
@@ -310,50 +317,57 @@ msgid ""
 "archived directory must be named rootfs with a valid file system hierachy "
 "such as: /usr/bin /etc /var/www"
 msgstr ""
+"Les fichiers dans l'archive du rootfs doivent voir la même structure de "
+"répertoires que d'une SliTaz standard ou qu'un syst!eme Linux. Par exemple, "
+"si vous voulez avoir un fichier de configuration de démarrage personnalisé, "
+"vous aurez: rootfs/etc/rcS.conf. Types d'archives acceptés :"
+"<strong>tar.gz tar.bz2 tar.lzma</strong> et la racine de l'archive doit "
+"s'appeller rootfs avec une structure de répertoires valide comme: "
+"/usr/bin /etc /var/www"
 
 #: web/rootfs.cgi:208
 msgid "Upload rootFS"
-msgstr ""
+msgstr "Envoi du rootFS"
 
 #: web/rootfs.cgi:210
 msgid "ISO image conversion"
-msgstr ""
+msgstr "Conversion de l'image ISO"
 
 #: web/rootfs.cgi:213
 msgid "Fast boot"
-msgstr ""
+msgstr "Démarrage rapide"
 
 #: web/rootfs.cgi:214
 msgid "Low RAM support"
-msgstr ""
+msgstr "Utiliser peu de RAM"
 
 #: web/rootfs.cgi:216
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 #: web/rootfs.cgi:217
 msgid "In RAM only"
-msgstr ""
+msgstr "En RAM uniquement"
 
 #: web/rootfs.cgi:218
 msgid "Small CD-ROM or RAM"
-msgstr ""
+msgstr "CR-ROM ou RAM restreint"
 
 #: web/rootfs.cgi:219
 msgid "Large CD-ROM or RAM"
-msgstr ""
+msgstr "CR-ROM ou RAM consequent"
 
 #: web/rootfs.cgi:221
 msgid "Convert"
-msgstr ""
+msgstr "Convertir"
 
 #: web/rootfs.cgi:229
 msgid "Uniq ID    :"
-msgstr ""
+msgstr "ID unique :"
 
 #: web/rootfs.cgi:230
 msgid "Flavor     :"
-msgstr ""
+msgstr "Saveur    :"
 
 #: web/rootfs.cgi:231
 msgid "Short desc :"
