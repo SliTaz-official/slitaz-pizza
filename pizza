@@ -232,9 +232,9 @@ case "$1" in
 		# TODO: Improve and use configs from pizza.conf
 		echo "Purging temporary files and old flavors" | log
 		echo "Purging tmp files..."
-		find $tmp -mtime +1 | xargs rm -rf
+		find $tmp -mtime +1 -print0 | xargs -0 rm -rf
 		echo "Purging ISO's..."
-		find $public -mtime +15 | xargs rm -rf
+		find $public -mtime +15 -print0 | xargs -0 rm -rf
 		;;
 	clean)
 		# Clean all chroot.
