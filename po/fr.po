@@ -61,7 +61,7 @@ msgstr "Bureau légé avec GTK"
 
 #: web/pizza.cgi:103
 msgid "Default SliTaz desktop"
-msgstr "Le bureau Slitaz"
+msgstr "Le bureau SliTaz"
 
 #: web/pizza.cgi:114 web/pkgs.cgi:173 web/rootfs.cgi:236
 msgid "Continue"

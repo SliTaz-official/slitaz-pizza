@@ -166,7 +166,7 @@ msgid ""
 "image can be burnt on a cdrom or installed on USB media. Please read the "
 "SliTaz Pizza <a href=\"?help\">Help</a> before starting a new flavor."
 msgstr ""
-"SliTaz pizza låter dig skapa din egen Slitaz ISO smak online. ISO-bilden kan "
+"SliTaz pizza låter dig skapa din egen SliTaz ISO smak online. ISO-bilden kan "
 "bli brännd på en CD-skriva eller installerad på ett USB-minne. Var god läs "
 "SliTaz Pizza <a href=\"?help\">Hjälpen</a> innan du startar en ny smak."
 
