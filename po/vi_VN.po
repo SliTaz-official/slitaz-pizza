@@ -1,0 +1,366 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SliTaz Pizza\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-02 16:31+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;\n"
+"Language-Team: LANGUAGE &lt;LL@li.org&gt;\n"
+"Language: Vietnam\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: web/pizza.cgi:71
+msgid "First step"
+msgstr "Bước đầu tiên"
+
+#: web/pizza.cgi:73
+msgid ""
+"Choose your distribution name and the one you want to use as base. We need "
+"your mail to notify you when your SliTaz Flavor is built and if anything "
+"goes wrong."
+msgstr ""
+"Chọn tên phân phối của bạn và cái bạn muốn sử dụng như là cơ sở. Chúng ta cần "
+"mail của bạn để thông báo cho bạn khi Flavor SliTaz của bạn được xây dựng và "
+"nếu bất cứ điều gì sai xảy ra."
+
+#: web/pizza.cgi:81
+msgid "Flavor name"
+msgstr "Tên Flavor"
+
+#: web/pizza.cgi:85
+msgid "Short description"
+msgstr "Miêu tả ngắn"
+
+#: web/pizza.cgi:89
+msgid "Email"
+msgstr ""
+
+#: web/pizza.cgi:93
+msgid "Based on"
+msgstr "Cơ bản từ"
+
+#: web/pizza.cgi:97
+msgid "Text mode system"
+msgstr "Hệ thống chế độ chữ"
+
+#: web/pizza.cgi:99
+msgid "X không GTK hoặc QT"
+msgstr ""
+
+#: web/pizza.cgi:101
+msgid "Clean GTK desktop"
+msgstr "Desktop GTK sạch"
+
+#: web/pizza.cgi:103
+msgid "Default SliTaz desktop"
+msgstr "Desktop SliTaz mặc định"
+
+#: web/pizza.cgi:114 web/pkgs.cgi:173 web/rootfs.cgi:236
+msgid "Continue"
+msgstr "Tiếp tục"
+
+#: web/pizza.cgi:129
+msgid "Tạo ra"
+msgstr ""
+
+#: web/pizza.cgi:131
+msgid ""
+"Last chance to stop process or start over. Next step will pack your flavor "
+"and add it to the build queue. Here you can also add a note to your receipt "
+"flavor, this will be displayed on your flavor ID page and can be used to "
+"give more info to other users and SliTaz developers."
+msgstr ""
+"Cuối cùng để ngăn chặn quá trình hoặc bắt đầu lại. Bước tiếp theo sẽ đóng gói flavor "
+"Và thêm nó vào hàng đợi. Ở đây bạn cũng có thể thêm một lưu ý tới receipt của bạn"
+", điều này sẽ được hiển thị trên trang ID flavor của bạn và có thể được sử dụng để "
+"thêm thông tin cho người khác và nhà phát triển SliTaz."
+
+#: web/pizza.cgi:151
+msgid "Cancel"
+msgstr "Thôi"
+
+#: web/pizza.cgi:154
+msgid "Build flavor"
+msgstr "Tạo flavor"
+
+#: web/pizza.cgi:161
+#, sh-format
+msgid "Removing temporary files for: $id"
+msgstr "Loại bỏ các file tạm cho: $id"
+
+#: web/pizza.cgi:165
+msgid "Start over"
+msgstr "Bắt đầu lại"
+
+#: web/pizza.cgi:181
+#, sh-format
+msgid "Packing: $FLAVOR"
+msgstr "Đóng gói: $FLAVOR"
+
+#: web/pizza.cgi:193
+msgid "Creating SliTaz CD-ROM README..."
+msgstr "Tạo SliTaz README CD-ROM..."
+
+#: web/pizza.cgi:200
+msgid "Creating flavor tarball..."
+msgstr "Tạo flavor tarball..."
+
+#: web/pizza.cgi:215
+msgid "Your ISO will be built on next Pizza Bot run"
+msgstr "ISO của bạn sẽ được xây dựng trên lệnh Pizza Bot tiếp theo"
+
+#: web/pizza.cgi:218
+#, sh-format
+msgid "There is $inqueue flavor in queue"
+msgid_plural "There are $inqueue flavors in queue"
+msgstr[0] "Đây là $inqueue flavor trong hàng đợi"
+msgstr[1] "Đây là $inqueue flavor trong hàng đợi"
+
+#: web/pizza.cgi:227 web/pizza.cgi:284
+msgid "Download tarball:"
+msgstr "Tải tarball:"
+
+#: web/pizza.cgi:234
+msgid "Status"
+msgstr "Trạng thái"
+
+#: web/pizza.cgi:255
+msgid "Download ISO:"
+msgstr "Tải ISO:"
+
+#: web/pizza.cgi:259
+msgid "Flavor is building or still in the build queue"
+msgstr "Flavor đang xây dựng hoặc còn trong hàng đợi"
+
+#: web/pizza.cgi:267
+#, sh-format
+msgid "Status for: $FLAVOR"
+msgstr "Trạng thái: $FLAVOR"
+
+#: web/pizza.cgi:269
+msgid "Flavor description:"
+msgstr "Miêu tả Flavor:"
+
+#: web/pizza.cgi:307
+msgid "Help"
+msgstr "Trợ giúp"
+
+#: web/pizza.cgi:330 web/pizza.cgi:379
+msgid "Activity"
+msgstr "Hoạt động"
+
+#: web/pizza.cgi:347
+msgid "Welcome"
+msgstr "Chào mừng"
+
+#: web/pizza.cgi:350
+msgid ""
+"SliTaz Pizza lets you create your own SliTaz ISO flavor online. The ISO "
+"image can be burnt on a cdrom or installed on USB media. Please read the "
+"SliTaz Pizza &lt;a href=\"?help\"&gt;Help&lt;/a&gt; before starting a new flavor."
+msgstr ""
+
+#: web/pizza.cgi:360
+msgid "Create a new flavor"
+msgstr "Tạo flavor mới"
+
+#: web/pizza.cgi:364
+msgid "Latest builds"
+msgstr "Xây dựng mới nhất"
+
+#: web/pizza.cgi:383
+msgid "More activity"
+msgstr "Thêm hoạt động"
+
+#: web/pkgs.cgi:109
+msgid "Creating receipt and packages list"
+msgstr "Tạo receipt và gói danh sách"
+
+#: web/pkgs.cgi:138
+msgid "Remove package(s)"
+msgstr "Hủy bỏ gói"
+
+#: web/pkgs.cgi:145
+msgid "Add package(s)"
+msgstr "Thêm gói"
+
+#: web/pkgs.cgi:152
+msgid ""
+"Here you can add or remove some packages to your flavor. You can also search "
+"for a package name and description to find a package name"
+msgstr ""
+"Ở đây bạn có thể thêm hoặc loại bỏ một số gói đến flavor. Bạn cũng có thể tìm kiếm gói"
+"bằng tên và mô tả để tìm một tên gói"
+
+#: web/pkgs.cgi:158
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#: web/rootfs.cgi:18
+#, sh-format
+msgid "File name: $tarball"
+msgstr "Tên tệp: $tarball"
+
+#: web/rootfs.cgi:19
+#, sh-format
+msgid "File size: $size Bytes"
+msgstr "Kích cỡ tệp: $size Bytes"
+
+#: web/rootfs.cgi:20
+#, sh-format
+msgid "Moving rootfs tarball to slitaz-$id..."
+msgstr "Chuyển rootfs tarball đến slitaz-$id..."
+
+#: web/rootfs.cgi:28
+msgid "Extracting archive for sanity checks..."
+msgstr "Giải nén lưu trữ để kiểm tra lỗi..."
+
+#: web/rootfs.cgi:40
+msgid "Checking Filesystem Standard..."
+msgstr "Kiểm tra hệ thống tập tin tiêu chuẩn..."
+
+#: web/rootfs.cgi:45
+#, sh-format
+msgid "Bad FSH path for: $i"
+msgstr "Đường dẫn FSH sai: $i"
+
+#: web/rootfs.cgi:50
+msgid "Checking uploaded rootfs size..."
+msgstr "Kiểm tra kích thước rootfs đã tải lên..."
+
+#: web/rootfs.cgi:84
+#, sh-format
+msgid "Added image: $wallpaper ($size Bytes)"
+msgstr "Thêm hình ảnh: $wallpaper ($size Bytes)"
+
+#: web/rootfs.cgi:86
+msgid "Unsupported image format"
+msgstr "Định dạng hình ảnh được hỗ trợ"
+
+#: web/rootfs.cgi:99
+#, sh-format
+msgid "Added file: $file ($size Bytes)"
+msgstr "Thêm vào tập tin: $file ($size Bytes)"
+
+#: web/rootfs.cgi:101
+msgid "Unsupported file type"
+msgstr "Loại tập tin không được hỗ trợ"
+
+#: web/rootfs.cgi:116
+msgid "Fast boot conversion"
+msgstr "Chuyển đổi khởi động nhanh"
+
+#: web/rootfs.cgi:135
+msgid "Low RAM conversion:"
+msgstr "chuyển đổi RAM thấp:"
+
+#: web/rootfs.cgi:161
+msgid ""
+"SliTaz root filesystem modification can be done via an easy to use form, a "
+"single tarball or by uploading files one by one in the wanted directory."
+msgstr ""
+"SliTaz hệ thống tập tin gốc sửa đổi có thể được thực hiện thông qua form,"
+"tarball đơn hoặc tải lên các tập tin trong các thư mục mong muốn."
+
+#: web/rootfs.cgi:165
+msgid "Easy customization"
+msgstr "Dễ dàng tùy biến"
+
+#: web/rootfs.cgi:168
+msgid "Desktop Wallpaper in JPG format"
+msgstr "Hình nền định dạng JPG"
+
+#: web/rootfs.cgi:176
+msgid "Upload Image"
+msgstr "Tải ảnh"
+
+#: web/rootfs.cgi:179
+msgid ""
+"Files on user desktop such as README, desktop files or documentation. The "
+"files will be copied in the Home directory of each new user. SliTaz creates "
+"the default Live user at boot. Allowed files and extensions are:"
+msgstr ""
+"Các tập tin trên desktop như README, tệp desktop hoặc tài liệu. "
+"Tệp sẽ được sao chép vào thư mục Home của người dùng mới. SliTaz tạo "
+"người dùng mặc định lúc khởi động. Cho phép các tập tin và tiện ích là:"
+
+#: web/rootfs.cgi:190
+msgid "Upload File"
+msgstr "Tải tệp"
+
+#: web/rootfs.cgi:193
+msgid "RootFS tarball"
+msgstr ""
+
+#: web/rootfs.cgi:195
+msgid ""
+"The files in the rootfs archive must have the same directory structure as "
+"any standard SliTaz or Linux system. For example if you wish to have a "
+"custom boot configuration file, you will have: rootfs/etc/rcS.conf. Accepted "
+"tarball formats are: &lt;strong&gt;tar.gz tar.bz2 tar.lzma&lt;/strong&gt; and the "
+"archived directory must be named rootfs with a valid file system hierachy "
+"such as: /usr/bin /etc /var/www"
+msgstr ""
+"Các tập tin trong rootfs phải có cấu trúc thư mục giống như "
+"bất kỳ tiêu chuẩn SliTaz hoặc hệ thống Linux. Ví dụ, nếu bạn muốn có một "
+"tập tin cấu hình khởi động tùy chỉnh, bạn sẽ có: rootfs/etc/rcS.conf. "
+"Chấp nhận tarball dạng: &lt;strong&gt;tar.gz tar.bz2 tar.lzma&lt;/strong&gt; và "
+"thư mục phải được đặt tên là rootfs với một hệ thống phân cấp hệ thống tập tin hợp lệ "
+"như: /usr/bin /etc /var/www"
+
+#: web/rootfs.cgi:208
+msgid "Upload rootFS"
+msgstr "Tải rootFS"
+
+#: web/rootfs.cgi:210
+msgid "ISO image conversion"
+msgstr "ISO chuyển đổi"
+
+#: web/rootfs.cgi:213
+msgid "Fast boot"
+msgstr "khởi động nhanh"
+
+#: web/rootfs.cgi:214
+msgid "Low RAM support"
+msgstr "hỗ trợ bộ nhớ RAM thấp"
+
+#: web/rootfs.cgi:216
+msgid "No"
+msgstr "Không"
+
+#: web/rootfs.cgi:217
+msgid "In RAM only"
+msgstr "Chỉ trong bộ nhớ RAM"
+
+#: web/rootfs.cgi:218
+msgid "Small CD-ROM or RAM"
+msgstr "CD-ROM hoặc bộ nhớ RAM nhỏ"
+
+#: web/rootfs.cgi:219
+msgid "Large CD-ROM or RAM"
+msgstr "CD-ROM hoặc bộ nhớ RAM lớn"
+
+#: web/rootfs.cgi:221
+msgid "Convert"
+msgstr "Đổi"
+
+#: web/rootfs.cgi:229
+msgid "Uniq ID    :"
+msgstr ""
+
+#: web/rootfs.cgi:230
+msgid "Flavor     :"
+msgstr ""
+
+#: web/rootfs.cgi:231
+msgid "Short desc :"
+msgstr "Miêu tả ngắn :"
