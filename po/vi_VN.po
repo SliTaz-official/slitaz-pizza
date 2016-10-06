@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR &lt;EMAIL@ADDRESS&gt;, YEAR.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
@@ -10,8 +10,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-02 16:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;\n"
-"Language-Team: LANGUAGE &lt;LL@li.org&gt;\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: Vietnam\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -166,7 +166,7 @@ msgstr "Chào mừng"
 msgid ""
 "SliTaz Pizza lets you create your own SliTaz ISO flavor online. The ISO "
 "image can be burnt on a cdrom or installed on USB media. Please read the "
-"SliTaz Pizza &lt;a href=\"?help\"&gt;Help&lt;/a&gt; before starting a new flavor."
+"SliTaz Pizza <a href=\"?help\">Help</a> before starting a new flavor."
 msgstr ""
 
 #: web/pizza.cgi:360
@@ -306,14 +306,14 @@ msgid ""
 "The files in the rootfs archive must have the same directory structure as "
 "any standard SliTaz or Linux system. For example if you wish to have a "
 "custom boot configuration file, you will have: rootfs/etc/rcS.conf. Accepted "
-"tarball formats are: &lt;strong&gt;tar.gz tar.bz2 tar.lzma&lt;/strong&gt; and the "
+"tarball formats are: <strong>tar.gz tar.bz2 tar.lzma</strong> and the "
 "archived directory must be named rootfs with a valid file system hierachy "
 "such as: /usr/bin /etc /var/www"
 msgstr ""
 "Các tập tin trong rootfs phải có cấu trúc thư mục giống như "
 "bất kỳ tiêu chuẩn SliTaz hoặc hệ thống Linux. Ví dụ, nếu bạn muốn có một "
 "tập tin cấu hình khởi động tùy chỉnh, bạn sẽ có: rootfs/etc/rcS.conf. "
-"Chấp nhận tarball dạng: &lt;strong&gt;tar.gz tar.bz2 tar.lzma&lt;/strong&gt; và "
+"Chấp nhận tarball dạng: <strong>tar.gz tar.bz2 tar.lzma</strong> và "
 "thư mục phải được đặt tên là rootfs với một hệ thống phân cấp hệ thống tập tin hợp lệ "
 "như: /usr/bin /etc /var/www"
 
@@ -364,3 +364,4 @@ msgstr ""
 #: web/rootfs.cgi:231
 msgid "Short desc :"
 msgstr "Miêu tả ngắn :"
+
