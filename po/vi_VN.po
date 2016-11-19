@@ -1,22 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Vietnamese translations for the SliTaz Pizza.
+# Copyright (C) 2016 SliTaz
+# This file is distributed under the same license as the SliTaz Pizza.
+# tuananh88c25 <tuananh88c25@gmail.com>, 2016.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Pizza\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-02 16:31+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: Vietnam\n"
+"POT-Creation-Date: 2016-11-19 22:53+0200\n"
+"PO-Revision-Date: 2016-10-04 17:31+0200\n"
+"Last-Translator: tuananh88c25 <tuananh88c25@gmail.com>\n"
+"Language-Team: \n"
+"Language: Vietnamese\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: web/pizza.cgi:71
 msgid "First step"
@@ -28,9 +27,9 @@ msgid ""
 "your mail to notify you when your SliTaz Flavor is built and if anything "
 "goes wrong."
 msgstr ""
-"Chọn tên phân phối của bạn và cái bạn muốn sử dụng như là cơ sở. Chúng ta cần "
-"mail của bạn để thông báo cho bạn khi Flavor SliTaz của bạn được xây dựng và "
-"nếu bất cứ điều gì sai xảy ra."
+"Chọn tên phân phối của bạn và cái bạn muốn sử dụng như là cơ sở. Chúng ta "
+"cần mail của bạn để thông báo cho bạn khi Flavor SliTaz của bạn được xây "
+"dựng và nếu bất cứ điều gì sai xảy ra."
 
 #: web/pizza.cgi:81
 msgid "Flavor name"
@@ -53,7 +52,7 @@ msgid "Text mode system"
 msgstr "Hệ thống chế độ chữ"
 
 #: web/pizza.cgi:99
-msgid "X không GTK hoặc QT"
+msgid "X without GTK or Qt"
 msgstr ""
 
 #: web/pizza.cgi:101
@@ -69,7 +68,7 @@ msgid "Continue"
 msgstr "Tiếp tục"
 
 #: web/pizza.cgi:129
-msgid "Tạo ra"
+msgid "Generate"
 msgstr ""
 
 #: web/pizza.cgi:131
@@ -79,10 +78,11 @@ msgid ""
 "flavor, this will be displayed on your flavor ID page and can be used to "
 "give more info to other users and SliTaz developers."
 msgstr ""
-"Cuối cùng để ngăn chặn quá trình hoặc bắt đầu lại. Bước tiếp theo sẽ đóng gói flavor "
-"Và thêm nó vào hàng đợi. Ở đây bạn cũng có thể thêm một lưu ý tới receipt của bạn"
-", điều này sẽ được hiển thị trên trang ID flavor của bạn và có thể được sử dụng để "
-"thêm thông tin cho người khác và nhà phát triển SliTaz."
+"Cuối cùng để ngăn chặn quá trình hoặc bắt đầu lại. Bước tiếp theo sẽ đóng "
+"gói flavor Và thêm nó vào hàng đợi. Ở đây bạn cũng có thể thêm một lưu ý tới "
+"receipt của bạn, điều này sẽ được hiển thị trên trang ID flavor của bạn và "
+"có thể được sử dụng để thêm thông tin cho người khác và nhà phát triển "
+"SliTaz."
 
 #: web/pizza.cgi:151
 msgid "Cancel"
@@ -123,7 +123,6 @@ msgstr "ISO của bạn sẽ được xây dựng trên lệnh Pizza Bot tiếp 
 msgid "There is $inqueue flavor in queue"
 msgid_plural "There are $inqueue flavors in queue"
 msgstr[0] "Đây là $inqueue flavor trong hàng đợi"
-msgstr[1] "Đây là $inqueue flavor trong hàng đợi"
 
 #: web/pizza.cgi:227 web/pizza.cgi:284
 msgid "Download tarball:"
@@ -198,8 +197,8 @@ msgid ""
 "Here you can add or remove some packages to your flavor. You can also search "
 "for a package name and description to find a package name"
 msgstr ""
-"Ở đây bạn có thể thêm hoặc loại bỏ một số gói đến flavor. Bạn cũng có thể tìm kiếm gói"
-"bằng tên và mô tả để tìm một tên gói"
+"Ở đây bạn có thể thêm hoặc loại bỏ một số gói đến flavor. Bạn cũng có thể "
+"tìm kiếm góibằng tên và mô tả để tìm một tên gói"
 
 #: web/pkgs.cgi:158
 msgid "Search"
@@ -289,9 +288,9 @@ msgid ""
 "files will be copied in the Home directory of each new user. SliTaz creates "
 "the default Live user at boot. Allowed files and extensions are:"
 msgstr ""
-"Các tập tin trên desktop như README, tệp desktop hoặc tài liệu. "
-"Tệp sẽ được sao chép vào thư mục Home của người dùng mới. SliTaz tạo "
-"người dùng mặc định lúc khởi động. Cho phép các tập tin và tiện ích là:"
+"Các tập tin trên desktop như README, tệp desktop hoặc tài liệu. Tệp sẽ được "
+"sao chép vào thư mục Home của người dùng mới. SliTaz tạo người dùng mặc định "
+"lúc khởi động. Cho phép các tập tin và tiện ích là:"
 
 #: web/rootfs.cgi:190
 msgid "Upload File"
@@ -310,12 +309,12 @@ msgid ""
 "archived directory must be named rootfs with a valid file system hierachy "
 "such as: /usr/bin /etc /var/www"
 msgstr ""
-"Các tập tin trong rootfs phải có cấu trúc thư mục giống như "
-"bất kỳ tiêu chuẩn SliTaz hoặc hệ thống Linux. Ví dụ, nếu bạn muốn có một "
-"tập tin cấu hình khởi động tùy chỉnh, bạn sẽ có: rootfs/etc/rcS.conf. "
-"Chấp nhận tarball dạng: <strong>tar.gz tar.bz2 tar.lzma</strong> và "
-"thư mục phải được đặt tên là rootfs với một hệ thống phân cấp hệ thống tập tin hợp lệ "
-"như: /usr/bin /etc /var/www"
+"Các tập tin trong rootfs phải có cấu trúc thư mục giống như bất kỳ tiêu "
+"chuẩn SliTaz hoặc hệ thống Linux. Ví dụ, nếu bạn muốn có một tập tin cấu "
+"hình khởi động tùy chỉnh, bạn sẽ có: rootfs/etc/rcS.conf. Chấp nhận tarball "
+"dạng: <strong>tar.gz tar.bz2 tar.lzma</strong> và thư mục phải được đặt tên "
+"là rootfs với một hệ thống phân cấp hệ thống tập tin hợp lệ như: /usr/bin /"
+"etc /var/www"
 
 #: web/rootfs.cgi:208
 msgid "Upload rootFS"
@@ -364,4 +363,3 @@ msgstr ""
 #: web/rootfs.cgi:231
 msgid "Short desc :"
 msgstr "Miêu tả ngắn :"
-

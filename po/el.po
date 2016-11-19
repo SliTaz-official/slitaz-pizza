@@ -52,8 +52,8 @@ msgid "Text mode system"
 msgstr "Σύστημα σε μορφή κειμένου (text mode)"
 
 #: web/pizza.cgi:99
-msgid "X without GTK or QT"
-msgstr "To X χωρίς GTK ή QT"
+msgid "X without GTK or Qt"
+msgstr "To X χωρίς GTK ή Qt"
 
 #: web/pizza.cgi:101
 msgid "Clean GTK desktop"

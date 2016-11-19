@@ -96,7 +96,7 @@ and if anything goes wrong.")
 					<option value="base">
 						Base - $(gettext "Text mode system")</option>
 					<option value="justx">
-						Justx - $(gettext "X without GTK or QT")</option>
+						Justx - $(gettext "X without GTK or Qt")</option>
 					<option value="gtkonly">
 						Gtkonly - $(gettext "Clean GTK desktop")</option>
 					<option value="core">

@@ -54,8 +54,8 @@ msgid "Text mode system"
 msgstr "سیستم مد متن"
 
 #: web/pizza.cgi:99
-msgid "X without GTK or QT"
-msgstr "QT یا GTK بدون X"
+msgid "X without GTK or Qt"
+msgstr "Qt یا GTK بدون X"
 
 #: web/pizza.cgi:101
 msgid "Clean GTK desktop"

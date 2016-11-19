@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Pizza\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-02 16:31+0000\n"
+"POT-Creation-Date: 2016-11-19 22:53+0200\n"
 "PO-Revision-Date: 2014-03-05 21:15+0300\n"
 "Last-Translator: Aleksej Bobylev <al.bobylev@gmail.com>\n"
 "Language-Team: \n"
@@ -18,13 +18,14 @@ msgstr ""
 "X-Basepath: ../\n"
 "X-Language: ru\n"
 "X-Source-Language: en\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../web/pizza.cgi:71
+#: web/pizza.cgi:71
 msgid "First step"
 msgstr "Первый шаг"
 
-#: ../web/pizza.cgi:73
+#: web/pizza.cgi:73
 msgid ""
 "Choose your distribution name and the one you want to use as base. We need "
 "your mail to notify you when your SliTaz Flavor is built and if anything "
@@ -34,47 +35,47 @@ msgstr ""
 "пожалуйста, свой e-mail, чтобы мы могли вам сообщить, когда ваша сборка "
 "SliTaz будет готова, или же в случае, если что-то пойдет не так."
 
-#: ../web/pizza.cgi:81
+#: web/pizza.cgi:81
 msgid "Flavor name"
 msgstr "Название сборки"
 
-#: ../web/pizza.cgi:85
+#: web/pizza.cgi:85
 msgid "Short description"
 msgstr "Короткое описание"
 
-#: ../web/pizza.cgi:89
+#: web/pizza.cgi:89
 msgid "Email"
 msgstr "Электронная почта"
 
-#: ../web/pizza.cgi:93
+#: web/pizza.cgi:93
 msgid "Based on"
 msgstr "Основана на"
 
-#: ../web/pizza.cgi:97
+#: web/pizza.cgi:97
 msgid "Text mode system"
 msgstr "система в текстовом режиме"
 
-#: ../web/pizza.cgi:99
-msgid "X without GTK or QT"
+#: web/pizza.cgi:99
+msgid "X without GTK or Qt"
 msgstr "только XOrg, без GTK или Qt"
 
-#: ../web/pizza.cgi:101
+#: web/pizza.cgi:101
 msgid "Clean GTK desktop"
 msgstr "чистый GTK десктоп"
 
-#: ../web/pizza.cgi:103
+#: web/pizza.cgi:103
 msgid "Default SliTaz desktop"
 msgstr "SliTaz по-умолчанию"
 
-#: ../web/pizza.cgi:114 ../web/pkgs.cgi:173 ../web/rootfs.cgi:236
+#: web/pizza.cgi:114 web/pkgs.cgi:173 web/rootfs.cgi:236
 msgid "Continue"
 msgstr "Продолжить"
 
-#: ../web/pizza.cgi:129
+#: web/pizza.cgi:129
 msgid "Generate"
 msgstr "Создание"
 
-#: ../web/pizza.cgi:131
+#: web/pizza.cgi:131
 msgid ""
 "Last chance to stop process or start over. Next step will pack your flavor "
 "and add it to the build queue. Here you can also add a note to your receipt "
@@ -86,41 +87,41 @@ msgstr ""
 "заметку (она отобразится на странице вашей сборки и даст более подробную "
 "информацию другим пользователям SliTaz, а также разработчикам)."
 
-#: ../web/pizza.cgi:151
+#: web/pizza.cgi:151
 msgid "Cancel"
 msgstr "Отмена"
 
-#: ../web/pizza.cgi:154
+#: web/pizza.cgi:154
 msgid "Build flavor"
 msgstr "Создать сборку"
 
-#: ../web/pizza.cgi:161
+#: web/pizza.cgi:161
 #, sh-format
 msgid "Removing temporary files for: $id"
 msgstr "Удаляются временные файлы $id"
 
-#: ../web/pizza.cgi:165
+#: web/pizza.cgi:165
 msgid "Start over"
 msgstr "Начать сначала"
 
-#: ../web/pizza.cgi:181
+#: web/pizza.cgi:181
 #, sh-format
 msgid "Packing: $FLAVOR"
 msgstr "Упаковка $FLAVOR"
 
-#: ../web/pizza.cgi:193
+#: web/pizza.cgi:193
 msgid "Creating SliTaz CD-ROM README..."
 msgstr "Создание файла README для CD-ROM SliTaz…"
 
-#: ../web/pizza.cgi:200
+#: web/pizza.cgi:200
 msgid "Creating flavor tarball..."
 msgstr "Создание архива редакции…"
 
-#: ../web/pizza.cgi:215
+#: web/pizza.cgi:215
 msgid "Your ISO will be built on next Pizza Bot run"
 msgstr "Ваш ISO будет создан при следующем запуске Pizza Bot"
 
-#: ../web/pizza.cgi:218
+#: web/pizza.cgi:218
 #, sh-format
 msgid "There is $inqueue flavor in queue"
 msgid_plural "There are $inqueue flavors in queue"
@@ -128,78 +129,78 @@ msgstr[0] "В очереди находится $inqueue сборка"
 msgstr[1] "В очереди находятся $inqueue сборки"
 msgstr[2] "В очереди находятся $inqueue сборок"
 
-#: ../web/pizza.cgi:227 ../web/pizza.cgi:284
+#: web/pizza.cgi:227 web/pizza.cgi:284
 msgid "Download tarball:"
 msgstr "Скачать архив:"
 
-#: ../web/pizza.cgi:234
+#: web/pizza.cgi:234
 msgid "Status"
 msgstr "Состояние"
 
-#: ../web/pizza.cgi:255
+#: web/pizza.cgi:255
 msgid "Download ISO:"
 msgstr "Скачать ISO:"
 
-#: ../web/pizza.cgi:259
+#: web/pizza.cgi:259
 msgid "Flavor is building or still in the build queue"
 msgstr "Ваша сборка либо создается, либо находится в очереди"
 
-#: ../web/pizza.cgi:267
+#: web/pizza.cgi:267
 #, sh-format
 msgid "Status for: $FLAVOR"
 msgstr "Состояние $FLAVOR"
 
-#: ../web/pizza.cgi:269
+#: web/pizza.cgi:269
 msgid "Flavor description:"
 msgstr "Описание сборки:"
 
-#: ../web/pizza.cgi:307
+#: web/pizza.cgi:307
 msgid "Help"
 msgstr "Справка"
 
-#: ../web/pizza.cgi:330 ../web/pizza.cgi:379
+#: web/pizza.cgi:330 web/pizza.cgi:379
 msgid "Activity"
 msgstr "Действия"
 
-#: ../web/pizza.cgi:347
+#: web/pizza.cgi:347
 msgid "Welcome"
 msgstr "Добро пожаловать"
 
-#: ../web/pizza.cgi:350
+#: web/pizza.cgi:350
 msgid ""
 "SliTaz Pizza lets you create your own SliTaz ISO flavor online. The ISO "
 "image can be burnt on a cdrom or installed on USB media. Please read the "
 "SliTaz Pizza <a href=\"?help\">Help</a> before starting a new flavor."
 msgstr ""
 "Создайте свою сборку SliTaz с помощью SliTaz Pizza! Образ ISO можно будет "
-"записать на CD или USB-устройство. Пожалуйста, прочтите <a "
-"href=\"?help\">справку</a> перед созданием сборки."
+"записать на CD или USB-устройство. Пожалуйста, прочтите <a href=\"?help"
+"\">справку</a> перед созданием сборки."
 
-#: ../web/pizza.cgi:360
+#: web/pizza.cgi:360
 msgid "Create a new flavor"
 msgstr "Создать новую сборку"
 
-#: ../web/pizza.cgi:364
+#: web/pizza.cgi:364
 msgid "Latest builds"
 msgstr "Последние сборки"
 
-#: ../web/pizza.cgi:383
+#: web/pizza.cgi:383
 msgid "More activity"
 msgstr "Ещё…"
 
-#: ../web/pkgs.cgi:109
+#: web/pkgs.cgi:109
 msgid "Creating receipt and packages list"
 msgstr "Создание рецепта и списка пакетов"
 
-#: ../web/pkgs.cgi:138
+#: web/pkgs.cgi:138
 msgid "Remove package(s)"
 msgstr "Удалить пакеты"
 
-#: ../web/pkgs.cgi:145
+#: web/pkgs.cgi:145
 msgid "Add package(s)"
 msgstr "Добавить пакеты"
 
-#: ../web/pkgs.cgi:152
+#: web/pkgs.cgi:152
 msgid ""
 "Here you can add or remove some packages to your flavor. You can also search "
 "for a package name and description to find a package name"
@@ -207,69 +208,69 @@ msgstr ""
 "Здесь можно добавить пакеты в вашу сборку или удалить ненужные. Искать "
 "пакеты можно по их названию или описанию"
 
-#: ../web/pkgs.cgi:158
+#: web/pkgs.cgi:158
 msgid "Search"
 msgstr "Искать"
 
-#: ../web/rootfs.cgi:18
+#: web/rootfs.cgi:18
 #, sh-format
 msgid "File name: $tarball"
 msgstr "Название файла: $tarball"
 
-#: ../web/rootfs.cgi:19
+#: web/rootfs.cgi:19
 #, sh-format
 msgid "File size: $size Bytes"
 msgstr "Размер файла: $size байт"
 
-#: ../web/rootfs.cgi:20
+#: web/rootfs.cgi:20
 #, sh-format
 msgid "Moving rootfs tarball to slitaz-$id..."
 msgstr "Перемещение архива rootfs в slitaz-$id…"
 
-#: ../web/rootfs.cgi:28
+#: web/rootfs.cgi:28
 msgid "Extracting archive for sanity checks..."
 msgstr "Тестовая распаковка архива…"
 
-#: ../web/rootfs.cgi:40
+#: web/rootfs.cgi:40
 msgid "Checking Filesystem Standard..."
 msgstr "Соответствие стандарту файловой системы…"
 
-#: ../web/rootfs.cgi:45
+#: web/rootfs.cgi:45
 #, sh-format
 msgid "Bad FSH path for: $i"
 msgstr "Путь «$i» не соответствует стандарту FSH"
 
-#: ../web/rootfs.cgi:50
+#: web/rootfs.cgi:50
 msgid "Checking uploaded rootfs size..."
 msgstr "Проверка размера загруженного rootfs…"
 
-#: ../web/rootfs.cgi:84
+#: web/rootfs.cgi:84
 #, sh-format
 msgid "Added image: $wallpaper ($size Bytes)"
 msgstr "Добавлено изображение: $wallpaper ($size байт)"
 
-#: ../web/rootfs.cgi:86
+#: web/rootfs.cgi:86
 msgid "Unsupported image format"
 msgstr "Неподдерживаемый формат изображения"
 
-#: ../web/rootfs.cgi:99
+#: web/rootfs.cgi:99
 #, sh-format
 msgid "Added file: $file ($size Bytes)"
 msgstr "Добавлен файл: $file ($size байт)"
 
-#: ../web/rootfs.cgi:101
+#: web/rootfs.cgi:101
 msgid "Unsupported file type"
 msgstr "Неподдерживаемый тип файла"
 
-#: ../web/rootfs.cgi:116
+#: web/rootfs.cgi:116
 msgid "Fast boot conversion"
 msgstr "Преобразование для быстрой загрузки"
 
-#: ../web/rootfs.cgi:135
+#: web/rootfs.cgi:135
 msgid "Low RAM conversion:"
 msgstr "Преобразование для малого размера ОЗУ:"
 
-#: ../web/rootfs.cgi:161
+#: web/rootfs.cgi:161
 msgid ""
 "SliTaz root filesystem modification can be done via an easy to use form, a "
 "single tarball or by uploading files one by one in the wanted directory."
@@ -278,19 +279,19 @@ msgstr ""
 "загрузив все файлы в едином архиве или каждый файл по-отдельности в нужную "
 "папку."
 
-#: ../web/rootfs.cgi:165
+#: web/rootfs.cgi:165
 msgid "Easy customization"
 msgstr "Простая настройка"
 
-#: ../web/rootfs.cgi:168
+#: web/rootfs.cgi:168
 msgid "Desktop Wallpaper in JPG format"
 msgstr "Фоновое изображение рабочего стола в формате JPG"
 
-#: ../web/rootfs.cgi:176
+#: web/rootfs.cgi:176
 msgid "Upload Image"
 msgstr "Загрузить изображение"
 
-#: ../web/rootfs.cgi:179
+#: web/rootfs.cgi:179
 msgid ""
 "Files on user desktop such as README, desktop files or documentation. The "
 "files will be copied in the Home directory of each new user. SliTaz creates "
@@ -301,15 +302,15 @@ msgstr ""
 "режиме Live создаётся пользователь по-умолчанию. Допускаются такие файлы и "
 "расширения имени:"
 
-#: ../web/rootfs.cgi:190
+#: web/rootfs.cgi:190
 msgid "Upload File"
 msgstr "Загрузить файл"
 
-#: ../web/rootfs.cgi:193
+#: web/rootfs.cgi:193
 msgid "RootFS tarball"
 msgstr "Архив RootFS"
 
-#: ../web/rootfs.cgi:195
+#: web/rootfs.cgi:195
 msgid ""
 "The files in the rootfs archive must have the same directory structure as "
 "any standard SliTaz or Linux system. For example if you wish to have a "
@@ -323,54 +324,53 @@ msgstr ""
 "конфигурации загрузки, он должен находиться в rootfs/etc/rcS.conf. "
 "Допустимые форматы архива: <strong>tar.gz</strong>, <strong>tar.bz2</strong> "
 "и <strong>tar.lzma</strong>. Архивируемая папка должна называться rootfs и "
-"содержать в себе разрешенную иерархию файловой системы, например: "
-"<strong>/usr/bin</strong>, <strong>/etc</strong> или "
-"<strong>/var/www</strong>"
+"содержать в себе разрешенную иерархию файловой системы, например: <strong>/"
+"usr/bin</strong>, <strong>/etc</strong> или <strong>/var/www</strong>"
 
-#: ../web/rootfs.cgi:208
+#: web/rootfs.cgi:208
 msgid "Upload rootFS"
 msgstr "Загрузить RootFS"
 
-#: ../web/rootfs.cgi:210
+#: web/rootfs.cgi:210
 msgid "ISO image conversion"
 msgstr "Преобразование образа ISO"
 
-#: ../web/rootfs.cgi:213
+#: web/rootfs.cgi:213
 msgid "Fast boot"
 msgstr "Быстрая загрузка"
 
-#: ../web/rootfs.cgi:214
+#: web/rootfs.cgi:214
 msgid "Low RAM support"
 msgstr "Поддержка малого размера ОЗУ"
 
-#: ../web/rootfs.cgi:216
+#: web/rootfs.cgi:216
 msgid "No"
 msgstr "нет"
 
-#: ../web/rootfs.cgi:217
+#: web/rootfs.cgi:217
 msgid "In RAM only"
 msgstr "только в ОЗУ"
 
-#: ../web/rootfs.cgi:218
+#: web/rootfs.cgi:218
 msgid "Small CD-ROM or RAM"
 msgstr "небольшой CD-ROM или ОЗУ"
 
-#: ../web/rootfs.cgi:219
+#: web/rootfs.cgi:219
 msgid "Large CD-ROM or RAM"
 msgstr "большой CD-ROM или ОЗУ"
 
-#: ../web/rootfs.cgi:221
+#: web/rootfs.cgi:221
 msgid "Convert"
 msgstr "Преобразовать"
 
-#: ../web/rootfs.cgi:229
+#: web/rootfs.cgi:229
 msgid "Uniq ID    :"
 msgstr "Уникальный ID:"
 
-#: ../web/rootfs.cgi:230
+#: web/rootfs.cgi:230
 msgid "Flavor     :"
 msgstr "Сборка:"
 
-#: ../web/rootfs.cgi:231
+#: web/rootfs.cgi:231
 msgid "Short desc :"
 msgstr "Короткое описание:"
