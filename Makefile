@@ -4,7 +4,7 @@
 PACKAGE="pizza"
 PREFIX?=/usr
 DESTDIR?=
-LINGUAS?=el fa fr pl pt_BR ru sv vi_VN zh_CN
+LINGUAS?=el fa fr ja pl pt_BR ru sv vi_VN zh_CN
 
 all:
 
