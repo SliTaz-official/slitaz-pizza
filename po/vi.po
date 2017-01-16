@@ -1,21 +1,22 @@
 # Vietnamese translations for the SliTaz Pizza.
 # Copyright (C) 2016 SliTaz
 # This file is distributed under the same license as the SliTaz Pizza.
-# tuananh88c25 <tuananh88c25@gmail.com>, 2016.
+# Anh Bình <tuananh88c25@gmail.com>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: SliTaz Pizza\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-19 22:53+0200\n"
-"PO-Revision-Date: 2016-10-04 17:31+0200\n"
-"Last-Translator: tuananh88c25 <tuananh88c25@gmail.com>\n"
+"PO-Revision-Date: 2017-01-16 11:31+0700\n"
+"Last-Translator: Anh Bình <tuananh88c25@gmail.com>\n"
 "Language-Team: \n"
-"Language: Vietnamese\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: web/pizza.cgi:71
 msgid "First step"
@@ -41,7 +42,7 @@ msgstr "Miêu tả ngắn"
 
 #: web/pizza.cgi:89
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: web/pizza.cgi:93
 msgid "Based on"
@@ -53,7 +54,7 @@ msgstr "Hệ thống chế độ chữ"
 
 #: web/pizza.cgi:99
 msgid "X without GTK or Qt"
-msgstr ""
+msgstr "X không qua GTK hoặc Qt"
 
 #: web/pizza.cgi:101
 msgid "Clean GTK desktop"
@@ -69,7 +70,7 @@ msgstr "Tiếp tục"
 
 #: web/pizza.cgi:129
 msgid "Generate"
-msgstr ""
+msgstr "Tạo ra"
 
 #: web/pizza.cgi:131
 msgid ""
@@ -167,6 +168,10 @@ msgid ""
 "image can be burnt on a cdrom or installed on USB media. Please read the "
 "SliTaz Pizza <a href=\"?help\">Help</a> before starting a new flavor."
 msgstr ""
+"SliTaz Pizza cho phép bạn tạo ra bản SliTaz ISO của riêng bạn trực tuyến. "
+"Những tệp ISO có thể được ghi vào đĩa CD-ROM hoặc cài đặt trên USB. Vui lòng "
+"đọc <a href=\"?help\">Trợ giúp</a> SliTaz Pizza  trước khi bắt đầu một bản "
+"mới."
 
 #: web/pizza.cgi:360
 msgid "Create a new flavor"
@@ -298,7 +303,7 @@ msgstr "Tải tệp"
 
 #: web/rootfs.cgi:193
 msgid "RootFS tarball"
-msgstr ""
+msgstr "RootFS tarball"
 
 #: web/rootfs.cgi:195
 msgid ""
@@ -354,12 +359,15 @@ msgstr "Đổi"
 
 #: web/rootfs.cgi:229
 msgid "Uniq ID    :"
-msgstr ""
+msgstr "Uniq ID    :"
 
 #: web/rootfs.cgi:230
 msgid "Flavor     :"
-msgstr ""
+msgstr "Flavor     :"
 
 #: web/rootfs.cgi:231
 msgid "Short desc :"
 msgstr "Miêu tả ngắn :"
+SliTaz Paste is powered by Zerobin
+
+#
