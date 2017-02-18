@@ -316,7 +316,7 @@ EOT
 		if mount | fgrep -q slitaz/public; then
 			mounted="Public is mounted"
 		else
-			mounted="WARRNING: Public is not mounted"
+			mounted="WARNING: Public is not mounted"
 		fi
 		echo '<h2><img src="images/monitor.png" alt="(i)" />Pizza Info</h2>'
 		echo '<pre>'

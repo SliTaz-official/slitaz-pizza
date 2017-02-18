@@ -38,7 +38,7 @@ EOT
 	done
 }
 
-# Gen an receipt for new flavor.
+# Gen a receipt for new flavor.
 gen_receipt() {
 	cat > $tmpdir/slitaz-$id/receipt << EOT
 # SliTaz flavor receipt.
