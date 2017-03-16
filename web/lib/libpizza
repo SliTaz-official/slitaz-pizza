@@ -2,12 +2,12 @@
 #
 # Common functions for Pizza CGI/SHell web interface.
 #
+. /usr/lib/slitaz/httphelper.sh
+header
 
 [ -f "/etc/slitaz/pizza.conf" ] && . /etc/slitaz/pizza.conf
 [ -f "../pizza.conf" ] && . ../pizza.conf
 . ./db.conf
-. /usr/lib/slitaz/httphelper
-header
 
 # xHTML header.
 cat lib/header.html || exit 1
