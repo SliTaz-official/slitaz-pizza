@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: SliTaz Pizza\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-19 22:53+0200\n"
-"PO-Revision-Date: 2017-03-14 17:30+0100\n"
+"PO-Revision-Date: 2017-10-08 08:40+0100\n"
 "Last-Translator: Hans-Günter Theisgen\n"
 "Language-Team: German \n"
 "Language: de\n"
@@ -106,10 +106,9 @@ msgstr "Von vorne beginnen"
 msgid "Packing: $FLAVOR"
 msgstr "$FLAVOR wird gepackt"
 
-#, fuzzy
 #: web/pizza.cgi:193
 msgid "Creating SliTaz CD-ROM README..."
-msgstr ""
+msgstr "LIESMICH-Datei wird erzeugt..."
 
 #: web/pizza.cgi:200
 msgid "Creating flavor tarball..."
@@ -117,7 +116,9 @@ msgstr "Ein Archiv mit der Variante wird erzeugt..."
 
 #: web/pizza.cgi:215
 msgid "Your ISO will be built on next Pizza Bot run"
-msgstr "Ihr ISO-Abbild wird beim nächsten Lauf von Pizza Bot erzeugt"
+msgstr ""
+"Ihr ISO-Abbild wird beim nächsten Lauf "
+"des Pizza-Kompilierungsautomaten erzeugt"
 
 #: web/pizza.cgi:218
 #, sh-format
@@ -172,7 +173,7 @@ msgstr ""
 "Mit SliTaz Pizza können Sie eine eigene Variante eines ISO-Abbildes erzeugen. "
 "Das ISO-Abbild kann auf optischen Datenträger geschrieben oder auf einem "
 "USB-Datenträger installiert werden. Lesen Sie vorher auch die "
-"SliTaz Pizza <a href=\"?help\">Anleitung</a>."
+"SliTaz Pizza-<a href=\"?help\">Anleitung</a>."
 
 #: web/pizza.cgi:360
 msgid "Create a new flavor"
@@ -229,21 +230,18 @@ msgstr "Archiv des Wurzelverzeichnisses rootfs wird nach slitaz-$id verschoben..
 msgid "Extracting archive for sanity checks..."
 msgstr "Das Archiv wird probeweise extrahiert..."
 
-#, fuzzy
 #: web/rootfs.cgi:40
 msgid "Checking Filesystem Standard..."
-msgstr ""
+msgstr "Dateisystem auf Einhaltung der Konventionen prüfen..."
 
-#, fuzzy
 #: web/rootfs.cgi:45
 #, sh-format
 msgid "Bad FSH path for: $i"
-msgstr ""
+msgstr "Falscher FSH-Pfad für: $i"
 
-#, fuzzy
 #: web/rootfs.cgi:50
 msgid "Checking uploaded rootfs size..."
-msgstr ""
+msgstr "Größe des übergebenen rootfs prüfen..."
 
 #: web/rootfs.cgi:84
 #, sh-format
@@ -263,55 +261,55 @@ msgstr "Datei hinzugefügt: $file ($size Byte)"
 msgid "Unsupported file type"
 msgstr "Dateityp nicht unterstützt"
 
-#, fuzzy
 #: web/rootfs.cgi:116
 msgid "Fast boot conversion"
-msgstr ""
+msgstr "Schnellstart-Umsetzung"
 
-#, fuzzy
 #: web/rootfs.cgi:135
 msgid "Low RAM conversion:"
-msgstr ""
+msgstr "Umsetzung für Rechner mit wenig Arbeitsspeicher"
 
-#, fuzzy
 #: web/rootfs.cgi:161
 msgid ""
 "SliTaz root filesystem modification can be done via an easy to use form, a "
 "single tarball or by uploading files one by one in the wanted directory."
 msgstr ""
+"Änderungen am Wurzeldateisystem können in einfacher Weise "
+"durch Transfer eines Archivs oder einzelner Dateien "
+"in die gewünschten Verzeichnisse vorgenommen werden."
 
-#, fuzzy
 #: web/rootfs.cgi:165
 msgid "Easy customization"
-msgstr ""
+msgstr "Einfache Anpassung"
 
 #: web/rootfs.cgi:168
 msgid "Desktop Wallpaper in JPG format"
 msgstr "Hintergrundbild im Format JPG"
 
-#, fuzzy
 #: web/rootfs.cgi:176
 msgid "Upload Image"
-msgstr ""
+msgstr "Abbild übergeben"
 
-#, fuzzy
 #: web/rootfs.cgi:179
 msgid ""
 "Files on user desktop such as README, desktop files or documentation. The "
 "files will be copied in the Home directory of each new user. SliTaz creates "
 "the default Live user at boot. Allowed files and extensions are:"
 msgstr ""
+"Dateien für die grafische Oberfläche, also LIESMICH, Symboldefinitionen und Dokumentation. "
+"Diese Dateien werden in das Stammverzeichnis jedes neuen Benutzers kopiert. "
+"SliTaz erzeugt bei der Systemeinleitung von einem Direktstart-Datenträger "
+"eine erste, nichtprivilegierte Benutzerkennung. "
+"Zulässige Dateinamen und Suffixe sind:"
 
-#, fuzzy
 #: web/rootfs.cgi:190
 msgid "Upload File"
-msgstr ""
+msgstr "Datei übergeben"
 
 #: web/rootfs.cgi:193
 msgid "RootFS tarball"
 msgstr "rootfs-Archiv"
 
-#, fuzzy
 #: web/rootfs.cgi:195
 msgid ""
 "The files in the rootfs archive must have the same directory structure as "
@@ -324,24 +322,21 @@ msgstr ""
 "Die Dateien im rootfs-Archiv müssen dieselbe Verzeichnisstruktur haben wie "
 "ein Standard-SliTaz- oder -Linux-System. Eine Datei für eine angepasste "
 "Systemeinleitung muss rootfs/etc/rcS.conf heissen. Die Archivformate "
-"<strong>tar.gz, tar.bz2 und tar.lzma</strong> werden unterstützt. Das Archiv "
-"muss rootfs heissen und eine brauchbare Verzeichnishierarchie enthalten, wie "
-"/usr/bin /etc /var/www"
+"<strong>tar.gz, tar.bz2</strong> und <strong>tar.lzma</strong> werden unterstützt. "
+"Das Archiv muss rootfs heissen und eine brauchbare Verzeichnishierarchie enthalten, wie "
+"/usr/bin, /etc, /var/www"
 
-#, fuzzy
 #: web/rootfs.cgi:208
 msgid "Upload rootFS"
-msgstr ""
+msgstr "rootfs-Archiv übergeben"
 
-#, fuzzy
 #: web/rootfs.cgi:210
 msgid "ISO image conversion"
-msgstr ""
+msgstr "ISO-Abbild konvertieren"
 
-#, fuzzy
 #: web/rootfs.cgi:213
 msgid "Fast boot"
-msgstr ""
+msgstr "Schnellstart"
 
 #: web/rootfs.cgi:214
 msgid "Low RAM support"
@@ -351,34 +346,30 @@ msgstr "Unterstützung für kleine Arbeitsspeicher"
 msgid "No"
 msgstr "Nein"
 
-#, fuzzy
 #: web/rootfs.cgi:217
 msgid "In RAM only"
-msgstr ""
+msgstr "Vollständig im Arbeitsspeicher"
 
-#, fuzzy
 #: web/rootfs.cgi:218
 msgid "Small CD-ROM or RAM"
-msgstr ""
+msgstr "Kleines ISO-Abbild oder Arbeitsspeicher"
 
-#, fuzzy
 #: web/rootfs.cgi:219
 msgid "Large CD-ROM or RAM"
-msgstr ""
+msgstr "Großes ISO-Abbild oder Arbeitsspeicher"
 
-#, fuzzy
 #: web/rootfs.cgi:221
 msgid "Convert"
-msgstr ""
+msgstr "Konvertieren"
 
 #: web/rootfs.cgi:229
 msgid "Uniq ID    :"
-msgstr "Eindeut. ID:"
+msgstr "Eindeutige Identif.:"
 
 #: web/rootfs.cgi:230
 msgid "Flavor     :"
-msgstr "Variante   :"
+msgstr "Variante           :"
 
 #: web/rootfs.cgi:231
 msgid "Short desc :"
-msgstr "Kurzbeschr.:"
+msgstr "Kurzbeschreibung   :"
