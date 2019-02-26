@@ -242,7 +242,7 @@ case "$1" in
 		cd $chroot || exit 1
 		for i in *
 		do
-			[ "$i" == "home" ] || rm -rf $i
+			[ "$i" = "home" ] || rm -rf $i
 		done && echo ""
 		;;
 	*)

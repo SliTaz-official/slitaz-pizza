@@ -5,7 +5,7 @@
 #
 
 # Output a RSS feed of latest build isos.
-if [ "$QUERY_STRING" == "rss" ]; then
+if [ "$QUERY_STRING" = "rss" ]; then
 	. /etc/slitaz/pizza.conf
 	pubdate=$(date "+%a, %d %b %Y %X")
 	cat << EOT
@@ -212,7 +212,7 @@ EOT
 		mv $tmpdir/slitaz-$id $queue
 		status
 		
-		if [ "$inqueue" == "1" ]; then
+		if [ "$inqueue" = "1" ]; then
 			gettext "Your ISO will be built on next Pizza Bot run"
 		else
 			eval_ngettext \
