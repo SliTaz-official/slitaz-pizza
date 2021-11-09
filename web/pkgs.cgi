@@ -24,7 +24,7 @@ pkgsdesc="$tmpdir/slitaz-$id/packages.desc"
 # Pizza uses local packages synced with mirror each night.
 list_pkgs() {
 	[ ! -f "$list" ] && echo "Missing: $pkgsdesc"
-	cat $pkgsdesc | while read PACKAGE VERSION SHORT_DESC
+	while read PACKAGE VERSION SHORT_DESC
 	do
 		cat << EOT
 
@@ -35,7 +35,7 @@ list_pkgs() {
 			<td>$SHORT_DESC</td>
 		</tr>
 EOT
-	done
+	done < $pkgsdesc
 }
 
 # Gen a receipt for new flavor.
@@ -122,7 +122,7 @@ esac
 #
 . $tmpdir/slitaz-$id/receipt
 
-nb=$(cat $list | wc -l)
+nb=$(wc -l < $list)
 cat << EOT
 <h2>Packages ($nb)</h2>
 

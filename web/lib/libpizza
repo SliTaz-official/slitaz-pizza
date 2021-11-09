@@ -39,7 +39,7 @@ highlighter() {
 
 # Log activities, we want first letter capitalized.
 log() {
-	grep ^[A-Z] | \
+	grep '^[A-Z]' | \
 		sed s"#^[A-Z]\([^']*\)#$(date '+%Y-%m-%d %H:%M') : \0#" >> $activity
 }
 

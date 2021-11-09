@@ -125,7 +125,7 @@ EOT
 		. $tmpdir/slitaz-$id/receipt
 		addfiles=$(find $tmpdir/slitaz-$id/addfiles -type f | wc -l)
 		[ "$addfiles" ] || addfiles=0
-		packages=$(cat $tmpdir/slitaz-$id/packages.list | wc -l)
+		packages=$(wc -l < $tmpdir/slitaz-$id/packages.list)
 		cat << EOT
 <h2>$(gettext "Generate")</h2>
 <p>
@@ -259,8 +259,8 @@ EOT
 			list="$queue/slitaz-$id/packages.list"
 			msg="$(gettext 'Flavor is building or still in the build queue')"
 		fi
-		pkgslist=$(cat $list | wc -l)
-		pkgsinst=$(cat $installed | wc -l)
+		pkgslist=$(wc -l < $list)
+		pkgsinst=$(wc -l < $installed)
 		[ "$pkgsinst" ] || pkgsinst=0
 		[ "$ISO_SIZE" ] || ISO_SIZE="N/A"
 		[ "$ROOTFS_SIZE" ] || ROOTFS_SIZE="N/A"
@@ -278,7 +278,7 @@ ISO size    : $ISO_SIZE
 </pre>
 
 <div>
-	<img src="images/iso.png" alt="[ iso ]" /> $(echo $msg)
+	<img src="images/iso.png" alt="[ iso ]" /> $msg
 </div>
 <div>
 	<img src="images/archive.png" alt="[ tarball ]" />
@@ -301,7 +301,7 @@ EOT
 			echo '<h2>Distro log</h2>'
 			echo '<pre>'
 			fgrep 'Build time' $log
-			cat $log | highlighter log
+			highlighter log < $log
 			echo '</pre>'
 		fi ;;
 	*\ helper\ *)
